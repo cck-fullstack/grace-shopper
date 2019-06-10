@@ -7,6 +7,10 @@ const Item = db.define('item', {
     allowNull: false,
     validate: {notEmpty: true}
   },
+  imageURL: {
+    type: Sequelize.STRING,
+    defaultValue: ''
+  },
   price: {
     type: Sequelize.INTEGER,
     allowNull: false,
@@ -16,8 +20,7 @@ const Item = db.define('item', {
     type: Sequelize.INTEGER
   },
   description: {
-    type: Sequelize.TEXT,
-    validate: {notEmpty: true}
+    type: Sequelize.TEXT
   },
   category: {
     type: Sequelize.STRING
