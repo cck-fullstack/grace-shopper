@@ -5,7 +5,7 @@ Roles (Will, Eric, Alex, Stan)
 ● Taskmaster - Will
 ● Gitmaster - Eric Kreiter
 ● Testmaster - Alex Mok
-● Mediator - Stan
+● Mediator - Stan So
 
 Daily process
 ● Morning standup started by yesterday's Taskmaster
