@@ -1,11 +1,11 @@
 _This document describes our team social contract for this project_
 Reference Establishing Norms
 
-Roles (Will Golden, Eric, Alex, Stan)
+Roles (Will, Eric, Alex, Stan)
 ● Taskmaster - Will Golden
-● Gitmaster - Eric
-● Testmaster - Alex
-● Mediator - Stan
+● Gitmaster - Eric Kreiter
+● Testmaster - Alex Mok
+● Mediator - Stan So
 
 Daily process
 ● Morning standup started by yesterday's Taskmaster
