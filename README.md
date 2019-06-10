@@ -3,8 +3,8 @@ Reference Establishing Norms
 
 Roles (Will, Eric, Alex, Stan)
 ● Taskmaster - Will
-● Gitmaster - Eric
-● Testmaster - Alex
+● Gitmaster - Eric Kreiter
+● Testmaster - Alex Mok
 ● Mediator - Stan So
 
 Daily process
