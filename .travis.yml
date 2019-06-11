@@ -24,6 +24,6 @@ script:
 # deploy:
 #   skip_cleanup: true # prevents travis from deleting the build
   provider: heroku
-  app: grace-shopper-cck # see README
-  api_key:
+  app: grace-shopper-cck
+  api_key: z7D7Q3RzRTSV37JAhPCwxw
     secure: LtuayPiQYTbMxCSSLvlD/zizmpB1+fU+31wtBOYueSf9DdWWkdfAHmA24YQ+zBlTP7gEWHNreeoRPMN8hHZDDM0qFEP6QWVvW3FIdMpZsB45aFIJ/ZFsGonIyd6O7xRX57IqTuc/Naxjj55n5VC7wA33k1j5Oz7vCX0JczKQjblbHXB1ZftJJe1uJFyBziq93ejoUitFbkh0JCHcpicQXbGu8GavM1eLejtUqa94j8mfQ3ZE/8b/mumSsDWDjgrCEI6h0ux8pi3HRgaqweGDLJM1wM0vvkKPy1Fr2NKIQUfkxs4dxwLPv+B0LkSsySri00rZBVGUVD4DF2GVQXwmvJvrnD7hzJK94pqCbLAK1emppi7OxAH1iVmFg3F7QijSFiNc8x2t2KXI3/4zjMphJuD0vejBUAXea8zcQ19SyYZAVKXm1T+nvSHLXOKnC7Muf00Us/Lw1Chpu5TtzI2GkCxtQnYEuJmMDPMeDL+8w3EW1qr9A/CoLs7tWEtmsuDWBD0iFW4Arlfkj7BoJc45IWvEDy0yyuCO1aGhp6L4kTcNR1SVIa7a+tU6i2PJYJ0+HWsGrr/7+NWVBfzjj8LrOv+/8HVgMpyeKQCGjGQzEeEXtr1HJwKv8iEg/pms2GzJMTfNMu0/DTxW1Xq73ZIlyuTEdnXKVgbUAUCbQttO9hk= # see README
