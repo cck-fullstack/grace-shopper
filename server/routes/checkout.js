@@ -1,11 +1,5 @@
 const router = require('express').Router()
-const {
-  User,
-  ShoppingCart,
-  CartItem,
-  Item,
-  OrderHistory
-} = require('../db/models')
+const {ShoppingCart, CartItem, Item, OrderHistory} = require('../db/models')
 
 const Sequelize = require('sequelize')
 module.exports = router
