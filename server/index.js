@@ -12,6 +12,8 @@ const app = express()
 const socketio = require('socket.io')
 module.exports = app
 
+const {ShoppingCart} = require('./db/models/shoppingCart')
+
 // This is a global Mocha hook, used for resource cleanup.
 // Otherwise, Mocha v4+ never quits after tests.
 if (process.env.NODE_ENV === 'test') {
@@ -60,8 +62,19 @@ const createApp = () => {
       saveUninitialized: false
     })
   )
+
   app.use(passport.initialize())
   app.use(passport.session())
+
+  //add shopping cart to session
+  app.use((req, res, next) => {
+    // let cart = await ShoppingCart.create()
+    if (!req.session.cart) {
+      req.session.cart = {}
+    }
+    console.log('session', req.session)
+    next()
+  })
 
   // auth and api routes
   app.use('/auth', require('./auth'))
