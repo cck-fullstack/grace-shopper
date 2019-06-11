@@ -18,7 +18,7 @@ class CartItems extends Component {
           cart.items.map((item, index) => (
             <div className="cartItems" key={index}>
               <p>name:{item.name}</p>
-              <p>Quantity:1</p>
+              <p>Quantity:{item.quantity}</p>
               <p>Price:${item.price * 0.01}</p>
               <button type="button" onClick={() => removeItem(index)}>
                 X

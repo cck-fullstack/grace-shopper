@@ -1,7 +1,7 @@
 {
-  "name": "grace-shopper",
+  "name": "grace-shopper-cck",
   "version": "2.0.0",
-  "description": "grace-shopper-cck1",
+  "description": "grace-shopper-cck",
   "engines": {
     "node": ">= 7.0.0"
   },
