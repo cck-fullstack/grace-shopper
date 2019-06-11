@@ -20,6 +20,7 @@ class AllItems extends Component {
             <p>Name:{item.name}</p>
             <p>Price:${item.price * 0.01}</p>
             <p>Quantity:{item.quantity}</p>
+            <p>Description:{item.description}</p>
             <button type="button" onClick={() => addToCart(item)}>
               Add To Cart
             </button>
