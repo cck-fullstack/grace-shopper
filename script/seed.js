@@ -14,6 +14,13 @@ async function seed() {
 
   console.log(`seeded ${users.length} users`)
 
+  const admins = await Promise.all([
+    Admin.create({email: 'admin1@email.com', password: '123'}),
+    Admin.create({email: 'admin2@email.com', password: '123'})
+  ])
+
+  console.log(`seeded ${admins.length} admins`)
+
   const items = await Promise.all([
     Item.create({
       name: 'Javascript Classes',
