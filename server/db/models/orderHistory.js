@@ -13,3 +13,5 @@ const OrderHistory = db.define('orderHistory', {
     validate: {notEmpty: true}
   }
 })
+
+module.exports = OrderHistory
