@@ -1,6 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import Stripe from './stripe.js'
 
 import {removeCartItem, checkOutCartThunk} from '../store/cart'
 
@@ -29,6 +30,7 @@ class CartItems extends Component {
         <button type="button" onClick={() => checkOutCart(cart.items)}>
           Check Out
         </button>
+        <Stripe />
       </span>
     )
   }
