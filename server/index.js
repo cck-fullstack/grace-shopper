@@ -12,7 +12,7 @@ const app = express()
 const socketio = require('socket.io')
 module.exports = app
 
-const {ShoppingCart} = require('./db/models/shoppingCart')
+const ShoppingCart = require('./db/models/shoppingCart')
 
 // This is a global Mocha hook, used for resource cleanup.
 // Otherwise, Mocha v4+ never quits after tests.
@@ -67,12 +67,14 @@ const createApp = () => {
   app.use(passport.session())
 
   //add shopping cart to session
-  app.use((req, res, next) => {
-    // let cart = await ShoppingCart.create()
+  app.use(async (req, res, next) => {
     if (!req.session.cart) {
-      req.session.cart = {}
+      let {dataValues} = await ShoppingCart.create({
+        orderNumber: ''
+      })
+      req.session.cart = {cartId: dataValues.id}
     }
-    console.log('session', req.session)
+    // req.session.destroy()
     next()
   })
 

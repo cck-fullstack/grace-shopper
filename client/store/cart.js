@@ -1,8 +1,11 @@
+import axios from 'axios'
+
 /**
  * ACTION TYPES
  */
 const ADD_ITEMS = 'ADD_ITEMS'
 const REMOVE_ITEM = 'REMOVE_ITEM'
+const CLEAR_CART = 'CLEAR_CART'
 
 /**
  * INITIAL STATE
@@ -14,6 +17,34 @@ const defaultCart = {count: 0, items: []}
  */
 export const addCartItem = item => ({type: ADD_ITEMS, item})
 export const removeCartItem = index => ({type: REMOVE_ITEM, index})
+export const clearCart = () => ({type: CLEAR_CART})
+
+/**
+ * THUNK CREATORS
+ */
+
+export const addCartItemThunk = item => async dispatch => {
+  try {
+    await axios.put('/api/cartItems', item)
+    dispatch(addCartItem(item))
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+export const checkOutCartThunk = items => async dispatch => {
+  try {
+    await axios.all([
+      // axios.post('/api/cartItems', items),
+      axios.post('/api/orderHistories'),
+      axios.post('/api/shoppingCarts')
+    ])
+
+    dispatch(clearCart())
+  } catch (err) {
+    console.error(err)
+  }
+}
 
 /**
  * REDUCER
@@ -38,7 +69,7 @@ export default function(state = defaultCart, action) {
       let items = []
       if (search) {
         items = [...state.items]
-        items[index].quantity += 1
+        // items[index].quantity += 1
       } else {
         items = [...state.items, action.item]
         items[length].quantity = 1
@@ -52,6 +83,8 @@ export default function(state = defaultCart, action) {
       })
       return {count: state.count - 1, items}
     }
+    case CLEAR_CART:
+      return defaultCart
     default:
       return state
   }
