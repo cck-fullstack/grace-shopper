@@ -11,7 +11,7 @@ router.get('/', async (req, res, next) => {
   }
 })
 
-//For multiple items
+//For multiple items (Not Used atm)
 router.post('/', async (req, res, next) => {
   try {
     //Convert items to model format
@@ -36,23 +36,42 @@ router.post('/', async (req, res, next) => {
 //Regular add cart (For persistence)
 router.put('/', async (req, res, next) => {
   try {
-    console.log(req.session, 'SESSION')
-    console.log(req.body)
-
     const newCart = {
       itemID: req.body.id,
-      shoppingCartId: +req.session.cart.cartId
+      shoppingCartId: req.session.cart.cartId
     }
-    // quantity : req.body.quantity
     const cart = await CartItem.findOne({where: newCart})
-    console.log(cart)
     if (cart) {
+      await cart.update({quantity: req.body.quantity})
+      res.sendStatus(204)
+    } else {
+      newCart.quantity = req.body.quantity
+      await CartItem.create(newCart)
+      res.sendStatus(201)
+    }
+  } catch (err) {
+    next(err)
+  }
+})
+
+router.put('/decrement', async (req, res, next) => {
+  try {
+    const newCart = {
+      itemID: req.body.id,
+      shoppingCartId: req.session.cart.cartId
+    }
+    console.log(newCart, 'NEWCART')
+
+    const cart = await CartItem.findOne({where: newCart})
+    console.log(cart, 'CART')
+    if (cart) {
+      console.log(req.body.quantity, 'REQ.BODY.QUANTITY')
       await cart.update({quantity: req.body.quantity})
     } else {
       newCart.quantity = req.body.quantity
       await CartItem.create(newCart)
     }
-    res.sendStatus(201)
+    res.sendStatus(200)
   } catch (err) {
     next(err)
   }

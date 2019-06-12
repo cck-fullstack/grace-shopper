@@ -5,6 +5,7 @@ import axios from 'axios'
  */
 const ADD_ITEMS = 'ADD_ITEMS'
 const REMOVE_ITEM = 'REMOVE_ITEM'
+const DECREMENT_ITEM = 'DECREMENT_ITEM'
 const CLEAR_CART = 'CLEAR_CART'
 
 /**
@@ -17,6 +18,7 @@ const defaultCart = {count: 0, items: []}
  */
 export const addCartItem = item => ({type: ADD_ITEMS, item})
 export const removeCartItem = index => ({type: REMOVE_ITEM, index})
+export const decrementCartItem = item => ({type: DECREMENT_ITEM, item})
 export const clearCart = () => ({type: CLEAR_CART})
 
 /**
@@ -27,6 +29,16 @@ export const addCartItemThunk = item => async dispatch => {
   try {
     await axios.put('/api/cartItems', item)
     dispatch(addCartItem(item))
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+export const decrementCartItemThunk = item => async dispatch => {
+  try {
+    console.log(item, 'BEFORE AXIOS DELETE')
+    await axios.put('/api/cartItems/decrement', item)
+    dispatch(decrementCartItem(item))
   } catch (err) {
     console.error(err)
   }
@@ -78,10 +90,25 @@ export default function(state = defaultCart, action) {
       return {count: state.count + 1, items: items}
     }
     case REMOVE_ITEM: {
-      const items = state.items.filter((ele, idx) => {
-        return idx !== action.index
+      let quantity = 0
+      const items = state.items.map((ele, idx) => {
+        if (idx !== action.index) {
+          return ele
+        } else {
+          quantity = ele.quantity
+        }
       })
       return {count: state.count - 1, items}
+    }
+    case DECREMENT_ITEM: {
+      return {
+        count: state.count - 1,
+        items: state.items.map(item => {
+          if (item.id === action.item.id) {
+            item.quantity -= 1
+          }
+        })
+      }
     }
     case CLEAR_CART:
       return defaultCart
