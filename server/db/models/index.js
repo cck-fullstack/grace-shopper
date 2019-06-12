@@ -1,4 +1,5 @@
 const User = require('./user')
+const Admin = require('./admin')
 const CartItem = require('./cartItem')
 const Item = require('./item')
 const ShoppingCart = require('./shoppingCart')
@@ -13,6 +14,7 @@ const OrderHistory = require('./orderHistory')
 
 ShoppingCart.belongsTo(User)
 CartItem.belongsTo(ShoppingCart)
+ShoppingCart.hasMany(CartItem)
 
 CartItem.hasMany(Item)
 
@@ -24,6 +26,7 @@ CartItem.hasMany(Item)
  */
 module.exports = {
   User,
+  Admin,
   CartItem,
   Item,
   ShoppingCart,

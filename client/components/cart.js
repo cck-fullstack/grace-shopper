@@ -1,19 +1,20 @@
 /* eslint-disable react/no-array-index-key */
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import Stripe from './stripe.js'
 
-import {removeCartItem} from '../store/cart'
+import {removeCartItem, checkOutCartThunk} from '../store/cart'
 
 class CartItems extends Component {
   async componentDidMount() {}
 
   render() {
-    const {cart, removeItem} = this.props
+    const {cart, checkOutCart, removeItem} = this.props
     return (
       <span>
         <h1>Cart Items</h1>
         {cart.items.length === 0 ? (
-          <span>Please add items to the cart</span>
+          <span>Please add items to the cart </span>
         ) : (
           cart.items.map((item, index) => (
             <div className="cartItems" key={index}>
@@ -26,6 +27,10 @@ class CartItems extends Component {
             </div>
           ))
         )}
+        <button type="button" onClick={() => checkOutCart(cart.items)}>
+          Check Out
+        </button>
+        <Stripe />
       </span>
     )
   }
@@ -36,7 +41,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  removeItem: idx => dispatch(removeCartItem(idx))
+  removeItem: idx => dispatch(removeCartItem(idx)),
+  checkOutCart: idx => dispatch(checkOutCartThunk(idx))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartItems)

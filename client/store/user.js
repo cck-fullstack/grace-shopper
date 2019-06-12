@@ -4,6 +4,7 @@ import history from '../history'
 /**
  * ACTION TYPES
  */
+const ADD_USER = 'ADD_USER'
 const GET_USER = 'GET_USER'
 const REMOVE_USER = 'REMOVE_USER'
 
@@ -15,12 +16,22 @@ const defaultUser = {}
 /**
  * ACTION CREATORS
  */
+const addUser = user => ({type: ADD_USER, user})
 const getUser = user => ({type: GET_USER, user})
 const removeUser = () => ({type: REMOVE_USER})
 
 /**
  * THUNK CREATORS
  */
+export const addUserThunk = user => async dispatch => {
+  try {
+    const {data} = await axios.post('/user', user)
+    dispatch(addUser(data))
+  } catch (error) {
+    console.error(error)
+  }
+}
+
 export const me = () => async dispatch => {
   try {
     const res = await axios.get('/auth/me')
@@ -61,6 +72,8 @@ export const logout = () => async dispatch => {
  */
 export default function(state = defaultUser, action) {
   switch (action.type) {
+    case ADD_USER:
+      return action.user
     case GET_USER:
       return action.user
     case REMOVE_USER:

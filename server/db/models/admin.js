@@ -2,7 +2,7 @@ const crypto = require('crypto')
 const Sequelize = require('sequelize')
 const db = require('../db')
 
-const User = db.define('user', {
+const Admin = db.define('admin', {
   email: {
     type: Sequelize.STRING,
     unique: true,
@@ -23,35 +23,26 @@ const User = db.define('user', {
     get() {
       return () => this.getDataValue('salt')
     }
-  },
-  address: {
-    type: Sequelize.TEXT
-  },
-  googleId: {
-    type: Sequelize.STRING
-  },
-  cartID: {
-    type: Sequelize.INTEGER
   }
 })
 
-module.exports = User
+module.exports = Admin
 
 /**
  * instanceMethods
  */
-User.prototype.correctPassword = function(candidatePwd) {
-  return User.encryptPassword(candidatePwd, this.salt()) === this.password()
+Admin.prototype.correctPassword = function(candidatePwd) {
+  return Admin.encryptPassword(candidatePwd, this.salt()) === this.password()
 }
 
 /**
  * classMethods
  */
-User.generateSalt = function() {
+Admin.generateSalt = function() {
   return crypto.randomBytes(16).toString('base64')
 }
 
-User.encryptPassword = function(plainText, salt) {
+Admin.encryptPassword = function(plainText, salt) {
   return crypto
     .createHash('RSA-SHA256')
     .update(plainText)
@@ -62,15 +53,15 @@ User.encryptPassword = function(plainText, salt) {
 /**
  * hooks
  */
-const setSaltAndPassword = user => {
-  if (user.changed('password')) {
-    user.salt = User.generateSalt()
-    user.password = User.encryptPassword(user.password(), user.salt())
+const setSaltAndPassword = admin => {
+  if (admin.changed('password')) {
+    admin.salt = Admin.generateSalt()
+    admin.password = Admin.encryptPassword(admin.password(), admin.salt())
   }
 }
 
-User.beforeCreate(setSaltAndPassword)
-User.beforeUpdate(setSaltAndPassword)
-User.beforeBulkCreate(users => {
-  users.forEach(setSaltAndPassword)
+Admin.beforeCreate(setSaltAndPassword)
+Admin.beforeUpdate(setSaltAndPassword)
+Admin.beforeBulkCreate(admins => {
+  admins.forEach(setSaltAndPassword)
 })
