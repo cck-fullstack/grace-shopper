@@ -47,17 +47,8 @@ class AllItems extends Component {
                 >
                   Add To Cart
                 </button>{' '}
-                <button className="btn-floating btn-small waves-effect waves-light green">
-                  {' '}
-                  +{' '}
-                </button>{' '}
-                <button className="btn-floating btn-small waves-effect waves-light red">
-                  {' '}
-                  -{' '}
-                </button>
               </div>
             </div>
-
           </div>
         ))}
       </span>
@@ -71,9 +62,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   fetchItems: () => dispatch(getItemsThunk()),
-  addToCart: item => {
-    dispatch(addCartItemThunk(item))
-  }
+  addToCart: item => dispatch(addCartItemThunk(item))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(AllItems)

@@ -24,7 +24,8 @@ const Item = db.define('item', {
   },
   imageURL: {
     type: Sequelize.STRING,
-    validate: {notEmpty: true}
+    defaultValue:
+      'https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/f_auto,q_auto,w_1100/v1555349001/shape/mentalfloss/screen_shot_2016-02-04_at_4.43.43_pm.png'
   }
 })
 
