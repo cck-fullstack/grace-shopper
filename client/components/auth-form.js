@@ -42,26 +42,22 @@ const AuthForm = props => {
         {displayName} with Google
       </a>
 
+      {/* THE BELOW IS IN PROGRESS. */}
 
-//       <a href="/auth/google">{displayName} with Google</a>
+      {/* <GoogleLogin
+      clientId={process.env.GOOGLE_CLIENT_ID}
+        clientId={'630517724735-e3j34trdr4vcv88tn1154etrgfu810am.apps.googleusercontent.com'}
+        buttonText="Login with Google"
+        onSuccess={responseGoogle}
+        onFailure={responseGoogle}
+        cookiePolicy={'single_host_origin'}
+      /> */}
 
-//       {/* THE BELOW IS IN PROGRESS. */}
-
-//       {/* <GoogleLogin
-//         //clientId={process.env.GOOGLE_CLIENT_ID}
-//         clientId={'630517724735-e3j34trdr4vcv88tn1154etrgfu810am.apps.googleusercontent.com'}
-//         buttonText="Login with Google"
-//         onSuccess={responseGoogle}
-//         onFailure={responseGoogle}
-//         cookiePolicy={'single_host_origin'}
-//       /> */}
-
-//       {/* <GoogleLogout
-//         buttonText="Logout"
-//         onLogoutSuccess={logout}
-//       >
-//       </GoogleLogout> */}
-
+      {/* <GoogleLogout
+        buttonText="Logout"
+        onLogoutSuccess={logout}
+      >
+      </GoogleLogout> */}
     </div>
   )
 }
