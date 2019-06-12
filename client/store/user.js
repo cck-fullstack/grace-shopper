@@ -6,6 +6,7 @@ import history from '../history'
  */
 const ADD_USER = 'ADD_USER'
 const GET_USER = 'GET_USER'
+const UPDATE_USER = 'UPDATE_USER'
 const REMOVE_USER = 'REMOVE_USER'
 
 /**
@@ -18,6 +19,7 @@ const defaultUser = {}
  */
 const addUser = user => ({type: ADD_USER, user})
 const getUser = user => ({type: GET_USER, user})
+const updateUser = updatedUser => ({type: UPDATE_USER, updatedUser})
 const removeUser = () => ({type: REMOVE_USER})
 
 /**
@@ -27,6 +29,15 @@ export const addUserThunk = user => async dispatch => {
   try {
     const {data} = await axios.post('/user', user)
     dispatch(addUser(data))
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export const updateUserThunk = (userId, user) => async dispatch => {
+  try {
+    const {data} = await axios.put(`/user/${userId}`, user)
+    dispatch(updateUser(data))
   } catch (error) {
     console.error(error)
   }
@@ -70,6 +81,7 @@ export const logout = () => async dispatch => {
 /**
  * REDUCER
  */
+
 export default function(state = defaultUser, action) {
   switch (action.type) {
     case ADD_USER:
@@ -78,6 +90,8 @@ export default function(state = defaultUser, action) {
       return action.user
     case REMOVE_USER:
       return defaultUser
+    case UPDATE_USER:
+      return action.updatedUser
     default:
       return state
   }
