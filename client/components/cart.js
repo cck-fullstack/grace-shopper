@@ -56,7 +56,6 @@ class CartItems extends Component {
                 type="button"
                 className="btn-floating btn-small waves-effect waves-light green"
                 onClick={() => addToCart(this.addOnClick(item))}
-                on
               >
                 {' '}
                 +{' '}
@@ -76,7 +75,7 @@ class CartItems extends Component {
         <button type="button" onClick={() => checkOutCart(cart.items)}>
           Check Out
         </button>
-        <Stripe />
+        {/* <Stripe /> */}
       </span>
     )
   }
