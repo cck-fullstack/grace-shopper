@@ -14,6 +14,22 @@ router.post('/', async (req, res, next) => {
       })
     )
   } catch (error) {
-    console.error(error)
+    next(error)
+  }
+})
+
+router.put('/:userId', async (req, res, next) => {
+  try {
+    let thisUser = await User.findByPk(req.params.userId)
+    if (thisUser) {
+      let updatedUser = await User.update(req.body, {
+        where: {id: req.params.userId},
+        returning: true,
+        plain: true
+      })
+      res.json(updatedUser[1])
+    }
+  } catch (error) {
+    next(error)
   }
 })
