@@ -22,13 +22,19 @@ export default class Stripe extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>Get ready to have your money stolen!</div>
-
-        <StripeCheckout
-          token={() => this.onToken}
-          stripeKey="pk_test_gRQzdxlhd01cSlBN3AspN8xq00kBwwD21I"
-        />
+      <div className="row">
+        <div className="col s12 m6">
+          <div className="card blue-grey darken-1">
+            <div className="card-content white-text">
+              Get ready to have your money stolen!
+            </div>
+            <StripeCheckout
+              className="middle"
+              token={() => this.onToken}
+              stripeKey="pk_test_gRQzdxlhd01cSlBN3AspN8xq00kBwwD21I"
+            />
+          </div>
+        </div>
       </div>
     )
   }

@@ -46,7 +46,11 @@ class CartItems extends Component {
             <div className="cartItems" key={index}>
               <p>
                 name:{item.name}
-                <button type="button" onClick={() => removeItem(index)}>
+                <button
+                  type="button"
+                  className="waves-effect waves-light btn-small red"
+                  onClick={() => removeItem(index)}
+                >
                   X
                 </button>
               </p>
@@ -73,7 +77,11 @@ class CartItems extends Component {
             // :<span>yes?</span>}
           ))
         )}
-        <button type="button" onClick={() => checkOutCart(cart.items)}>
+        <button
+          type="button"
+          className="waves-effect waves-light btn red"
+          onClick={() => checkOutCart(cart.items)}
+        >
           Check Out
         </button>
         <Stripe />

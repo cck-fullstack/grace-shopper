@@ -19,3 +19,10 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
+.material-icons {
+  vertical-align: middle !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
