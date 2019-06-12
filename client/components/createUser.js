@@ -33,52 +33,11 @@ class AddUser extends Component {
     return (
       <div>
         Customer Sign-up:
-        {/* <UserForm
+        <UserForm
           state={this.state}
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
-        /> */}
-        <div>
-          <form onSubmit={this.handleSubmit}>
-            <input
-              name="firstName"
-              placeholder="First Name Here"
-              value={this.state.firstName}
-              onChange={event => this.handleChange(event)}
-            />
-            <br />
-            <input
-              name="lastName"
-              placeholder="Last Name Here"
-              value={this.state.lastName}
-              onChange={event => this.handleChange(event)}
-            />
-            <br />
-            <input
-              name="email"
-              placeholder="Email Here"
-              value={this.state.email}
-              onChange={event => this.handleChange(event)}
-            />
-            <br />
-            <input
-              name="password"
-              type="password"
-              placeholder="Password Here"
-              value={this.state.password}
-              onChange={event => this.handleChange(event)}
-            />
-            <br />
-            <input
-              name="address"
-              placeholder="Address Here"
-              value={this.state.address}
-              onChange={event => this.handleChange(event)}
-            />
-            <br />
-            <button type="submit">Submit</button>
-          </form>
-        </div>
+        />
       </div>
     )
   }
@@ -87,6 +46,7 @@ class AddUser extends Component {
 const mapDispatchToProps = dispatch => {
   return {
     addUserThunk: user => {
+      console.log('thunk fired', user)
       dispatch(addUserThunk(user))
     }
   }
