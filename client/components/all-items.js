@@ -13,17 +13,37 @@ class AllItems extends Component {
 
     return (
       <span>
-        <h1>All Items</h1>
+        <h1 className="brand-logo">All Items</h1>
         {items.map(item => (
-          <div className="items" key={item.id}>
-            <img src={item.imageURL} />
-            <p>Name:{item.name}</p>
-            <p>Price:${item.price * 0.01}</p>
-            <p>Quantity:{item.quantity}</p>
-            <p>Description:{item.description}</p>
-            <button type="button" onClick={() => addToCart(item)}>
-              Add To Cart
-            </button>
+          <div className="row" key={item.id}>
+            <div className="col s12 m7">
+              <div className="card">
+                <div className="card-image">
+                  <img src={item.imageURL} />
+                </div>
+                <div className="card-content">
+                  <p className="card-title">{item.name}</p>
+                  <p>${item.price * 0.01}</p>
+                  <p>Stock:{item.quantity}</p>
+                  <p>Description:{item.description}</p>
+                </div>{' '}
+                <button
+                  type="button"
+                  className="btn waves-effect waves-light blue"
+                  onClick={() => addToCart(item)}
+                >
+                  Add To Cart
+                </button>{' '}
+                <button className="btn-floating btn-small waves-effect waves-light green">
+                  {' '}
+                  +{' '}
+                </button>{' '}
+                <button className="btn-floating btn-small waves-effect waves-light red">
+                  {' '}
+                  -{' '}
+                </button>
+              </div>
+            </div>
           </div>
         ))}
       </span>

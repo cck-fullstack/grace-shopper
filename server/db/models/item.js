@@ -21,6 +21,10 @@ const Item = db.define('item', {
   },
   category: {
     type: Sequelize.STRING
+  },
+  imageURL: {
+    type: Sequelize.STRING,
+    validate: {notEmpty: true}
   }
 })
 

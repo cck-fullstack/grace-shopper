@@ -20,21 +20,27 @@ async function seed() {
       price: 1234,
       quantity: 10,
       description: 'Fullstack Academy workshop ripoff',
-      category: 'javascript'
+      category: 'javascript',
+      imageURL:
+        'https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/f_auto,q_auto,w_1100/v1555349001/shape/mentalfloss/screen_shot_2016-02-04_at_4.43.43_pm.png'
     }),
     Item.create({
       name: 'Python Classes',
       price: 5678,
       quantity: 100,
       description: 'Watch Khan Academy',
-      category: 'python'
+      category: 'python',
+      imageURL:
+        'https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/f_auto,q_auto,w_1100/v1555349001/shape/mentalfloss/screen_shot_2016-02-04_at_4.43.43_pm.png'
     }),
     Item.create({
       name: 'Typescript Classes',
       price: 1111,
       quantity: 2,
       description: 'Elective workshop ripoff',
-      category: 'javascript'
+      category: 'javascript',
+      imageURL:
+        'https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/f_auto,q_auto,w_1100/v1555349001/shape/mentalfloss/screen_shot_2016-02-04_at_4.43.43_pm.png'
     })
   ])
 

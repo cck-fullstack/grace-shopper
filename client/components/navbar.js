@@ -6,27 +6,37 @@ import {logout} from '../store'
 
 const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
   <div>
-    <h1>BOILERMAKER</h1>
-    <nav>
-      {isLoggedIn ? (
-        <div>
-          {/* The navbar will show these links after you log in */}
-          <Link to="/home">Home</Link>
-          <a href="#" onClick={handleClick}>
-            Logout
-          </a>
-        </div>
-      ) : (
-        <div>
-          {/* The navbar will show these links before you log in */}
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
-        </div>
-      )}
-    </nav>
-    {cartCount}
-    <Link to="/cartItems"> Cart Items</Link>
-
+    <h1 className="brand-logo">Service Sellin Bois</h1>
+    <div id="navbar">
+      <nav className="nav-wrapper grey darken-3">
+        {isLoggedIn ? (
+          <div className="container">
+            {/* The navbar will show these links after you log in */}
+            <Link to="/home">Home</Link>
+            <a href="#" onClick={handleClick}>
+              Logout
+            </a>
+          </div>
+        ) : (
+          <div>
+            {/* The navbar will show these links before you log in */}
+            <Link to="/login" className="left waves-effect waves-light btn">
+              Login
+            </Link>
+            <Link to="/signup" className="left waves-effect waves-light btn">
+              Sign Up
+            </Link>
+            <Link
+              to="/cartItems"
+              className="right waves-effect waves-light btn"
+            >
+              {' '}
+              Cart Items {cartCount}
+            </Link>{' '}
+          </div>
+        )}
+      </nav>
+    </div>
     <hr />
   </div>
 )
