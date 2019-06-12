@@ -60,18 +60,18 @@ router.put('/decrement', async (req, res, next) => {
       itemID: req.body.id,
       shoppingCartId: req.session.cart.cartId
     }
-    console.log(newCart, 'NEWCART')
+    // console.log(newCart, 'NEWCART')
 
     const cart = await CartItem.findOne({where: newCart})
-    console.log(cart, 'CART')
-    if (cart) {
-      console.log(req.body.quantity, 'REQ.BODY.QUANTITY')
-      await cart.update({quantity: req.body.quantity})
+    // console.log(cart, 'CART')
+    if (cart.quantity > 1) {
+      // console.log(req.body.quantity, 'REQ.BODY.QUANTITY')
+      await cart.update({quantity: req.body.quantity - 1})
+      res.sendStatus(201)
     } else {
-      newCart.quantity = req.body.quantity
-      await CartItem.create(newCart)
+      await cart.destroy(cart)
+      res.sendStatus(200)
     }
-    res.sendStatus(200)
   } catch (err) {
     next(err)
   }

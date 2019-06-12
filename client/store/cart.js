@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 import axios from 'axios'
 
 /**
@@ -91,14 +92,14 @@ export default function(state = defaultCart, action) {
     }
     case REMOVE_ITEM: {
       let quantity = 0
-      const items = state.items.map((ele, idx) => {
-        if (idx !== action.index) {
-          return ele
-        } else {
-          quantity = ele.quantity
+      const items = state.items.filter((item, idx) => {
+        if (idx === action.index) {
+          quantity = item.quantity
         }
+        return idx !== action.index
       })
-      return {count: state.count - 1, items}
+
+      return {count: state.count - quantity, items}
     }
     case DECREMENT_ITEM: {
       return {
@@ -107,6 +108,7 @@ export default function(state = defaultCart, action) {
           if (item.id === action.item.id) {
             item.quantity -= 1
           }
+          return item
         })
       }
     }
