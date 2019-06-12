@@ -8,7 +8,7 @@ const {
 } = require('../db/models')
 
 const Sequelize = require('sequelize')
-module.exports = router
+// module.exports = router
 router.post('/updateOrderHistory', async (req, res, next) => {
   try {
     const newOrder = await OrderHistory.create({

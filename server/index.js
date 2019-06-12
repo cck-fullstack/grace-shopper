@@ -68,13 +68,13 @@ const createApp = () => {
 
   //add shopping cart to session
   app.use(async (req, res, next) => {
-    console.log(req.session.cart)
     if (!req.session.cart) {
-      let cart = await ShoppingCart.create({orderNumber: 123, userId: 1})
-      console.log(cart)
-      req.session.cart = {cardId: cart.id}
+      let {dataValues} = await ShoppingCart.create({
+        orderNumber: ''
+      })
+      req.session.cart = {cartId: dataValues.id}
     }
-    console.log('session', req.session)
+    // req.session.destroy()
     next()
   })
 
