@@ -47,8 +47,17 @@ export const me = () => async dispatch => {
   try {
     const res = await axios.get('/auth/me')
     dispatch(getUser(res.data || defaultUser))
-  } catch (err) {
-    console.error(err)
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export const getUserThunk = userId => async dispatch => {
+  try {
+    const {data} = await axios.get(`/users/${userId}`)
+    dispatch(getUser(data))
+  } catch (error) {
+    console.error(error)
   }
 }
 

@@ -7,6 +7,8 @@ export {default as Navbar} from './navbar'
 export {default as UserHome} from './user-home'
 export {Login, Signup} from './auth-form'
 export {default as AddUser} from './createUser'
+export {default as UserPage} from './userPage'
 export {default as Cart} from './cart'
 export {default as SingleItem} from './single-item'
 export {default as Items} from './all-items'
+
