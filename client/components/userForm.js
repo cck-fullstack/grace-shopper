@@ -6,6 +6,8 @@ const UserForm = props => {
       <div className="col s12">
         <form onSubmit={props.handleSubmit} className="container">
           <input
+            required
+            type="text"
             name="firstName"
             placeholder="First Name Here"
             value={props.state.firstName}
@@ -13,6 +15,8 @@ const UserForm = props => {
           />
           <br />
           <input
+            required
+            type="text"
             name="lastName"
             placeholder="Last Name Here"
             value={props.state.lastName}
@@ -20,6 +24,8 @@ const UserForm = props => {
           />
           <br />
           <input
+            required
+            type="email"
             name="email"
             placeholder="Email Here"
             value={props.state.email}
@@ -27,14 +33,17 @@ const UserForm = props => {
           />
           <br />
           <input
-            name="password"
+            required
             type="password"
+            name="password"
             placeholder="Password Here"
             value={props.state.password}
             onChange={event => props.handleChange(event)}
           />
           <br />
           <input
+            required
+            type="text"
             name="address"
             placeholder="Address Here"
             value={props.state.address}
