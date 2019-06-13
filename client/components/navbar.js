@@ -28,26 +28,92 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
 
   // >>>>>>> master
   <div>
-    <h1 className="brand-logo">Service Sellin Bois</h1>
-    <div id="navbar">
+    <h1 className="brand-logo">
+      <Link to="/" className="black-text">
+        Droopy Cart Bros
+      </Link>
+    </h1>
+    <div id="navbar-fixed">
       <nav className="nav-wrapper grey darken-3">
         {isLoggedIn ? (
           <div className="container">
             {/* The navbar will show these links after you log in */}
-            <Link to="/home">Home</Link>
-            <a href="#" onClick={handleClick}>
+            <a
+              href="#"
+              className="waves-effect waves-light btn-flat right"
+              onClick={handleClick}
+            >
               Logout
             </a>
+            <Link
+              to="/cartItems"
+              className="right waves-effect waves-light btn-flat"
+            >
+              <div>
+                <i id="cartIcon" className="material-icons left">
+                  shopping_cart
+                </i>{' '}
+                droopy cart
+              </div>
+            </Link>
+            <div className="navlinks">
+              <Link
+                to="/home"
+                className="white-text waves-effect waves-light btn-flat"
+              >
+                Home
+              </Link>
+              <Link
+                to="/allitems"
+                className="white-text waves-effect waves-light btn-flat"
+              >
+                Our Products
+              </Link>
+            </div>
           </div>
         ) : (
           <div>
             {/* The navbar will show these links before you log in */}
-            <Link to="/login" className="left waves-effect waves-light btn">
+            <Link
+              to="/login"
+              className="white-text right waves-effect waves-light btn-flat"
+            >
               Login
             </Link>
-            <Link to="/create" className="left waves-effect waves-light btn">
+            <Link
+              to="/create"
+              className="white-text right waves-effect waves-light btn-flat"
+            >
               Create Account{' '}
             </Link>
+            <Link
+              to="/cartItems"
+              className="white-text right waves-effect waves-light btn-flat"
+            >
+              <div>
+                <i id="cartIcon" className="material-icons left">
+                  shopping_cart
+                </i>{' '}
+                droopy cart
+              </div>
+            </Link>
+            <div className="navlinks">
+              <Link
+                to="/home"
+                className="white-text waves-effect waves-light btn-flat"
+              >
+                Home
+              </Link>
+              <Link
+                to="/allitems"
+                className="white-text waves-effect waves-light btn-flat"
+              >
+                Our Products
+              </Link>
+            </div>
+  {/*<Link to="/create" className="left waves-effect waves-light btn">
+              Create Account{' '}
+            </Link>*/}
           </div>
         )}
         <Link to="/cartItems" className="right waves-effect waves-light btn">
