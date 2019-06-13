@@ -44,7 +44,7 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
                 Home
               </Link>
               <Link
-                to="/allItems"
+                to="/items"
                 className="white-text waves-effect waves-light btn-flat"
               >
                 Our Products
@@ -86,7 +86,7 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
                 Home
               </Link>
               <Link
-                to="/allItems"
+                to="/items"
                 className="white-text waves-effect waves-light btn-flat"
               >
                 Our Products
