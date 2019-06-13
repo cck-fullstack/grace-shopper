@@ -5,28 +5,6 @@ import {Link} from 'react-router-dom'
 import {logout} from '../store'
 
 const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
-  // =======
-  //     <h1>BOILERMAKER</h1>
-  //     <nav>
-  //       {isLoggedIn ? (
-  //         <div>
-  //           {/* The navbar will show these links after you log in */}
-  //           <Link to="/home">Home</Link>
-  //           <a href="#" onClick={handleClick}>
-  //             Logout
-  //           </a>
-  //         </div>
-  //       ) : (
-  //         <div>
-  //           {/* The navbar will show these links before you log in */}
-  //           <Link to="/login">Login</Link>
-  //         </div>
-  //       )}
-  //     </nav>
-  //     {cartCount}
-  //     <Link to="/cartItems"> Cart Items</Link>
-
-  // >>>>>>> master
   <div>
     <h1 className="brand-logo">
       <Link to="/" className="black-text">
@@ -40,7 +18,7 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
             {/* The navbar will show these links after you log in */}
             <a
               href="#"
-              className="waves-effect waves-light btn-flat right"
+              className="white-text waves-effect waves-light btn-flat right"
               onClick={handleClick}
             >
               Logout
@@ -49,8 +27,10 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
               to="/cartItems"
               className="right waves-effect waves-light btn-flat"
             >
-              <div>
+              <div className="white-text waves-effect waves-light btn-flat">
+                {cartCount}
                 <i id="cartIcon" className="material-icons left">
+                  {' '}
                   shopping_cart
                 </i>{' '}
                 droopy cart
@@ -64,7 +44,7 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
                 Home
               </Link>
               <Link
-                to="/allitems"
+                to="/allItems"
                 className="white-text waves-effect waves-light btn-flat"
               >
                 Our Products
@@ -91,6 +71,7 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
               className="white-text right waves-effect waves-light btn-flat"
             >
               <div>
+                {cartCount}
                 <i id="cartIcon" className="material-icons left">
                   shopping_cart
                 </i>{' '}
@@ -105,21 +86,14 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
                 Home
               </Link>
               <Link
-                to="/allitems"
+                to="/allItems"
                 className="white-text waves-effect waves-light btn-flat"
               >
                 Our Products
               </Link>
             </div>
-  {/*<Link to="/create" className="left waves-effect waves-light btn">
-              Create Account{' '}
-            </Link>*/}
           </div>
         )}
-        <Link to="/cartItems" className="right waves-effect waves-light btn">
-          {' '}
-          Cart Items {cartCount}
-        </Link>{' '}
       </nav>
     </div>
 

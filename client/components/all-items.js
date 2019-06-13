@@ -11,19 +11,21 @@ class AllItems extends Component {
 
   addOnClick = item => {
     if (this.props.cart) {
-      const search = _.find(this.props.cart.items, {id: item.id})
+      let search = _.find(this.props.cart.items, {id: item.id})
 
       if (search !== undefined) {
         search.quantity += 1
         return search
       }
     }
+
     item.quantity = 1
     return item
   }
 
   render() {
     let {addToCart, items} = this.props
+    console.log(items)
     return (
       <span>
         <h1 className="brand-logo">All Items</h1>
@@ -37,7 +39,7 @@ class AllItems extends Component {
                 <div className="card-content">
                   <p className="card-title">{item.name}</p>
                   <p>${item.price * 0.01}</p>
-                  <p>Stock:{item.quantity}</p>
+                  <p>Stock:{item.inventory}</p>
                   <p>Description:{item.description}</p>
                 </div>{' '}
                 <button

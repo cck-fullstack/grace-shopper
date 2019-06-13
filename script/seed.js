@@ -47,7 +47,7 @@ async function seed() {
     Item.create({
       name: 'Javascript Classes',
       price: 1234,
-      quantity: 10,
+      inventory: 10,
       description: 'Fullstack Academy workshop ripoff',
       category: 'javascript',
       imageURL:
@@ -56,7 +56,7 @@ async function seed() {
     Item.create({
       name: 'Python Classes',
       price: 5678,
-      quantity: 100,
+      inventory: 100,
       description: 'Watch Khan Academy',
       category: 'python',
       imageURL:
@@ -65,7 +65,7 @@ async function seed() {
     Item.create({
       name: 'Typescript Classes',
       price: 1111,
-      quantity: 2,
+      inventory: 2,
       description: 'Elective workshop ripoff',
       category: 'javascript',
       imageURL:

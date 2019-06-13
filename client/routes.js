@@ -24,7 +24,7 @@ class Routes extends Component {
         <Route path="/login" component={Login} />
         <Route path="/create" component={AddUser} />
         <Route path="/cartItems" component={Cart} />
-        <Route path="/allitems" component={AllItems} />
+        <Route path="/allItems" component={AllItems} />
         <Route path="/checkout" component={Checkout} />
 
         {isLoggedIn && (

@@ -82,7 +82,6 @@ export default function(state = defaultCart, action) {
       let items = []
       if (search) {
         items = [...state.items]
-        // items[index].quantity += 1
       } else {
         items = [...state.items, action.item]
         items[length].quantity = 1
