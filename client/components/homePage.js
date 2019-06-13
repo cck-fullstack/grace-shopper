@@ -5,7 +5,17 @@ import Footer from './footer'
 const Home = () => {
   return (
     <div>
-      <Carousel />
+      <div className="sliderboi">
+        <Carousel />
+      </div>
+      <div>
+        <button
+          id="view-all-btn"
+          className="btn-large waves-effect waves-light blue"
+        >
+          View All
+        </button>
+      </div>
       <Footer />
     </div>
   )

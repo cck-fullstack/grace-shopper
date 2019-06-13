@@ -8,7 +8,7 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
   <div>
     <h1 className="brand-logo">
       <Link to="/" className="black-text">
-        Droopy Cart Bros
+        The Code School
       </Link>
     </h1>
     <div id="navbar-fixed">
@@ -38,7 +38,7 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
             </Link>
             <div className="navlinks">
               <Link
-                to="/home"
+                to="/"
                 className="white-text waves-effect waves-light btn-flat"
               >
                 Home
@@ -80,7 +80,7 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
             </Link>
             <div className="navlinks">
               <Link
-                to="/home"
+                to="/"
                 className="white-text waves-effect waves-light btn-flat"
               >
                 Home
