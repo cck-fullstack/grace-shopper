@@ -3,14 +3,13 @@ import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
 
-
 import {
   Items,
   SingleItem,
   Login,
   Signup,
   UserHome,
-  UserPage
+  UserPage,
   AddUser,
   Cart,
   Checkout
