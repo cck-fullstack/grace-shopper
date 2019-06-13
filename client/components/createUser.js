@@ -30,6 +30,7 @@ class AddUser extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <div className="row">
         <h3 className="col 12">Customer Sign-up:</h3>
@@ -43,10 +44,13 @@ class AddUser extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     addUserThunk: user => {
-      dispatch(addUserThunk(user))
+      dispatch(addUserThunk(user)).then(() => {
+        //change to whatever we decide when we do, sending to home for now
+        ownProps.history.push('/home')
+      })
     }
   }
 }
