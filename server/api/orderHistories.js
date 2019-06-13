@@ -6,7 +6,7 @@ router.get('/', async (req, res, next) => {
   try {
     let id = req.session.passport.user
     const orders = await ShoppingCart.findAll({
-      where: {userId: id.toString()}
+      where: {userId: id}
     }).then(carts => {
       return Promise.all(
         carts.map(cart =>
@@ -30,8 +30,8 @@ router.post('/', async (req, res, next) => {
     if (req.session.passport) user = req.session.passport.user
 
     const order = {
-      cartID: req.session.cart.cartId,
-      userID: user
+      cartId: req.session.cart.cartId,
+      userId: user
     }
     await OrderHistory.create(order)
     res.sendStatus(201)

@@ -38,7 +38,7 @@ const User = db.define('user', {
   googleId: {
     type: Sequelize.STRING
   },
-  cartID: {
+  cartId: {
     type: Sequelize.INTEGER
   }
   // admin: {
