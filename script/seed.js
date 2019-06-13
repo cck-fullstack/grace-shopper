@@ -26,22 +26,22 @@ async function seed() {
 
   console.log(`seeded ${users.length} users`)
 
-  // const admins = await Promise.all([
-  //   Admin.create({
-  //     firstName: 'Admin',
-  //     lastName: 'Bob',
-  //     email: 'admin1@email.com',
-  //     password: '123'
-  //   }),
-  //   Admin.create({
-  //     firstName: 'Sadmin',
-  //     lastName: 'Jef',
-  //     email: 'admin2@email.com',
-  //     password: '123'
-  //   })
-  // // ])
+  const admins = await Promise.all([
+    Admin.create({
+      firstName: 'Admin',
+      lastName: 'Bob',
+      email: 'admin1@email.com',
+      password: '123'
+    }),
+    Admin.create({
+      firstName: 'Sadmin',
+      lastName: 'Jef',
+      email: 'admin2@email.com',
+      password: '123'
+    })
+  ])
 
-  // console.log(`seeded ${admins.length} admins`)
+  console.log(`seeded ${admins.length} admins`)
 
   const items = await Promise.all([
     Item.create({
@@ -51,7 +51,7 @@ async function seed() {
       description: 'Fullstack Academy workshop ripoff',
       category: 'javascript',
       imageURL:
-        'https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/f_auto,q_auto,w_1100/v1555349001/shape/mentalfloss/screen_shot_2016-02-04_at_4.43.43_pm.png'
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png'
     }),
     Item.create({
       name: 'Python Classes',
@@ -59,8 +59,7 @@ async function seed() {
       inventory: 100,
       description: 'Watch Khan Academy',
       category: 'python',
-      imageURL:
-        'https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/f_auto,q_auto,w_1100/v1555349001/shape/mentalfloss/screen_shot_2016-02-04_at_4.43.43_pm.png'
+      imageURL: 'https://tinyurl.com/y5udnla3'
     }),
     Item.create({
       name: 'Typescript Classes',
@@ -69,18 +68,23 @@ async function seed() {
       description: 'Elective workshop ripoff',
       category: 'javascript',
       imageURL:
-        'https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/f_auto,q_auto,w_1100/v1555349001/shape/mentalfloss/screen_shot_2016-02-04_at_4.43.43_pm.png'
+        'https://cdn-images-1.medium.com/max/1200/1*JsyV8lXMuTbRVLQ2FPYWAg.png'
     })
   ])
 
   console.log(`seeded ${items.length} items`)
 
   const cartItems = await Promise.all([
-    CartItem.create({itemID: 1, quantity: 1}),
-    CartItem.create({itemID: 2, quantity: 5})
+    CartItem.create({itemId: 1, quantity: 1}),
+    CartItem.create({itemId: 2, quantity: 5})
   ])
 
   console.log(`seeded ${cartItems.length} cart items`)
+
+  const orderHistory = await Promise.all([
+    OrderHistory.create({cartId: 1, userId: 1}),
+    OrderHistory.create({cartId: 1, userId: 1})
+  ])
 
   console.log(`seeded successfully`)
 }

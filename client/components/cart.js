@@ -82,6 +82,14 @@ class CartItems extends Component {
             </div>
           ))
         )}
+        <button
+          type="button"
+          className="waves-effect waves-light btn red"
+          onClick={() => checkOutCart(cart.items)}
+        >
+          Check Out
+        </button>
+        <Stripe />
       </span>
     )
   }

@@ -11,27 +11,13 @@ router.get('/', async (req, res, next) => {
   }
 })
 
-// NOT SURE IF NEEDED
-// router.get('/:cartId', async (req, res, next) => {
-//   try {
-//     const cartItems = await CartItem.findAll({
-//       where: {
-//         shoppingCartId: cartId
-//       }
-//     })
-//     res.json(cartItems)
-//   } catch (error) {
-//     next(error)
-//   }
-// })
-
 //For multiple items (Not Used atm)
 router.post('/', async (req, res, next) => {
   try {
     //Convert items to model format
     const cartItems = req.body.map(item => {
       return {
-        itemID: item.id,
+        itemId: item.id,
         quantity: item.quantity,
         shoppingCartId: req.session.cart.cartId
       }
@@ -43,7 +29,6 @@ router.post('/', async (req, res, next) => {
     res.sendStatus(201)
   } catch (err) {
     next(err)
-    console.log('IT DIDNT WORK')
   }
 })
 
@@ -51,7 +36,7 @@ router.post('/', async (req, res, next) => {
 router.put('/', async (req, res, next) => {
   try {
     const newCart = {
-      itemID: req.body.id,
+      itemId: req.body.id,
       shoppingCartId: req.session.cart.cartId
     }
     const cart = await CartItem.findOne({where: newCart})
@@ -71,7 +56,7 @@ router.put('/', async (req, res, next) => {
 router.put('/decrement', async (req, res, next) => {
   try {
     const newCart = {
-      itemID: req.body.id,
+      itemId: req.body.id,
       shoppingCartId: req.session.cart.cartId
     }
 
