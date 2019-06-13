@@ -24,7 +24,7 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
               Logout
             </a>
             <Link
-              to="/cartItems"
+              to="/checkout"
               className="right waves-effect waves-light btn-flat"
             >
               <div className="white-text waves-effect waves-light btn-flat">
@@ -73,7 +73,7 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
               Create Account{' '}
             </Link>
             <Link
-              to="/cartItems"
+              to="/checkout"
               className="white-text right waves-effect waves-light btn-flat"
             >
               <div>

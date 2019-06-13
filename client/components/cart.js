@@ -35,6 +35,7 @@ class CartItems extends Component {
       decrementItem,
       removeItem
     } = this.props
+
     return (
       <span>
         <h1>Cart Items</h1>
@@ -71,17 +72,16 @@ class CartItems extends Component {
                 {' '}
                 -{' '}
               </button>
+              <button
+                type="button"
+                className="waves-effect waves-light btn red"
+                onClick={() => checkOutCart(cart.items)}
+              >
+                Check Out
+              </button>
             </div>
           ))
         )}
-        <button
-          type="button"
-          className="waves-effect waves-light btn red"
-          onClick={() => checkOutCart(cart.items)}
-        >
-          Check Out
-        </button>
-        {/* <Stripe /> */}
       </span>
     )
   }
@@ -91,9 +91,13 @@ const mapStateToProps = state => {
   return {cart: state.cart}
 }
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
   removeItem: idx => dispatch(removeCartItem(idx)),
-  checkOutCart: idx => dispatch(checkOutCartThunk(idx)),
+  checkOutCart: idx => {
+    // BROKEN: ownProps - when you click checkout, it does not redirect user to /home as intended
+    console.log('OWNPROPS', ownProps)
+    dispatch(checkOutCartThunk(idx)).then(() => ownProps.history.push('/home'))
+  },
   addToCart: item => dispatch(addCartItemThunk(item)),
   decrementItem: item => dispatch(decrementCartItemThunk(item))
 })
