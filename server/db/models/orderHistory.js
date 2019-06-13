@@ -2,12 +2,12 @@ const Sequelize = require('sequelize')
 const db = require('../db')
 
 const OrderHistory = db.define('orderHistory', {
-  cartID: {
+  cartId: {
     type: Sequelize.STRING,
     allowNull: false,
     validate: {notEmpty: true}
   },
-  userID: {
+  userId: {
     type: Sequelize.INTEGER,
     allowNull: false,
     validate: {notEmpty: true}
