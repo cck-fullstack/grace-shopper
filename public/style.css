@@ -26,3 +26,7 @@ form div {
   justify-content: center;
   align-items: center;
 }
+
+#cartIcon {
+  line-height: unset;
+}
