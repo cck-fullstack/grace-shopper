@@ -1,10 +1,23 @@
 const router = require('express').Router()
-const {OrderHistory} = require('../db/models')
+const {CartItem, Item, OrderHistory, ShoppingCart} = require('../db/models')
 module.exports = router
 
 router.get('/', async (req, res, next) => {
   try {
-    res.json(await OrderHistory.findAll())
+    let id = req.session.passport.user
+    const orders = await ShoppingCart.findAll({
+      where: {userId: id}
+    }).then(carts => {
+      return Promise.all(
+        carts.map(cart =>
+          CartItem.findAll({
+            where: {shoppingCartId: cart.id},
+            include: [Item]
+          })
+        )
+      )
+    })
+    res.json(orders)
   } catch (err) {
     next(err)
   }
@@ -17,8 +30,8 @@ router.post('/', async (req, res, next) => {
     if (req.session.passport) user = req.session.passport.user
 
     const order = {
-      cartID: req.session.cart.cartId,
-      userID: user
+      cartId: req.session.cart.cartId,
+      userId: user
     }
     await OrderHistory.create(order)
     res.sendStatus(201)

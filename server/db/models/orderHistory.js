@@ -8,7 +8,7 @@ const OrderHistory = db.define('orderHistory', {
     validate: {notEmpty: true}
   },
   userID: {
-    type: Sequelize.STRING,
+    type: Sequelize.INTEGER,
     allowNull: false,
     validate: {notEmpty: true}
   }
