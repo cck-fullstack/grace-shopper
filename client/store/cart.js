@@ -14,47 +14,6 @@ const CLEAR_CART = 'CLEAR_CART'
  * INITIAL STATE
  */
 
-// const testItems = [
-//   {
-//     id: 1,
-//     name: "Javascript Classes",
-//     price: 1234,
-//     inventory: 10,
-//     description: "Fullstack Academy workshop ripoff",
-//     category: "javascript",
-//     imageURL: "https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/f_auto,q_auto,w_1100/v1555349001/shape/mentalfloss/screen_shot_2016-02-04_at_4.43.43_pm.png",
-//     createdAt: "2019-06-13T19:42:31.172Z",
-//     updatedAt: "2019-06-13T19:42:31.172Z",
-//     cartItemId: null
-//   },
-//   {
-//     id: 2,
-//     name: "Python Classes",
-//     price: 5678,
-//     inventory: 100,
-//     description: "Watch Khan Academy",
-//     category: "python",
-//     imageURL: "https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/f_auto,q_auto,w_1100/v1555349001/shape/mentalfloss/screen_shot_2016-02-04_at_4.43.43_pm.png",
-//     createdAt: "2019-06-13T19:42:31.173Z",
-//     updatedAt: "2019-06-13T19:42:31.173Z",
-//     cartItemId: null
-//   },
-//   {
-//     id: 3,
-//     name: "Typescript Classes",
-//     price: 1111,
-//     inventory: 2,
-//     description: "Elective workshop ripoff",
-//     category: "javascript",
-//     imageURL: "https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/f_auto,q_auto,w_1100/v1555349001/shape/mentalfloss/screen_shot_2016-02-04_at_4.43.43_pm.png",
-//     createdAt: "2019-06-13T19:42:31.173Z",
-//     updatedAt: "2019-06-13T19:42:31.173Z",
-//     cartItemId: null
-//   }
-// ]
-
-// const defaultCart = { count: 3, items: testItems }
-
 const defaultCart = {count: 0, items: []}
 
 /**
