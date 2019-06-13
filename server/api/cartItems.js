@@ -11,6 +11,20 @@ router.get('/', async (req, res, next) => {
   }
 })
 
+// NOT SURE IF NEEDED
+// router.get('/:cartId', async (req, res, next) => {
+//   try {
+//     const cartItems = await CartItem.findAll({
+//       where: {
+//         shoppingCartId: cartId
+//       }
+//     })
+//     res.json(cartItems)
+//   } catch (error) {
+//     next(error)
+//   }
+// })
+
 //For multiple items (Not Used atm)
 router.post('/', async (req, res, next) => {
   try {

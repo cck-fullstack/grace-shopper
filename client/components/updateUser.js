@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {addUserThunk} from '../store/user'
+import {updateUserThunk, me} from '../store/user'
 import UserForm from './userForm'
 
 const initialState = {
@@ -11,7 +11,7 @@ const initialState = {
   address: ''
 }
 
-class AddUser extends Component {
+class UpdateUser extends Component {
   constructor(props) {
     super(props)
     this.state = initialState
@@ -22,18 +22,16 @@ class AddUser extends Component {
       [event.target.name]: event.target.value
     })
   }
-
+  // is it this.props or just props?
   handleSubmit = event => {
     event.preventDefault()
-    this.props.addUserThunk(this.state)
+    this.props.updateUserThunk(this.props.userId, this.state)
     this.setState(initialState)
   }
 
   render() {
-    console.log(this.props)
     return (
-      <div className="row">
-        <h3 className="col 12">Customer Sign-up:</h3>
+      <div>
         <UserForm
           state={this.state}
           handleSubmit={this.handleSubmit}
@@ -44,15 +42,12 @@ class AddUser extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = dispatch => {
   return {
-    addUserThunk: user => {
-      dispatch(addUserThunk(user)).then(() => {
-        //change to whatever we decide when we do, sending to home for now
-        ownProps.history.push('/home')
-      })
+    updateUserThunk: (userId, user) => {
+      dispatch(updateUserThunk(userId, user))
     }
   }
 }
 
-export default connect(null, mapDispatchToProps)(AddUser)
+export default connect(null, mapDispatchToProps)(UpdateUser)
