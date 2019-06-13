@@ -28,14 +28,21 @@ export const getItemsThunk = () => async dispatch => {
   }
 }
 
+export const getSingleItemThunk = id => async dispatch => {
+  try {
+    const {data} = await axios.get(`/api/items/${id}`)
+    dispatch(getItems(data))
+  } catch (err) {
+    console.error(err)
+  }
+}
+
 /**
  * REDUCER
  */
 export default function(state = defaultItems, action) {
-  console.log(state, 'state')
   switch (action.type) {
     case GET_ITEMS: {
-      console.log('IS THIS RUNNING???', action)
       return action.items
     }
     default:

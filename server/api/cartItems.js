@@ -40,6 +40,7 @@ router.put('/', async (req, res, next) => {
       itemID: req.body.id,
       shoppingCartId: req.session.cart.cartId
     }
+    console.log(newCart)
     const cart = await CartItem.findOne({where: newCart})
     if (cart) {
       await cart.update({quantity: req.body.quantity})
