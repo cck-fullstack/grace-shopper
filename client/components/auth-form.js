@@ -3,11 +3,19 @@ import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import {auth} from '../store'
 
+const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy
+
+import {GoogleLogin, GoogleLogout} from 'react-google-login'
+
 /**
  * COMPONENT
  */
 const AuthForm = props => {
   const {name, displayName, handleSubmit, error} = props
+
+  const responseGoogle = response => {
+    console.log('RESPONSE:', response)
+  }
 
   return (
     <div>
@@ -34,6 +42,27 @@ const AuthForm = props => {
       <a href="/auth/google" className="waves-effect waves-light btn red">
         {displayName} with Google
       </a>
+
+    {/*<a href="/auth/google" className="btn">
+        {displayName} with Google
+      </a>*/}
+
+      {/* THE BELOW IS IN PROGRESS. */}
+
+      {/* <GoogleLogin
+      clientId={process.env.GOOGLE_CLIENT_ID}
+        clientId={'630517724735-e3j34trdr4vcv88tn1154etrgfu810am.apps.googleusercontent.com'}
+        buttonText="Login with Google"
+        onSuccess={responseGoogle}
+        onFailure={responseGoogle}
+        cookiePolicy={'single_host_origin'}
+      /> */}
+
+      {/* <GoogleLogout
+        buttonText="Logout"
+        onLogoutSuccess={logout}
+      >
+      </GoogleLogout> */}
     </div>
   )
 }

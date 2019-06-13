@@ -16,14 +16,14 @@ install:
 before_script:
   - psql -c 'create database "grace-shopper-test";' -U postgres # remember to change this name if you change it elsewhere (e.g. package.json)
 script:
-  - npm test             # test the code
+  - npm test # test the code
   - npm run build-client # make the bundle
 
-# before_deploy:
-#   - rm -rf node_modules # omit from the tarball, since we skip cleanup
-# deploy:
-#   skip_cleanup: true # prevents travis from deleting the build
-provider: heroku
+before_deploy:
+  - rm -rf node_modules # omit from the tarball, since we skip cleanup
+deploy:
+  skip_cleanup: true # prevents travis from deleting the build
+  provider: heroku
   app: grace-shopper-cck
-  api_key: z7D7Q3RzRTSV37JAhPCwxw
-  secure: "ng62ItutGJlwTz7SFdYM200aS8Hb0ucUlWNo+kiYiWtaqQ5m68H8dPR/MAg54KhILBfb7419R2DVoap6JChetJOZXagchaXqPJfxsKJTIMVMy4W/X6fOXY7hriUllR7EJvxRM08wznwIVF/DSvkXZUCHXZVpsuhDYqi3DPFdNB+pylRI5y3LZZcyVhMT19o+dWJHYXvqelACUXQKgDBNL+rd0B1q5ixbLjsaMeWUebv0Ym58K9xUU8PVoE1gyBBHUoq+75dW104kt+ON/4xQ/2LDTCbN6mhaNcrMyaMBoI+x1mX/rQPchyNAE2PiSLdkwgE2ZfEdIEe0OM56/5RpiyfCJrdFRHso8imGnUKDRnnf1IZGKHtsUY23F84UubHzhHglKqX4LrQjTZiBDi/IhX08QWarTh71SnYl6tec5Db+uU5RlXwSaHA3iFmUu8zasPxfwbUY9wz3HDwuflzFqDfGb7CN7+EWVgOmWKAkmM1uJjB7C1xLBs5p8Sycl9R5U66U0V7dKWXBArdtX2B1lXTq9733jmGiD+9Z8iduL3E9T/zKeAHhMslsEMDcUjAUj2/JpB6Amzzg7HTTcvZluV64EW5nOxbBWQ+i/3eOuCTNOmoHk8m26cNKRyYb09ATlGIL5Sj3RZv75F32qOTfbWPHAJ7mN8/3BSVeIQE8eTs=" # see README
+  api_key:
+    secure: 'ng62ItutGJlwTz7SFdYM200aS8Hb0ucUlWNo+kiYiWtaqQ5m68H8dPR/MAg54KhILBfb7419R2DVoap6JChetJOZXagchaXqPJfxsKJTIMVMy4W/X6fOXY7hriUllR7EJvxRM08wznwIVF/DSvkXZUCHXZVpsuhDYqi3DPFdNB+pylRI5y3LZZcyVhMT19o+dWJHYXvqelACUXQKgDBNL+rd0B1q5ixbLjsaMeWUebv0Ym58K9xUU8PVoE1gyBBHUoq+75dW104kt+ON/4xQ/2LDTCbN6mhaNcrMyaMBoI+x1mX/rQPchyNAE2PiSLdkwgE2ZfEdIEe0OM56/5RpiyfCJrdFRHso8imGnUKDRnnf1IZGKHtsUY23F84UubHzhHglKqX4LrQjTZiBDi/IhX08QWarTh71SnYl6tec5Db+uU5RlXwSaHA3iFmUu8zasPxfwbUY9wz3HDwuflzFqDfGb7CN7+EWVgOmWKAkmM1uJjB7C1xLBs5p8Sycl9R5U66U0V7dKWXBArdtX2B1lXTq9733jmGiD+9Z8iduL3E9T/zKeAHhMslsEMDcUjAUj2/JpB6Amzzg7HTTcvZluV64EW5nOxbBWQ+i/3eOuCTNOmoHk8m26cNKRyYb09ATlGIL5Sj3RZv75F32qOTfbWPHAJ7mN8/3BSVeIQE8eTs=' # see README

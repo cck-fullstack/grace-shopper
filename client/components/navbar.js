@@ -111,8 +111,15 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
                 Our Products
               </Link>
             </div>
+  {/*<Link to="/create" className="left waves-effect waves-light btn">
+              Create Account{' '}
+            </Link>*/}
           </div>
         )}
+        <Link to="/cartItems" className="right waves-effect waves-light btn">
+          {' '}
+          Cart Items {cartCount}
+        </Link>{' '}
       </nav>
     </div>
 
