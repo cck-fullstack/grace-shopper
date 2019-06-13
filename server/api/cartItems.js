@@ -40,7 +40,6 @@ router.put('/', async (req, res, next) => {
       itemID: req.body.id,
       shoppingCartId: req.session.cart.cartId
     }
-    console.log(newCart)
     const cart = await CartItem.findOne({where: newCart})
     if (cart) {
       await cart.update({quantity: req.body.quantity})
@@ -61,12 +60,9 @@ router.put('/decrement', async (req, res, next) => {
       itemID: req.body.id,
       shoppingCartId: req.session.cart.cartId
     }
-    // console.log(newCart, 'NEWCART')
 
     const cart = await CartItem.findOne({where: newCart})
-    // console.log(cart, 'CART')
     if (cart.quantity > 1) {
-      // console.log(req.body.quantity, 'REQ.BODY.QUANTITY')
       await cart.update({quantity: req.body.quantity - 1})
       res.sendStatus(201)
     } else {
