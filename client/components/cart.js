@@ -42,54 +42,51 @@ class CartItems extends Component {
         {cart.items.length === 0 ? (
           <span>Please add items to the cart </span>
         ) : (
-          cart.items.map((item, index) => (
-            <div className="cartItems" key={index}>
-              <p>
-                name:{item.name}
-                <button
-                  type="button"
-                  className="waves-effect waves-light btn-small red"
-                  onClick={() => removeItem(index)}
-                >
-                  X
-                </button>
-              </p>
-              <p>Quantity:{item.quantity}</p>
-              <p>Price:${item.price * 0.01}</p>
-              <button
-                type="button"
-                className="btn-floating btn-small waves-effect waves-light green"
-                onClick={() => addToCart(this.addOnClick(item))}
-              >
-                {' '}
-                +{' '}
-              </button>{' '}
-              <button
-                type="button"
-                className="btn-floating btn-small waves-effect waves-light red"
-                onClick={() => decrementItem(item)}
-              >
-                {' '}
-                -{' '}
-              </button>
-              <button
-                type="button"
-                className="waves-effect waves-light btn red"
-                onClick={() => checkOutCart(cart.items)}
-              >
-                Check Out
-              </button>
-            </div>
-          ))
+          <div>
+            {cart.items.map((item, index) => {
+              return (
+                <div className="cartItems" key={index}>
+                  <p>
+                    name:{item.name}
+                    <button
+                      type="button"
+                      className="waves-effect waves-light btn-small red"
+                      onClick={() => removeItem(index)}
+                    >
+                      X
+                    </button>
+                  </p>
+                  <p>Quantity:{item.quantity}</p>
+                  <p>Price:${item.price * 0.01}</p>
+                  <button
+                    type="button"
+                    className="btn-floating btn-small waves-effect waves-light green"
+                    onClick={() => addToCart(this.addOnClick(item))}
+                  >
+                    {' '}
+                    +{' '}
+                  </button>{' '}
+                  <button
+                    type="button"
+                    className="btn-floating btn-small waves-effect waves-light red"
+                    onClick={() => decrementItem(item)}
+                  >
+                    {' '}
+                    -{' '}
+                  </button>
+                </div>
+              )
+            })}
+            <button
+              type="button"
+              className="waves-effect waves-light btn red"
+              onClick={() => checkOutCart(cart.items)}
+            >
+              Check Out
+            </button>
+            <Stripe />
+          </div>
         )}
-        <button
-          type="button"
-          className="waves-effect waves-light btn red"
-          onClick={() => checkOutCart(cart.items)}
-        >
-          Check Out
-        </button>
-        <Stripe />
       </span>
     )
   }
