@@ -40,11 +40,11 @@ const User = db.define('user', {
   },
   cartID: {
     type: Sequelize.INTEGER
+  },
+  isAdmin: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
   }
-  // admin: {
-  //   type: Sequelize.BOOLEAN,
-  //   defaultValue: false
-  // }
 })
 
 module.exports = User

@@ -47,7 +47,13 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
                 to="/items"
                 className="white-text waves-effect waves-light btn-flat"
               >
-                Our Products
+                Products
+              </Link>
+              <Link
+                to="/user"
+                className="white-text waves-effect waves-light btn-flat"
+              >
+                Profile
               </Link>
             </div>
           </div>
