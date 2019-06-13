@@ -17,7 +17,7 @@ router.post('/', async (req, res, next) => {
     //Convert items to model format
     const cartItems = req.body.map(item => {
       return {
-        itemID: item.id,
+        itemId: item.id,
         quantity: item.quantity,
         shoppingCartId: req.session.cart.cartId
       }
@@ -37,7 +37,7 @@ router.post('/', async (req, res, next) => {
 router.put('/', async (req, res, next) => {
   try {
     const newCart = {
-      itemID: req.body.id,
+      itemId: req.body.id,
       shoppingCartId: req.session.cart.cartId
     }
     const cart = await CartItem.findOne({where: newCart})
@@ -57,7 +57,7 @@ router.put('/', async (req, res, next) => {
 router.put('/decrement', async (req, res, next) => {
   try {
     const newCart = {
-      itemID: req.body.id,
+      itemId: req.body.id,
       shoppingCartId: req.session.cart.cartId
     }
 

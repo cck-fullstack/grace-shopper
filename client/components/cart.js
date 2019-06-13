@@ -81,7 +81,7 @@ class CartItems extends Component {
         >
           Check Out
         </button>
-        {/* <Stripe /> */}
+        <Stripe />
       </span>
     )
   }

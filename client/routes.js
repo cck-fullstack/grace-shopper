@@ -10,7 +10,8 @@ import {
   UserHome,
   AddUser,
   Cart,
-  Checkout
+  Checkout,
+  OrderHistory
 } from './components'
 import {me} from './store'
 // import Cart from './components/cart'
@@ -35,6 +36,7 @@ class Routes extends Component {
         <Route exact path="/items/:id" component={SingleItem} />
         <Route path="/items" component={Items} />
         <Route path="/checkout" component={Checkout} />
+        <Route path="/orderhistory" component={OrderHistory} />
 
         {/* Blocks api routes but we use during development
         <Route path="/api" component={UserHome} /> */}
