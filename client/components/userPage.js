@@ -10,10 +10,6 @@ class UserPage extends Component {
     this.state = {}
   }
 
-  componentDidMount() {
-    // this.props.getUserThunk(+this.props.match.params.userId)
-  }
-
   handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value
@@ -27,14 +23,15 @@ class UserPage extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <div>
-        <h2>Welcome to your user page, {this.props.firstName}</h2>
+        <h2>Welcome to your user page, {this.props.user.firstName}</h2>
         <h4>Your Current Cart:</h4>
         <CartItems />
         <div>
           <h4>Update your information here:</h4>
-          <UpdateUser userId={+this.props.match.params.userId} />
+          <UpdateUser userId={+this.props.user.id} />
           <h4>Your Order History:</h4>
         </div>
       </div>
@@ -42,12 +39,12 @@ class UserPage extends Component {
   }
 }
 
-// const mapStateToProps = state => {
-//   console.log('STATE?', state)
-//   return {
-//     user: state.user
-//   }
-// }
+const mapStateToProps = state => {
+  return {
+    user: state.user
+    // cart: state.cart
+  }
+}
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -57,4 +54,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(UserPage)
+export default connect(mapStateToProps, mapDispatchToProps)(UserPage)
