@@ -26,22 +26,22 @@ async function seed() {
 
   console.log(`seeded ${users.length} users`)
 
-  // const admins = await Promise.all([
-  //   Admin.create({
-  //     firstName: 'Admin',
-  //     lastName: 'Bob',
-  //     email: 'admin1@email.com',
-  //     password: '123'
-  //   }),
-  //   Admin.create({
-  //     firstName: 'Sadmin',
-  //     lastName: 'Jef',
-  //     email: 'admin2@email.com',
-  //     password: '123'
-  //   })
-  // // ])
+  const admins = await Promise.all([
+    Admin.create({
+      firstName: 'Admin',
+      lastName: 'Bob',
+      email: 'admin1@email.com',
+      password: '123'
+    }),
+    Admin.create({
+      firstName: 'Sadmin',
+      lastName: 'Jef',
+      email: 'admin2@email.com',
+      password: '123'
+    })
+  ])
 
-  // console.log(`seeded ${admins.length} admins`)
+  console.log(`seeded ${admins.length} admins`)
 
   const items = await Promise.all([
     Item.create({
@@ -76,11 +76,16 @@ async function seed() {
   console.log(`seeded ${items.length} items`)
 
   const cartItems = await Promise.all([
-    CartItem.create({itemID: 1, quantity: 1}),
-    CartItem.create({itemID: 2, quantity: 5})
+    CartItem.create({itemId: 1, quantity: 1}),
+    CartItem.create({itemId: 2, quantity: 5})
   ])
 
   console.log(`seeded ${cartItems.length} cart items`)
+
+  const orderHistory = await Promise.all([
+    OrderHistory.create({cartId: 1, userId: 1}),
+    OrderHistory.create({cartId: 1, userId: 1})
+  ])
 
   console.log(`seeded successfully`)
 }
