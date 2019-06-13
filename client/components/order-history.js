@@ -21,7 +21,7 @@ class OrderHistory extends Component {
   render() {
     return (
       <span>
-        <h1 className="brand-logo">Order History</h1>
+        <h3 className="brand-logo">Order History</h3>
         {this.state.orders.map((cart, idx) => {
           return (
             <div key={idx}>

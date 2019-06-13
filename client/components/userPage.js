@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {getUserThunk} from '../store/user'
 import CartItems from './cart'
 import UpdateUser from './updateUser'
+import OrderHistory from './order-history'
 
 class UserPage extends Component {
   constructor(props) {
@@ -27,12 +28,14 @@ class UserPage extends Component {
     return (
       <div>
         <h2>Welcome to your user page, {this.props.user.firstName}</h2>
-        <h4>Your Current Cart:</h4>
+        <h3>Your Current Cart:</h3>
         <CartItems />
+        <br />
         <div>
-          <h4>Update your information here:</h4>
+          <h3>Update your information here:</h3>
           <UpdateUser userId={+this.props.user.id} />
-          <h4>Your Order History:</h4>
+          <br />
+          <OrderHistory />
         </div>
       </div>
     )
