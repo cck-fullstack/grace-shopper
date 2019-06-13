@@ -16,7 +16,7 @@ class CartItems extends Component {
 
   addOnClick = item => {
     if (this.props.cart) {
-      const search = _.find(this.props.cart.items, {id: item.id})
+      let search = _.find(this.props.cart.items, {id: item.id})
 
       if (search !== undefined) {
         search.quantity += 1
@@ -42,7 +42,6 @@ class CartItems extends Component {
           <span>Please add items to the cart </span>
         ) : (
           cart.items.map((item, index) => (
-            // {item !== undefined ?
             <div className="cartItems" key={index}>
               <p>
                 name:{item.name}
@@ -73,7 +72,6 @@ class CartItems extends Component {
                 -{' '}
               </button>
             </div>
-            // :<span>yes?</span>}
           ))
         )}
         <button

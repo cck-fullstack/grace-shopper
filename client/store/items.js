@@ -4,6 +4,7 @@ import axios from 'axios'
  * ACTION TYPES
  */
 const GET_ITEMS = 'GET_ITEMS'
+const ADD_ITEMS = 'ADD_ITEMS'
 
 /**
  * INITIAL STATE
@@ -31,10 +32,12 @@ export const getItemsThunk = () => async dispatch => {
  * REDUCER
  */
 export default function(state = defaultItems, action) {
+  console.log(state, 'state')
   switch (action.type) {
-    case GET_ITEMS:
+    case GET_ITEMS: {
+      console.log('IS THIS RUNNING???', action)
       return action.items
-
+    }
     default:
       return state
   }
