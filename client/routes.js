@@ -13,6 +13,7 @@ import {
   Checkout
 } from './components'
 import {me} from './store'
+import Home from './components/homePage'
 // import Cart from './components/cart'
 
 /**
@@ -29,6 +30,7 @@ class Routes extends Component {
     return (
       <Switch>
         {/* Routes placed here are available to all visitors */}
+        <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/create" component={AddUser} />
         <Route path="/cartItems" component={Cart} />
