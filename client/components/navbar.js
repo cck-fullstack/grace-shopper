@@ -29,11 +29,11 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
             >
               <div className="white-text waves-effect waves-light btn-flat">
                 {cartCount}
-                <i id="cartIcon" className="material-icons left">
+                <i id="cartIcon" className="material-icons">
                   {' '}
                   shopping_cart
                 </i>{' '}
-                droopy cart
+                cart
               </div>
             </Link>
             <div className="navlinks">
@@ -45,7 +45,7 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
               </Link>
               <Link
                 to="/items"
-                className="white-text waves-effect waves-light btn-flat"
+                className="white-text waves-effect waves-light dropdown-trigger btn"
               >
                 Our Products
               </Link>
@@ -71,11 +71,11 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
               className="white-text right waves-effect waves-light btn-flat"
             >
               <div>
-                {cartCount}
-                <i id="cartIcon" className="material-icons left">
+                <i id="cartIcon" className="material-icons right">
                   shopping_cart
-                </i>{' '}
-                droopy cart
+                </i>
+                {'cart '}
+                {cartCount}
               </div>
             </Link>
             <div className="navlinks">
@@ -87,10 +87,16 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
               </Link>
               <Link
                 to="/items"
-                className="white-text waves-effect waves-light btn-flat"
+                className="white-text waves-effect waves-light btn-flat dropdown-trigger btn"
+                data-target="dropdown1"
               >
                 Our Products
               </Link>
+              <ul id="dropdown1" className="dropdown-content">
+                <li>category1</li>
+                <li>category2</li>
+                <li>category3</li>
+              </ul>
             </div>
           </div>
         )}
@@ -100,6 +106,8 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
     <hr />
   </div>
 )
+
+//***DROPDOWN EVENT LISTENER***
 
 /**
  * CONTAINER

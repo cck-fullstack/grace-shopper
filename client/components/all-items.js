@@ -39,7 +39,7 @@ class AllItems extends Component {
                   <div className="card-image">
                     <img src={item.imageURL} />
                   </div>
-                  <div className="card-content">
+                  <div className="card-content black-text">
                     <p className="card-title">{item.name}</p>
                     <p>${item.price * 0.01}</p>
                     <p>Stock:{item.inventory}</p>
