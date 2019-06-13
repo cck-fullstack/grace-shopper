@@ -31,8 +31,8 @@ class AddUser extends Component {
 
   render() {
     return (
-      <div>
-        Customer Sign-up:
+      <div className="row">
+        <h3 className="col 12">Customer Sign-up:</h3>
         <UserForm
           state={this.state}
           handleSubmit={this.handleSubmit}

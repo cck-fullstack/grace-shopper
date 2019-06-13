@@ -2,9 +2,22 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {Login, Signup, UserHome, AddUser, UserPage} from './components'
+
+
+import {
+  Items,
+  SingleItem,
+  Login,
+  Signup,
+  UserHome,
+  UserPage
+  AddUser,
+  Cart,
+  Checkout
+} from './components'
+
 import {me} from './store'
-import Cart from './components/cart'
+// import Cart from './components/cart'
 
 /**
  * COMPONENT
@@ -23,6 +36,12 @@ class Routes extends Component {
         <Route path="/login" component={Login} />
         <Route path="/create" component={AddUser} />
         <Route path="/cartItems" component={Cart} />
+        <Route exact path="/items/:id" component={SingleItem} />
+        <Route path="/items" component={Items} />
+        <Route path="/checkout" component={Checkout} />
+
+        {/* Blocks api routes but we use during development
+        <Route path="/api" component={UserHome} /> */}
 
         {isLoggedIn && (
           <Switch>

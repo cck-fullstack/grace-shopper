@@ -12,7 +12,7 @@ const Item = db.define('item', {
     allowNull: false,
     validate: {notEmpty: true}
   },
-  quantity: {
+  inventory: {
     type: Sequelize.INTEGER
   },
   description: {

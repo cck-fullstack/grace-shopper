@@ -16,7 +16,7 @@ class CartItems extends Component {
 
   addOnClick = item => {
     if (this.props.cart) {
-      const search = _.find(this.props.cart.items, {id: item.id})
+      let search = _.find(this.props.cart.items, {id: item.id})
 
       if (search !== undefined) {
         search.quantity += 1
@@ -42,11 +42,14 @@ class CartItems extends Component {
           <span>Please add items to the cart </span>
         ) : (
           cart.items.map((item, index) => (
-            // {item !== undefined ?
             <div className="cartItems" key={index}>
               <p>
                 name:{item.name}
-                <button type="button" onClick={() => removeItem(index)}>
+                <button
+                  type="button"
+                  className="waves-effect waves-light btn-small red"
+                  onClick={() => removeItem(index)}
+                >
                   X
                 </button>
               </p>
@@ -56,7 +59,6 @@ class CartItems extends Component {
                 type="button"
                 className="btn-floating btn-small waves-effect waves-light green"
                 onClick={() => addToCart(this.addOnClick(item))}
-                on
               >
                 {' '}
                 +{' '}
@@ -70,13 +72,16 @@ class CartItems extends Component {
                 -{' '}
               </button>
             </div>
-            // :<span>yes?</span>}
           ))
         )}
-        <button type="button" onClick={() => checkOutCart(cart.items)}>
+        <button
+          type="button"
+          className="waves-effect waves-light btn red"
+          onClick={() => checkOutCart(cart.items)}
+        >
           Check Out
         </button>
-        <Stripe />
+        {/* <Stripe /> */}
       </span>
     )
   }

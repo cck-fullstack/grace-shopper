@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {getItemsThunk} from '../store/items'
 import {addCartItemThunk} from '../store/cart'
 import _ from 'lodash'
+import {Link} from 'react-router-dom'
 
 class AllItems extends Component {
   componentDidMount() {
@@ -11,19 +12,22 @@ class AllItems extends Component {
 
   addOnClick = item => {
     if (this.props.cart) {
-      const search = _.find(this.props.cart.items, {id: item.id})
+      let search = _.find(this.props.cart.items, {id: item.id})
 
       if (search !== undefined) {
         search.quantity += 1
         return search
       }
     }
+
     item.quantity = 1
     return item
   }
 
   render() {
     let {addToCart, items} = this.props
+    if (!Array.isArray(items)) items = [items]
+
     return (
       <span>
         <h1 className="brand-logo">All Items</h1>
@@ -31,15 +35,17 @@ class AllItems extends Component {
           <div className="row" key={item.id}>
             <div className="col s12 m7">
               <div className="card">
-                <div className="card-image">
-                  <img src={item.imageURL} />
-                </div>
-                <div className="card-content">
-                  <p className="card-title">{item.name}</p>
-                  <p>${item.price * 0.01}</p>
-                  <p>Stock:{item.quantity}</p>
-                  <p>Description:{item.description}</p>
-                </div>{' '}
+                <Link to={`/items/${item.id}`}>
+                  <div className="card-image">
+                    <img src={item.imageURL} />
+                  </div>
+                  <div className="card-content">
+                    <p className="card-title">{item.name}</p>
+                    <p>${item.price * 0.01}</p>
+                    <p>Stock:{item.inventory}</p>
+                    <p>Description:{item.description}</p>
+                  </div>{' '}
+                </Link>
                 <button
                   type="button"
                   className="btn waves-effect waves-light blue"
