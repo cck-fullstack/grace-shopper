@@ -10,14 +10,14 @@ const Item = db.define('item', {
   price: {
     type: Sequelize.INTEGER,
     allowNull: false,
-    validate: {notEmpty: true}
+    validate: {notEmpty: true, min: 0}
   },
   inventory: {
-    type: Sequelize.INTEGER
+    type: Sequelize.INTEGER,
+    validate: {min: 0}
   },
   description: {
-    type: Sequelize.TEXT,
-    validate: {notEmpty: true}
+    type: Sequelize.TEXT
   },
   category: {
     type: Sequelize.STRING
