@@ -7,7 +7,7 @@ import CartItems from './cart'
 class Checkout extends Component {
   // is componentDidMount needed?
   componentDidMount() {
-    console.log('THIS.PROPS:', this.props)
+    // console.log('THIS.PROPS:', this.props)
   }
 
   render() {

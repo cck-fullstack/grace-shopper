@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {getUserThunk} from '../store/user'
-import CartItems from './cart'
 import UpdateUser from './updateUser'
 import OrderHistory from './order-history'
 
@@ -24,13 +23,9 @@ class UserPage extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div>
         <h2>Welcome to your user page, {this.props.user.firstName}</h2>
-        <h3>Your Current Cart:</h3>
-        <CartItems />
-        <br />
         <div>
           <h3>Update your information here:</h3>
           <UpdateUser userId={+this.props.user.id} />
@@ -45,7 +40,6 @@ class UserPage extends Component {
 const mapStateToProps = state => {
   return {
     user: state.user
-    // cart: state.cart
   }
 }
 
