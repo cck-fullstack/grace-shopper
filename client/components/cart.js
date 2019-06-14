@@ -12,6 +12,10 @@ import {
 } from '../store/cart'
 
 class CartItems extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
   async componentDidMount() {}
 
   addOnClick = item => {
@@ -99,9 +103,10 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch, ownProps) => ({
   removeItem: idx => dispatch(removeCartItem(idx)),
   checkOutCart: idx => {
-    // BROKEN: ownProps - when you click checkout, it does not redirect user to /home as intended
-    console.log('OWNPROPS', ownProps)
-    dispatch(checkOutCartThunk(idx)).then(() => ownProps.history.push('/home'))
+    // BROKEN: ownProps - when you click checkout, it does not redirect user to /home as intended {}
+    // console.log(ownProps)
+    dispatch(checkOutCartThunk(idx))
+    // .then(() => ownProps.history.push('/home'))
   },
   addToCart: item => dispatch(addCartItemThunk(item)),
   decrementItem: item => dispatch(decrementCartItemThunk(item))
