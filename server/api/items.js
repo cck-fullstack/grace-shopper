@@ -44,3 +44,15 @@ router.put('/', async (req, res, next) => {
     next(err)
   }
 })
+
+router.delete('/:id', async (req, res, next) => {
+  try {
+    console.log(req.params, 'REQ')
+    const item = await Item.findByPk(req.params.id)
+    if (!item) return res.sendStatus(404)
+    await item.destroy()
+    res.sendStatus(204)
+  } catch (err) {
+    next(err)
+  }
+})

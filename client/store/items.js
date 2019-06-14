@@ -1,4 +1,5 @@
 import axios from 'axios'
+import _ from 'lodash'
 
 /**
  * ACTION TYPES
@@ -6,7 +7,7 @@ import axios from 'axios'
 const GET_ITEMS = 'GET_ITEMS'
 const ADD_ITEMS = 'ADD_ITEMS'
 const CREATE_ITEM = 'CREATE_ITEM'
-
+const DELETE_ITEM = 'DELETE_ITEM'
 /**
  * INITIAL STATE
  */
@@ -18,7 +19,7 @@ const defaultItems = []
 const getItems = items => ({type: GET_ITEMS, items})
 const addItem = item => ({type: ADD_ITEMS, item})
 const addItemInventory = item => ({type: CREATE_ITEM, item})
-
+const deleteItem = id => ({type: DELETE_ITEM, id})
 /**
  * THUNK CREATORS
  */
@@ -58,6 +59,16 @@ export const updateItemCountThunk = (item, change = 1) => async dispatch => {
   }
 }
 
+export const deleteItemThunk = id => async dispatch => {
+  try {
+    console.log(id, 'ID IN THUNK')
+    await axios.delete(`api/items/${id}`)
+    dispatch(deleteItem(id))
+  } catch (err) {
+    console.error(err)
+  }
+}
+
 /**
  * REDUCER
  */
@@ -75,6 +86,12 @@ export default function(state = defaultItems, action) {
     }
     case CREATE_ITEM:
       return [...state, action.item]
+    case DELETE_ITEM: {
+      let items = state
+      _.remove(items, item => item.id === action.id)
+      return [...items]
+    }
+
     default:
       return state
   }
