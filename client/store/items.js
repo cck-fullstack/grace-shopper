@@ -89,7 +89,7 @@ export default function(state = defaultItems, action) {
     case DELETE_ITEM: {
       let items = state
       _.remove(items, item => item.id === action.id)
-      return items
+      return [...items]
     }
 
     default:
