@@ -49,20 +49,6 @@ class AdminPage extends Component {
     this.setState(defaultState)
   }
 
-  // addOnClick = item => {
-  //   if (this.props.cart) {
-  //     let search = _.find(this.props.cart.items, {id: item.id})
-
-  //     if (search !== undefined) {
-  //       search.quantity += 1
-  //       return search
-  //     }
-  //   }
-
-  //   item.quantity = 1
-  //   return item
-  // }
-
   changeAmount = (event, item) => {
     event.preventDefault()
     this.props.changeItemCount(item, event.path[0][0].valueAsNumber)
@@ -70,7 +56,8 @@ class AdminPage extends Component {
 
   render() {
     const {showAddForm, showEditItems} = this.state
-    const {addOneItem, deleteItem, removeOneItem} = this.props
+    const {addOneItem, deleteItem, removeOneItem, items} = this.props
+    console.log(items, 'PROPS.ITEMS')
     return (
       <span>
         <h1>Admin Page</h1>
@@ -99,11 +86,11 @@ class AdminPage extends Component {
         </button>
         {showEditItems ? (
           <ul>
-            {this.props.items.map(item => (
+            {items.map(item => (
               <div key={item.id}>
                 <li>
                   {item.name}
-                  <button type="button" onClick={() => deleteItem()}>
+                  <button type="button" onClick={() => deleteItem(item.id)}>
                     X
                   </button>
                 </li>
@@ -150,9 +137,7 @@ const mapDispatchToProps = dispatch => ({
   createItem: item => dispatch(addItemThunk(item)),
   addOneItem: item => dispatch(updateItemCountThunk(item, 1)),
   removeOneItem: item => dispatch(updateItemCountThunk(item, -1)),
-  changeItemCount: (item, amt) => {
-    dispatch(updateItemCountThunk(item, amt))
-  },
+  changeItemCount: (item, amt) => dispatch(updateItemCountThunk(item, amt)),
 
   deleteItem: id => dispatch(deleteItemThunk(id))
 })
