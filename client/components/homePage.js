@@ -1,6 +1,5 @@
 import React from 'react'
 import Carousel from './carousel'
-import Footer from './footer'
 
 const Home = () => {
   return (
@@ -16,7 +15,6 @@ const Home = () => {
           View All
         </button>
       </div>
-      <Footer />
     </div>
   )
 }

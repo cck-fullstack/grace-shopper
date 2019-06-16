@@ -33,10 +33,6 @@ class AdminPage extends Component {
   componentDidMount() {
     this.props.fetchItems()
     this.props.fetchUsers()
-    // const elems = document.querySelectorAll('select')
-    // const options = document.querySelectorAll('option')
-
-    // M.FormSelect.init(elems, options)
   }
 
   handleChange = evt => {

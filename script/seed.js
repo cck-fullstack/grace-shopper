@@ -3,10 +3,6 @@
 const db = require('../server/db')
 const {Item, CartItem, User, OrderHistory} = require('../server/db/models')
 const {seedClasses} = require('./seedplus')
-// console.log(seedClasses)
-// seedClasses.forEach(item => {
-//   console.log(item, 'ITEM')
-// })
 
 async function seed() {
   await db.sync({force: true})
@@ -63,6 +59,7 @@ async function seed() {
 
   console.log(`seeded ${items.length} items`)
 
+  // Seeds larger file
   const allClasses = await Promise.all(
     seedClasses.map(item => {
       Item.create(item)
@@ -82,6 +79,8 @@ async function seed() {
     OrderHistory.create({cartId: 1, userId: 1}),
     OrderHistory.create({cartId: 1, userId: 1})
   ])
+
+  console.log(`seeded ${orderHistory.length} order histories`)
 
   console.log(`seeded successfully`)
 }

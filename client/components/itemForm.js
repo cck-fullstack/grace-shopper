@@ -14,8 +14,8 @@ const ItemForm = props => {
   } = props
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Add Item Form</h1>
+    <form onSubmit={handleSubmit} style={{width: '20em'}}>
+      <h1>Add Item</h1>
       <label>
         Item Name:
         {!name &&
