@@ -84,8 +84,10 @@ export const deleteItemThunk = id => async dispatch => {
  */
 export default function(state = defaultItems, action) {
   switch (action.type) {
-    case GET_ITEMS:
+    case GET_ITEMS: {
+      if (!Array.isArray(action.items)) return [action.items]
       return action.items
+    }
 
     case ADD_ITEMS: {
       const items = state.map(item => {

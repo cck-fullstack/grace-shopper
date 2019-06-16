@@ -1,5 +1,4 @@
-import M from 'materialize-css'
-import {Dropdown, Button, Divider, Icon} from 'react-materialize'
+import {Dropdown, Button, Divider} from 'react-materialize'
 
 import React, {Component} from 'react'
 

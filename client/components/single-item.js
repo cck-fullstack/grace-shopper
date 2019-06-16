@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {getSingleItemThunk} from '../store/items'
 import {addCartItemThunk} from '../store/cart'
 import _ from 'lodash'
+import {Toast} from 'react-materialize'
 
 class SingleItem extends Component {
   componentDidMount() {
@@ -26,7 +27,7 @@ class SingleItem extends Component {
 
   render() {
     let {addToCart, items} = this.props
-
+    items = items[0]
     if (!items) items = []
 
     return (
@@ -44,13 +45,21 @@ class SingleItem extends Component {
                 <p>Stock:{items.inventory}</p>
                 <p>Description:{items.description}</p>
               </div>{' '}
-              <button
-                type="button"
-                className="btn waves-effect waves-light blue"
-                onClick={() => addToCart(this.addOnClick(items))}
+              <div
+                onClick={() => {
+                  addToCart(this.addOnClick(items))
+                }}
               >
-                Add To Cart
-              </button>{' '}
+                <Toast
+                  className="btn waves-effect waves-light blue"
+                  options={{
+                    html: `${items.name} added to cart!`,
+                    displayLength: 300
+                  }}
+                >
+                  Add to Cart
+                </Toast>
+              </div>
             </div>
           </div>
         </div>
