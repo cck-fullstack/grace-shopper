@@ -25,15 +25,14 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
             </a>
             <Link
               to="/checkout"
-              className="right waves-effect waves-light btn-flat"
+              className="white-text right waves-effect waves-light btn-flat"
             >
-              <div className="white-text waves-effect waves-light btn-flat">
-                {cartCount}
-                <i id="cartIcon" className="material-icons">
-                  {' '}
+              <div>
+                <i id="cartIcon" className="material-icons right">
                   shopping_cart
-                </i>{' '}
-                cart
+                </i>
+                {'cart '}
+                {cartCount}
               </div>
             </Link>
             <div className="navlinks">
@@ -45,7 +44,7 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
               </Link>
               <Link
                 to="/items"
-                className="white-text waves-effect waves-light dropdown-trigger btn"
+                className="white-text waves-effect waves-light btn-flat"
               >
                 Products
               </Link>
@@ -93,7 +92,7 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
               </Link>
               <Link
                 to="/items"
-                className="white-text waves-effect waves-light btn-flat dropdown-trigger btn"
+                className="white-text waves-effect waves-light btn-flat"
                 data-target="dropdown1"
               >
                 Our Products
