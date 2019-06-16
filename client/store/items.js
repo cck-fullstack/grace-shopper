@@ -17,6 +17,7 @@ const defaultItems = []
  * ACTION CREATORS
  */
 const getItems = items => ({type: GET_ITEMS, items})
+
 const addItem = item => ({type: ADD_ITEMS, item})
 const addItemInventory = item => ({type: CREATE_ITEM, item})
 const deleteItem = id => ({type: DELETE_ITEM, id})
@@ -26,6 +27,16 @@ const deleteItem = id => ({type: DELETE_ITEM, id})
 export const getItemsThunk = () => async dispatch => {
   try {
     const {data} = await axios.get('/api/items')
+    dispatch(getItems(data))
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+export const getCategoryThunk = category => async dispatch => {
+  try {
+    console.log(category, ' INTHUNK')
+    const {data} = await axios.get(`/api/items/category/${category}`)
     dispatch(getItems(data))
   } catch (err) {
     console.error(err)
@@ -61,7 +72,6 @@ export const updateItemCountThunk = (item, change = 1) => async dispatch => {
 
 export const deleteItemThunk = id => async dispatch => {
   try {
-    console.log(id, 'ID IN THUNK')
     await axios.delete(`api/items/${id}`)
     dispatch(deleteItem(id))
   } catch (err) {
@@ -91,7 +101,6 @@ export default function(state = defaultItems, action) {
       _.remove(items, item => item.id === action.id)
       return [...items]
     }
-
     default:
       return state
   }

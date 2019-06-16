@@ -47,11 +47,23 @@ router.put('/', async (req, res, next) => {
 
 router.delete('/:id', async (req, res, next) => {
   try {
-    console.log(req.params, 'REQ')
     const item = await Item.findByPk(req.params.id)
     if (!item) return res.sendStatus(404)
     await item.destroy()
     res.sendStatus(204)
+  } catch (err) {
+    next(err)
+  }
+})
+
+router.get('/category/:category', async (req, res, next) => {
+  try {
+    console.log(req.params.category, 'CATEGORY IN ROUTES')
+    const category = await Item.findAll({
+      where: {category: req.params.category}
+    })
+    if (!category) return res.sendStatus(404)
+    res.json(category)
   } catch (err) {
     next(err)
   }

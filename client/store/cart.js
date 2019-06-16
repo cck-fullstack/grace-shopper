@@ -50,7 +50,6 @@ export const addCartItemThunk = item => async dispatch => {
 
 export const decrementCartItemThunk = item => async dispatch => {
   try {
-    console.log(item, 'BEFORE AXIOS DELETE')
     await axios.put('/api/cartItems/decrement', item)
     dispatch(decrementCartItem(item))
   } catch (err) {
@@ -58,10 +57,9 @@ export const decrementCartItemThunk = item => async dispatch => {
   }
 }
 
-export const checkOutCartThunk = items => async dispatch => {
+export const checkOutCartThunk = () => async dispatch => {
   try {
     await axios.all([
-      // axios.post('/api/cartItems', items),
       axios.post('/api/orderHistories'),
       axios.post('/api/shoppingCarts')
     ])
