@@ -14,12 +14,12 @@ import {
   Cart,
   Checkout,
   OrderHistory,
-  AdminPage
+  AdminPage,
+  Category
 } from './components'
 
 import {me} from './store'
 import Home from './components/homePage'
-// import Cart from './components/cart'
 
 /**
  * COMPONENT
@@ -31,7 +31,6 @@ class Routes extends Component {
 
   render() {
     const {isLoggedIn} = this.props
-    console.log('IS LOGGED IN?', this.props.isLoggedIn)
     return (
       <Switch>
         {/* Routes placed here are available to all visitors */}
@@ -40,6 +39,7 @@ class Routes extends Component {
         <Route path="/create" component={AddUser} />
         <Route path="/cartItems" component={Cart} />
         <Route exact path="/items/:id" component={SingleItem} />
+        <Route exact path="/items/category/:category" component={Category} />
         <Route path="/items" component={Items} />
         <Route path="/checkout" component={Checkout} />
         <Route path="/orderhistory" component={OrderHistory} />

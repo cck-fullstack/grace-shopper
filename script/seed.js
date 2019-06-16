@@ -18,7 +18,8 @@ async function seed() {
       lastName: 'McBoddy',
       email: 'cody@email.com',
       password: '123',
-      address: '123 my house'
+      address: '123 my house',
+      isAdmin: true
     }),
     User.create({
       firstName: 'Murphy',
@@ -37,7 +38,7 @@ async function seed() {
       price: 1234,
       inventory: 10,
       description: 'Fullstack Academy workshop ripoff',
-      category: 'javascript',
+      category: 'Javascript',
       imageURL:
         'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png'
     }),
@@ -46,7 +47,7 @@ async function seed() {
       price: 5678,
       inventory: 100,
       description: 'Watch Khan Academy',
-      category: 'python',
+      category: 'Python',
       imageURL: 'https://tinyurl.com/y5udnla3'
     }),
     Item.create({
@@ -54,7 +55,7 @@ async function seed() {
       price: 1111,
       inventory: 2,
       description: 'Elective workshop ripoff',
-      category: 'javascript',
+      category: 'Javascript',
       imageURL:
         'https://cdn-images-1.medium.com/max/1200/1*JsyV8lXMuTbRVLQ2FPYWAg.png'
     })

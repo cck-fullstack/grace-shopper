@@ -30,7 +30,6 @@ class AddUser extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className="row">
         <h3 className="col 12">Customer Sign-up:</h3>

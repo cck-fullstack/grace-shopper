@@ -102,10 +102,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   removeItem: idx => dispatch(removeCartItem(idx)),
-  checkOutCart: idx => {
+  checkOutCart: () => {
     // BROKEN: ownProps - when you click checkout, it does not redirect user to /home as intended {}
     // console.log(ownProps)
-    dispatch(checkOutCartThunk(idx))
+    dispatch(checkOutCartThunk())
     // .then(() => ownProps.history.push('/home'))
   },
   addToCart: item => dispatch(addCartItemThunk(item)),

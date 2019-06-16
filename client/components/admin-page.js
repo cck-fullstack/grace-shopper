@@ -7,7 +7,10 @@ import {
   updateItemCountThunk,
   addItemThunk
 } from '../store/items'
+import {getAllUsersThunk, deleteUserThunk} from '../store/user'
 import ItemForm from './itemForm'
+import M from 'materialize-css'
+import {Select} from 'react-materialize'
 
 const defaultState = {
   name: '',
@@ -17,7 +20,8 @@ const defaultState = {
   category: '',
   warningMessage: 'Field is required!',
   showAddForm: false,
-  showEditItems: false
+  showEditItems: false,
+  showEditUsersForm: false
 }
 
 class AdminPage extends Component {
@@ -28,6 +32,11 @@ class AdminPage extends Component {
 
   componentDidMount() {
     this.props.fetchItems()
+    this.props.fetchUsers()
+    // const elems = document.querySelectorAll('select')
+    // const options = document.querySelectorAll('option')
+
+    // M.FormSelect.init(elems, options)
   }
 
   handleChange = evt => {
@@ -55,9 +64,15 @@ class AdminPage extends Component {
   }
 
   render() {
-    const {showAddForm, showEditItems} = this.state
-    const {addOneItem, deleteItem, removeOneItem, items} = this.props
-    console.log(items, 'PROPS.ITEMS')
+    const {showAddForm, showEditItems, showEditUsersForm} = this.state
+    const {
+      addOneItem,
+      deleteItem,
+      deleteUser,
+      removeOneItem,
+      items,
+      users
+    } = this.props
     return (
       <span>
         <h1>Admin Page</h1>
@@ -123,13 +138,48 @@ class AdminPage extends Component {
         ) : (
           <div />
         )}
+
+        <button
+          type="button"
+          onClick={() => this.setState({showEditUsersForm: !showEditUsersForm})}
+        >
+          Show Edit User Form{' '}
+        </button>
+        {showEditUsersForm ? (
+          <ul>
+            {users.data.map(user => (
+              <div key={user.id}>
+                <li>
+                  {user.firstName} {user.lastName}
+                  <button type="button" onClick={() => deleteUser(user.id)}>
+                    X
+                  </button>
+                </li>
+
+                {/* <li>Admin</li>
+
+                <Select size='s'>
+                  <option value="">Choose your option</option>
+                  <option value="true">True</option>
+                  <option value="false">False</option>
+                </Select> */}
+              </div>
+            ))}
+          </ul>
+        ) : (
+          <div />
+        )}
       </span>
     )
   }
 }
 
 const mapStateToProps = state => {
-  return {items: state.items, cart: state.cart}
+  return {
+    items: state.items,
+    cart: state.cart,
+    users: state.user.usersData
+  }
 }
 
 const mapDispatchToProps = dispatch => ({
@@ -138,8 +188,10 @@ const mapDispatchToProps = dispatch => ({
   addOneItem: item => dispatch(updateItemCountThunk(item, 1)),
   removeOneItem: item => dispatch(updateItemCountThunk(item, -1)),
   changeItemCount: (item, amt) => dispatch(updateItemCountThunk(item, amt)),
+  deleteItem: id => dispatch(deleteItemThunk(id)),
 
-  deleteItem: id => dispatch(deleteItemThunk(id))
+  fetchUsers: () => dispatch(getAllUsersThunk()),
+  deleteUser: id => dispatch(deleteUserThunk(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(AdminPage)

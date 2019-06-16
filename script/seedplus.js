@@ -12,7 +12,7 @@ const seedClasses = [
     price: 28078,
     inventory: 29,
     description: 'seize best-of-breed channels',
-    category: 'C#',
+    category: 'Ruby',
     imageURL: 'https://unsplash.com/photos/yZf1quatKCA'
   },
   {
@@ -92,7 +92,7 @@ const seedClasses = [
     price: 22587,
     inventory: 43,
     description: 'empower granular partnerships',
-    category: 'C#',
+    category: 'Ruby',
     imageURL: 'https://unsplash.com/photos/-wWRHIUklxM'
   },
   {
@@ -220,7 +220,7 @@ const seedClasses = [
     price: 16449,
     inventory: 42,
     description: 'optimize frictionless initiatives',
-    category: 'C#',
+    category: 'Ruby',
     imageURL: 'https://unsplash.com/photos/t1mqA3V3-7g'
   },
   {
@@ -228,7 +228,7 @@ const seedClasses = [
     price: 16328,
     inventory: 61,
     description: 'engage real-time technologies',
-    category: 'C#',
+    category: 'Ruby',
     imageURL: 'https://unsplash.com/photos/SSxIGsySh8o'
   },
   {
@@ -260,7 +260,7 @@ const seedClasses = [
     price: 19044,
     inventory: 74,
     description: 'harness value-added action-items',
-    category: 'C#',
+    category: 'Ruby',
     imageURL: 'https://unsplash.com/photos/Sd8O2SgKDJA'
   },
   {
@@ -268,7 +268,7 @@ const seedClasses = [
     price: 23779,
     inventory: 44,
     description: 'embrace magnetic portals',
-    category: 'C#',
+    category: 'Ruby',
     imageURL: 'https://unsplash.com/photos/sai-x7brics'
   },
   {
@@ -284,7 +284,7 @@ const seedClasses = [
     price: 25583,
     inventory: 14,
     description: 'integrate vertical hashtags',
-    category: 'C#',
+    category: 'Ruby',
     imageURL: 'https://unsplash.com/photos/rM7B4DheQc0'
   },
   {
@@ -420,7 +420,7 @@ const seedClasses = [
     price: 17286,
     inventory: 67,
     description: 'orchestrate intuitive markets',
-    category: 'C#',
+    category: 'Ruby',
     imageURL: 'https://unsplash.com/photos/JzkgpML_8XI'
   },
   {
@@ -428,7 +428,7 @@ const seedClasses = [
     price: 18641,
     inventory: 65,
     description: 'embrace clicks-and-mortar communities',
-    category: 'C#',
+    category: 'Ruby',
     imageURL: 'https://unsplash.com/photos/j4PaE7E2_Ws'
   },
   {
@@ -476,7 +476,7 @@ const seedClasses = [
     price: 10451,
     inventory: 19,
     description: 'leverage global bandwidth',
-    category: 'C#',
+    category: 'Ruby',
     imageURL: 'https://unsplash.com/photos/HkTMcmlMOUQ'
   },
   {
@@ -492,7 +492,7 @@ const seedClasses = [
     price: 14826,
     inventory: 40,
     description: 'morph frictionless vortals',
-    category: 'C#',
+    category: 'Ruby',
     imageURL: 'https://unsplash.com/photos/GYumuBnTqKc'
   },
   {
@@ -572,7 +572,7 @@ const seedClasses = [
     price: 21825,
     inventory: 97,
     description: 'seize e-business markets',
-    category: 'C#',
+    category: 'Ruby',
     imageURL: 'https://unsplash.com/photos/Cm7oKel-X2Q'
   },
   {
@@ -580,7 +580,7 @@ const seedClasses = [
     price: 19372,
     inventory: 71,
     description: 'architect frictionless eyeballs',
-    category: 'C#',
+    category: 'Ruby',
     imageURL: 'https://unsplash.com/photos/bIQiMWxX_WU'
   },
   {
@@ -692,7 +692,7 @@ const seedClasses = [
     price: 17766,
     inventory: 73,
     description: 'optimize robust action-items',
-    category: 'C#',
+    category: 'Ruby',
     imageURL: 'https://unsplash.com/photos/6-jTZysYY_U'
   },
   {
@@ -756,7 +756,7 @@ const seedClasses = [
     price: 23179,
     inventory: 25,
     description: 'envisioneer innovative e-commerce',
-    category: 'C#',
+    category: 'Ruby',
     imageURL: 'https://unsplash.com/photos/2fl-ocJ5MOA'
   },
   {
@@ -764,7 +764,7 @@ const seedClasses = [
     price: 16121,
     inventory: 16,
     description: 'reintermediate killer users',
-    category: 'C#',
+    category: 'Ruby',
     imageURL: 'https://unsplash.com/photos/1DkWWN1dr-s'
   },
   {
