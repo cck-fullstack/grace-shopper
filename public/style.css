@@ -76,3 +76,9 @@ form div {
   color: white;
   margin-left: 1em;
 }
+
+#logo {
+  height: 60px;
+  padding-bottom: 10px;
+  margin-top: -8px;
+}
