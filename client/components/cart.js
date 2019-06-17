@@ -3,7 +3,6 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Stripe from './stripe.js'
 import _ from 'lodash'
-import Footer from './footer'
 
 import {
   addCartItemThunk,
@@ -98,7 +97,6 @@ class CartItems extends Component {
           </div>
         )}
         <div>
-          <Footer />
         </div>
       </span>
     )
