@@ -42,7 +42,7 @@ class AllItems extends Component {
                   </div>
                   <div className="card-content black-text">
                     <p className="card-title">{item.name}</p>
-                    <p>${item.price * 0.01}</p>
+                    <p>${item.price / 100}</p>
                     <p>Stock:{item.inventory}</p>
                     <p>Description:{item.description}</p>
                   </div>{' '}

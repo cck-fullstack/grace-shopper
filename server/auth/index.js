@@ -18,9 +18,9 @@ router.post('/login', async (req, res, next) => {
       ]
     })
 
-    // console.log(user.shoppingCarts[0].dataValues.cartItems, 'CARTS')
-
-    console.log(user, 'LOGIN ROUTE')
+    req.session.cart.prevCartId = user.shoppingCarts[0].dataValues.id
+    // console.log(user.shoppingCarts[0].dataValues.id, 'CARTS')
+    // console.log(user, 'LOGIN ROUTE')
     if (!user) {
       console.log('No such user found:', req.body.email)
       res.status(401).send('Wrong username and/or password')

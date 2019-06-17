@@ -77,7 +77,8 @@ export const auth = (email, password, method) => async dispatch => {
     res = await axios.post(`/auth/${method}`, {email, password})
 
     if (res.data.shoppingCarts) {
-      await axios.put('/shoppingCarts/merge')
+      console.log('IF SHOPPING CART EXISTS')
+      await axios.put('/api/shoppingCarts/merge')
     }
 
     //Need to finish shopping cart merge and delete current cart

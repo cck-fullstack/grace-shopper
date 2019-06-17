@@ -1,6 +1,7 @@
 import {Dropdown, Button, Divider} from 'react-materialize'
 
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 
 const categories = [
   'C++',
@@ -21,20 +22,20 @@ class Categories extends Component {
         options={{coverTrigger: false}}
         trigger={<Button>Products</Button>}
       >
-        <a href="/items" style={{margin: 0}}>
+        <Link to="/items" style={{margin: 0}}>
           All
-        </a>
+        </Link>
         <Divider />
 
         {categories.map(category => {
           return (
-            <a
-              href={`/items/category/${category}`}
-              style={{margin: 0}}
+            <Link
+              to={`/items/category/${category}`}
               key={category}
+              style={{margin: 0}}
             >
               {category}
-            </a>
+            </Link>
           )
         })}
       </Dropdown>
