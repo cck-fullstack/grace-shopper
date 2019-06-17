@@ -13,6 +13,11 @@ const Footer = () => {
                 <li>Will Golden</li>
                 <li>Stan So</li>
                 <li>Eric Kreiter</li>
+                <li>
+                  <a href="mailto:kat@reelstyle.co">
+                    <button className="ui primary button teal">Email us</button>
+                  </a>
+                </li>
               </ul>
             </div>
             <div className="col l4 offset-l2 s12">
@@ -31,11 +36,6 @@ const Footer = () => {
                 <li>
                   <a href="http://twitter.com/pewdiepie">
                     <button className="ui twitter button">Twitter</button>
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:kat@reelstyle.co">
-                    <button className="ui primary button teal">Email us</button>
                   </a>
                 </li>
               </ul>
