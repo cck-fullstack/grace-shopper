@@ -88,14 +88,14 @@ const Navbar = ({handleClick, isLoggedIn, cartCount, firstName}) => {
                 to="/login"
                 className="white-text right waves-effect waves-light btn"
               >
-                Login
+                Login/Sign Up
               </Link>
-              <Link
+              {/* <Link
                 to="/create"
                 className="white-text right waves-effect waves-light btn"
               >
                 Create Account{' '}
-              </Link>
+              </Link> */}
               <Link
                 to="/checkout"
                 className="white-text right waves-effect waves-light btn"
