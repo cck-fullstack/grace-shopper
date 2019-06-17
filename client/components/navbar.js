@@ -8,12 +8,6 @@ import ProductsDropdown from './dropdown'
 const Navbar = ({handleClick, isLoggedIn, cartCount}) => {
   return (
     <div>
-      <h1 className="brand-logo">
-        <Link to="/" className="black-text">
-          The Code School
-        </Link>
-      </h1>
-
       <div id="navbar-fixed">
         <nav className="nav-wrapper grey darken-3">
           {isLoggedIn ? (

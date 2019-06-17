@@ -49,35 +49,40 @@ class CartItems extends Component {
           <div>
             {cart.items.map((item, index) => {
               return (
-                <div className="cartItems" key={index}>
-                  <p>
-                    name:{item.name}
-                    <button
-                      type="button"
-                      className="waves-effect waves-light btn-small red"
-                      onClick={() => removeItem(index)}
-                    >
-                      X
-                    </button>
-                  </p>
-                  <p>Quantity:{item.quantity}</p>
-                  <p>Price:${item.price * 0.01}</p>
-                  <button
-                    type="button"
-                    className="btn-floating btn-small waves-effect waves-light green"
-                    onClick={() => addToCart(this.addOnClick(item))}
-                  >
-                    {' '}
-                    +{' '}
-                  </button>{' '}
-                  <button
-                    type="button"
-                    className="btn-floating btn-small waves-effect waves-light red"
-                    onClick={() => decrementItem(item)}
-                  >
-                    {' '}
-                    -{' '}
-                  </button>
+                <div className="container" key={index}>
+                  <table className="striped">
+                    <tbody>
+                      <p>
+                        <h4>{item.name}</h4>
+                        <button
+                          type="button"
+                          id="view-all-btn"
+                          className="waves-effect waves-light btn-small red"
+                          onClick={() => removeItem(index)}
+                        >
+                          x
+                        </button>
+                      </p>
+                      <p>Quantity:{item.quantity}</p>
+                      <p>Price:${item.price * 0.01}</p>
+                      <button
+                        type="button"
+                        className="btn-floating btn-small waves-effect waves-light green"
+                        onClick={() => addToCart(this.addOnClick(item))}
+                      >
+                        {' '}
+                        +{' '}
+                      </button>{' '}
+                      <button
+                        type="button"
+                        className="btn-floating btn-small waves-effect waves-light red"
+                        onClick={() => decrementItem(item)}
+                      >
+                        {' '}
+                        -{' '}
+                      </button>
+                    </tbody>
+                  </table>
                 </div>
               )
             })}
@@ -91,6 +96,8 @@ class CartItems extends Component {
             <Stripe />
           </div>
         )}
+        <div>
+        </div>
       </span>
     )
   }
