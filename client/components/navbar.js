@@ -34,7 +34,7 @@ const Navbar = ({handleClick, isLoggedIn, cartCount, firstName}) => {
           {isLoggedIn ? (
             <div>
               {/* The navbar will show these links after you log in */}
-              <Link href="/" className="navlinks left">
+              <Link to="/" className="navlinks left">
                 <img
                   id="logo"
                   src="https://cdn.discordapp.com/attachments/581912987577876502/590217108122763267/6455ecdcad33ab630747b56c640a6a696e380c8d.png"
@@ -78,7 +78,7 @@ const Navbar = ({handleClick, isLoggedIn, cartCount, firstName}) => {
           ) : (
             <div>
               {/* The navbar will show these links before you log in */}
-              <Link href="/" className="navlinks left">
+              <Link to="/" className="navlinks left">
                 <img
                   id="logo"
                   src="https://cdn.discordapp.com/attachments/581912987577876502/590217108122763267/6455ecdcad33ab630747b56c640a6a696e380c8d.png"
