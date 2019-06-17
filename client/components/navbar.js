@@ -14,7 +14,7 @@ const status = async () => {
   await axios.get('/api/dev/status')
 }
 
-const Navbar = ({handleClick, isLoggedIn, cartCount}) => {
+const Navbar = ({handleClick, isLoggedIn, cartCount, firstName}) => {
   return (
     <div>
     {/*<button type="button" onClick={() => destroy()}>
@@ -65,7 +65,7 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => {
                   to="/user"
                   className="white-text waves-effect waves-light btn-flat"
                 >
-                  Profile
+                  {firstName}
                 </Link>
               </div>
             </div>
@@ -122,7 +122,8 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => {
 const mapState = state => {
   return {
     isLoggedIn: !!state.user.id,
-    cartCount: state.cart.count
+    cartCount: state.cart.count,
+    firstName: state.user.firstName
   }
 }
 
