@@ -32,32 +32,34 @@ class Routes extends Component {
   render() {
     const {isLoggedIn} = this.props
     return (
-      <Switch>
-        {/* Routes placed here are available to all visitors */}
-        <Route exact path="/" component={Home} />
-        <Route path="/login" component={Login} />
-        <Route path="/create" component={AddUser} />
-        <Route path="/cartItems" component={Cart} />
-        <Route exact path="/items/:id" component={SingleItem} />
-        <Route exact path="/items/category/:category" component={Category} />
-        <Route path="/items" component={Items} />
-        <Route path="/checkout" component={Checkout} />
-        <Route path="/orderhistory" component={OrderHistory} />
-        <Route path="/adminpage" component={AdminPage} />
+      <div id="content">
+        <Switch>
+          {/* Routes placed here are available to all visitors */}
+          <Route exact path="/" component={Home} />
+          <Route path="/login" component={Login} />
+          <Route path="/create" component={AddUser} />
+          <Route path="/cartItems" component={Cart} />
+          <Route exact path="/items/:id" component={SingleItem} />
+          <Route exact path="/items/category/:category" component={Category} />
+          <Route path="/items" component={Items} />
+          <Route path="/checkout" component={Checkout} />
+          <Route path="/orderhistory" component={OrderHistory} />
+          <Route path="/adminpage" component={AdminPage} />
 
-        {/* Blocks api routes but we use during development
-        <Route path="/api" component={UserHome} /> */}
+          {/* Blocks api routes but we use during development
+          <Route path="/api" component={UserHome} /> */}
 
-        {isLoggedIn && (
-          <Switch>
-            {/* Routes placed here are only available after logging in */}
-            <Route path="/home" component={Home} />
-            <Route path="/user/" component={UserPage} />
-          </Switch>
-        )}
-        {/* Displays our Login component as a fallback */}
-        <Route component={Login} />
-      </Switch>
+          {isLoggedIn && (
+            <Switch>
+              {/* Routes placed here are only available after logging in */}
+              <Route path="/home" component={Home} />
+              <Route path="/user/" component={UserPage} />
+            </Switch>
+          )}
+          {/* Displays our Login component as a fallback */}
+          <Route component={Login} />
+        </Switch>
+      </div>
     )
   }
 }
