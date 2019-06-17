@@ -75,7 +75,7 @@ class AdminPage extends Component {
     } = this.props
     return (
       <span>
-        <h3>Admin Page</h3>
+        <h3>Admin Panel</h3>
 
         <button
           type="button"
