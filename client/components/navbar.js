@@ -16,6 +16,7 @@ const status = async () => {
 
 const Navbar = ({handleClick, isLoggedIn, cartCount, firstName}) => {
   return (
+
     <div id="navbar">
       {/*<button type="button" onClick={() => destroy()}>
         Destroy Session
@@ -98,6 +99,7 @@ const Navbar = ({handleClick, isLoggedIn, cartCount, firstName}) => {
                 Create Account{' '}
               </Link>
               <Link
+
                 to="/checkout"
                 className="white-text right waves-effect waves-light btn"
               >

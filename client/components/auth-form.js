@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import {auth} from '../store'
+import {Link} from 'react-router-dom'
 
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy
 
@@ -39,16 +40,20 @@ const AuthForm = props => {
         </div>
         {error && error.response && <div> {error.response.data} </div>}
       </form>
+      <br />
+      <Link to="/create" className="waves-effect waves-light btn green">
+        <i className="material-icons left">cloud</i>
+        Create Account
+      </Link>
+      {'            '}
       <a href="/auth/google" className="waves-effect waves-light btn red">
+        <i className="material-icons right">cloud</i>
         {displayName} with Google
       </a>
-
       {/*<a href="/auth/google" className="btn">
         {displayName} with Google
       </a>*/}
-
       {/* THE BELOW IS IN PROGRESS. */}
-
       {/* <GoogleLogin
       clientId={process.env.GOOGLE_CLIENT_ID}
         clientId={'630517724735-e3j34trdr4vcv88tn1154etrgfu810am.apps.googleusercontent.com'}
@@ -57,7 +62,6 @@ const AuthForm = props => {
         onFailure={responseGoogle}
         cookiePolicy={'single_host_origin'}
       /> */}
-
       {/* <GoogleLogout
         buttonText="Logout"
         onLogoutSuccess={logout}

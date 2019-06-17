@@ -16,6 +16,10 @@ body {
   flex-shrink: 0;
 }
 
+#logo {
+  align-self: center;
+}
+
 a {
   text-decoration: none;
 }
