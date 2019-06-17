@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {getSingleItemThunk} from '../store/items'
 import {addCartItemThunk} from '../store/cart'
 import _ from 'lodash'
+import {Breadcrumb, Toast} from 'react-materialize'
 
 class SingleItem extends Component {
   componentDidMount() {
@@ -26,12 +27,20 @@ class SingleItem extends Component {
 
   render() {
     let {addToCart, items} = this.props
-
+    items = items[0]
     if (!items) items = []
 
     return (
       <span>
-        <h1 className="brand-logo">Single Items</h1>
+        <Breadcrumb className="teal">
+          <a href="/items" style={{margin: 0}}>
+            Products
+          </a>
+          <a href={`/items/category/${items.category}`} style={{margin: 0}}>
+            {items.category}
+          </a>
+          <a style={{margin: 0}}>{items.name}</a>
+        </Breadcrumb>
         <div className="row" key={items.id}>
           <div className="col s12 m7">
             <div className="card">
@@ -44,13 +53,21 @@ class SingleItem extends Component {
                 <p>Stock:{items.inventory}</p>
                 <p>Description:{items.description}</p>
               </div>{' '}
-              <button
-                type="button"
-                className="btn waves-effect waves-light blue"
-                onClick={() => addToCart(this.addOnClick(items))}
+              <div
+                onClick={() => {
+                  addToCart(this.addOnClick(items))
+                }}
               >
-                Add To Cart
-              </button>{' '}
+                <Toast
+                  className="btn waves-effect waves-light blue"
+                  options={{
+                    html: `${items.name} added to cart!`,
+                    displayLength: 300
+                  }}
+                >
+                  Add to Cart
+                </Toast>
+              </div>
             </div>
           </div>
         </div>

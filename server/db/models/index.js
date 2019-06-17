@@ -12,6 +12,7 @@ const OrderHistory = require('./orderHistory')
  */
 
 ShoppingCart.belongsTo(User)
+User.hasMany(ShoppingCart)
 CartItem.belongsTo(ShoppingCart)
 ShoppingCart.hasMany(CartItem)
 CartItem.belongsTo(Item)

@@ -4,10 +4,31 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
 import ProductsDropdown from './dropdown'
+import axios from 'axios'
+
+const destroy = async () => {
+  await axios.get('/api/dev/')
+}
+
+const status = async () => {
+  await axios.get('/api/dev/status')
+}
 
 const Navbar = ({handleClick, isLoggedIn, cartCount}) => {
   return (
     <div>
+    {/*<button type="button" onClick={() => destroy()}>
+        Destroy Session
+      </button>
+      <button type="button" onClick={() => status()}>
+        Session Status
+      </button>
+
+      <h1 className="brand-logo">
+        <Link to="/" className="black-text">
+          The Code School
+        </Link>
+      </h1>*/}
       <div id="navbar-fixed">
         <nav className="nav-wrapper grey darken-3">
           {isLoggedIn ? (
@@ -88,7 +109,6 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => {
           )}
         </nav>
       </div>
-
       <hr />
     </div>
   )

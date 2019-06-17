@@ -28,10 +28,10 @@ class OrderHistory extends Component {
             return cart.length === 0 ? (
               <div />
             ) : (
-              <div key={idx}>
+              <div key={cart.id}>
                 <h2>Cart {idx + 1}</h2>
                 {cart.map(item => (
-                  <div className="row" key={item.item.id}>
+                  <div className="row" key={`${cart.id}-${item.item.id}`}>
                     <div className="col s12 m7">
                       <div className="card">
                         <Link to={`/items/${item.item.id}`}>

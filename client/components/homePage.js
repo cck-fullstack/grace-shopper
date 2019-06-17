@@ -1,6 +1,5 @@
 import React from 'react'
 import Carousel from './carousel'
-import Footer from './footer'
 import {Link} from 'react-router-dom'
 
 const Home = () => {
@@ -19,7 +18,6 @@ const Home = () => {
           </button>
         </Link>
       </div>
-      <Footer />
     </div>
   )
 }

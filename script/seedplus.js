@@ -5,7 +5,7 @@ const seedClasses = [
     inventory: 33,
     description: 'transform interactive content',
     category: 'Java',
-    imageURL: 'https://unsplash.com/photos/zvf7cZ0PC20'
+    imageURL: '/pics/cck (99).jpg'
   },
   {
     name: 'MumboBase',
@@ -13,7 +13,7 @@ const seedClasses = [
     inventory: 29,
     description: 'seize best-of-breed channels',
     category: 'Ruby',
-    imageURL: 'https://unsplash.com/photos/yZf1quatKCA'
+    imageURL: '/pics/cck (98).jpg'
   },
   {
     name: 'Chant',
@@ -21,7 +21,7 @@ const seedClasses = [
     inventory: 68,
     description: 'evolve B2B infomediaries',
     category: 'Python',
-    imageURL: 'https://unsplash.com/photos/YvYBOSiBJE8'
+    imageURL: '/pics/cck (97).jpg'
   },
   {
     name: 'Gist#',
@@ -29,7 +29,7 @@ const seedClasses = [
     inventory: 73,
     description: 'reinvent real-time partnerships',
     category: 'Python',
-    imageURL: 'https://unsplash.com/photos/yOujaSETXlo'
+    imageURL: '/pics/cck (96).jpg'
   },
   {
     name: 'Obsidian++',
@@ -37,7 +37,7 @@ const seedClasses = [
     inventory: 100,
     description: 'integrate extensible markets',
     category: 'Python',
-    imageURL: 'https://unsplash.com/photos/YnfGtpt2gf4'
+    imageURL: '/pics/cck (95).jpg'
   },
   {
     name: 'VibeX',
@@ -45,7 +45,7 @@ const seedClasses = [
     inventory: 59,
     description: 'mesh best-of-breed models',
     category: 'Java',
-    imageURL: 'https://unsplash.com/photos/yEOCA6oiVqg'
+    imageURL: '/pics/cck (94).jpg'
   },
   {
     name: 'Minmax#',
@@ -53,7 +53,7 @@ const seedClasses = [
     inventory: 61,
     description: 'benchmark granular deliverables',
     category: 'Java',
-    imageURL: 'https://unsplash.com/photos/yC-Yzbqy7PY'
+    imageURL: '/pics/cck (93).jpg'
   },
   {
     name: 'Galore',
@@ -61,7 +61,7 @@ const seedClasses = [
     inventory: 52,
     description: 'maximize vertical applications',
     category: 'Javascript',
-    imageURL: 'https://unsplash.com/photos/YcfCXxo7rpc'
+    imageURL: '/pics/cck (92).jpg'
   },
   {
     name: 'Sapphire System',
@@ -69,7 +69,7 @@ const seedClasses = [
     inventory: 100,
     description: 'reinvent innovative portals',
     category: 'C++',
-    imageURL: 'https://unsplash.com/photos/xcC5ozHk_N8'
+    imageURL: '/pics/cck (91).jpg'
   },
   {
     name: 'Bundle Language',
@@ -77,7 +77,7 @@ const seedClasses = [
     inventory: 26,
     description: 'reintermediate one-to-one web-readiness',
     category: 'Perl',
-    imageURL: 'https://unsplash.com/photos/x8R2oSWZRSE'
+    imageURL: '/pics/cck (90).jpg'
   },
   {
     name: 'Mumbo',
@@ -85,7 +85,7 @@ const seedClasses = [
     inventory: 28,
     description: 'maximize real-time architectures',
     category: 'C++',
-    imageURL: 'https://unsplash.com/photos/x7HJdJZqplo'
+    imageURL: '/pics/cck (89).jpg'
   },
   {
     name: 'Splice',
@@ -93,7 +93,7 @@ const seedClasses = [
     inventory: 43,
     description: 'empower granular partnerships',
     category: 'Ruby',
-    imageURL: 'https://unsplash.com/photos/-wWRHIUklxM'
+    imageURL: '/pics/cck (88).jpg'
   },
   {
     name: 'Sonic-2',
@@ -101,7 +101,7 @@ const seedClasses = [
     inventory: 93,
     description: 'utilize interactive channels',
     category: 'Python',
-    imageURL: 'https://unsplash.com/photos/wpTWYBll4_w'
+    imageURL: '/pics/cck (87).jpg'
   },
   {
     name: 'Pivot',
@@ -109,7 +109,7 @@ const seedClasses = [
     inventory: 26,
     description: 'reintermediate granular interfaces',
     category: 'C++',
-    imageURL: 'https://unsplash.com/photos/WlD3vixTVUg'
+    imageURL: '/pics/cck (86).jpg'
   },
   {
     name: 'Chime',
@@ -117,7 +117,7 @@ const seedClasses = [
     inventory: 63,
     description: 'streamline dynamic portals',
     category: 'Java',
-    imageURL: 'https://unsplash.com/photos/vC-GqGbakJo'
+    imageURL: '/pics/cck (85).jpg'
   },
   {
     name: 'Lode',
@@ -125,7 +125,7 @@ const seedClasses = [
     inventory: 68,
     description: 'evolve 24/7 niches',
     category: 'Python',
-    imageURL: 'https://unsplash.com/photos/VB-w_3dnyvI'
+    imageURL: '/pics/cck (84).jpg'
   },
   {
     name: 'Dodge',
@@ -133,7 +133,7 @@ const seedClasses = [
     inventory: 85,
     description: 'grow killer communities',
     category: 'Javascript',
-    imageURL: 'https://unsplash.com/photos/V6s1cmE39XM'
+    imageURL: '/pics/cck (83).jpg'
   },
   {
     name: 'Pinnacle Basic',
@@ -141,7 +141,7 @@ const seedClasses = [
     inventory: 81,
     description: 'utilize virtual systems',
     category: 'C++',
-    imageURL: 'https://unsplash.com/photos/uzBiLWpjQEQ'
+    imageURL: '/pics/cck (82).jpg'
   },
   {
     name: 'Slang+',
@@ -149,7 +149,7 @@ const seedClasses = [
     inventory: 76,
     description: 'benchmark global eyeballs',
     category: 'Javascript',
-    imageURL: 'https://unsplash.com/photos/utwYoEu9SU8'
+    imageURL: '/pics/cck (81).jpg'
   },
   {
     name: 'Patter-3',
@@ -157,7 +157,7 @@ const seedClasses = [
     inventory: 77,
     description: 'leverage innovative bandwidth',
     category: 'PHP',
-    imageURL: 'https://unsplash.com/photos/USOu_Ob9rxo'
+    imageURL: '/pics/cck (80).jpg'
   },
   {
     name: 'EffluxEdge',
@@ -165,7 +165,7 @@ const seedClasses = [
     inventory: 10,
     description: 'target 24/365 vortals',
     category: 'C++',
-    imageURL: 'https://unsplash.com/photos/upywS5QFwr8'
+    imageURL: '/pics/cck (79).jpg'
   },
   {
     name: 'Reflect',
@@ -173,7 +173,7 @@ const seedClasses = [
     inventory: 16,
     description: 'deploy leading-edge partnerships',
     category: 'PHP',
-    imageURL: 'https://unsplash.com/photos/Uax2bg5EizU'
+    imageURL: '/pics/cck (78).jpg'
   },
   {
     name: 'Curator',
@@ -181,7 +181,7 @@ const seedClasses = [
     inventory: 95,
     description: 'incubate mission-critical synergies',
     category: 'Python',
-    imageURL: 'https://unsplash.com/photos/uAgLGG1WBd4'
+    imageURL: '/pics/cck (77).jpg'
   },
   {
     name: 'Pulse Script',
@@ -189,7 +189,7 @@ const seedClasses = [
     inventory: 21,
     description: 'incentivize scalable portals',
     category: 'Python',
-    imageURL: 'https://unsplash.com/photos/U5rMrSI7Pn4'
+    imageURL: '/pics/cck (76).jpg'
   },
   {
     name: 'Precious',
@@ -197,7 +197,7 @@ const seedClasses = [
     inventory: 30,
     description: 'deploy seamless technologies',
     category: 'Perl',
-    imageURL: 'https://unsplash.com/photos/TYIzeCiZ_60'
+    imageURL: '/pics/cck (75).jpg'
   },
   {
     name: 'Mist',
@@ -205,7 +205,7 @@ const seedClasses = [
     inventory: 17,
     description: 'reintermediate best-of-breed infrastructures',
     category: 'C++',
-    imageURL: 'https://unsplash.com/photos/tn2rBnvIl9I'
+    imageURL: '/pics/cck (74).jpg'
   },
   {
     name: 'EffigyPro',
@@ -213,7 +213,7 @@ const seedClasses = [
     inventory: 21,
     description: 'deploy virtual vortals',
     category: 'Javascript',
-    imageURL: 'https://unsplash.com/photos/tBtuxtLvAZs'
+    imageURL: '/pics/cck (73).jpg'
   },
   {
     name: 'Tune',
@@ -221,7 +221,7 @@ const seedClasses = [
     inventory: 42,
     description: 'optimize frictionless initiatives',
     category: 'Ruby',
-    imageURL: 'https://unsplash.com/photos/t1mqA3V3-7g'
+    imageURL: '/pics/cck (72).jpg'
   },
   {
     name: 'Flex Script',
@@ -229,7 +229,7 @@ const seedClasses = [
     inventory: 61,
     description: 'engage real-time technologies',
     category: 'Ruby',
-    imageURL: 'https://unsplash.com/photos/SSxIGsySh8o'
+    imageURL: '/pics/cck (71).jpg'
   },
   {
     name: 'Spirit',
@@ -237,7 +237,7 @@ const seedClasses = [
     inventory: 89,
     description: 'target B2B interfaces',
     category: 'C++',
-    imageURL: 'https://unsplash.com/photos/sseiVD2XsOk'
+    imageURL: '/pics/cck (70).jpg'
   },
   {
     name: 'Pitch',
@@ -245,7 +245,7 @@ const seedClasses = [
     inventory: 85,
     description: 'implement back-end channels',
     category: 'PHP',
-    imageURL: 'https://unsplash.com/photos/SJWPKMb9u-k'
+    imageURL: '/pics/cck (69).jpg'
   },
   {
     name: 'Rune Language',
@@ -253,7 +253,7 @@ const seedClasses = [
     inventory: 76,
     description: 'mesh best-of-breed e-commerce',
     category: 'PHP',
-    imageURL: 'https://unsplash.com/photos/SIoHky3TPeo'
+    imageURL: '/pics/cck (68).jpg'
   },
   {
     name: 'Agent System',
@@ -261,7 +261,7 @@ const seedClasses = [
     inventory: 74,
     description: 'harness value-added action-items',
     category: 'Ruby',
-    imageURL: 'https://unsplash.com/photos/Sd8O2SgKDJA'
+    imageURL: '/pics/cck (67).jpg'
   },
   {
     name: 'Gist Basic',
@@ -269,7 +269,7 @@ const seedClasses = [
     inventory: 44,
     description: 'embrace magnetic portals',
     category: 'Ruby',
-    imageURL: 'https://unsplash.com/photos/sai-x7brics'
+    imageURL: '/pics/cck (66).jpg'
   },
   {
     name: 'Influx',
@@ -277,7 +277,7 @@ const seedClasses = [
     inventory: 31,
     description: 'streamline dot-com metrics',
     category: 'Javascript',
-    imageURL: 'https://unsplash.com/photos/rMmibFe4czY'
+    imageURL: '/pics/cck (65).jpg'
   },
   {
     name: 'EmberPro',
@@ -285,7 +285,7 @@ const seedClasses = [
     inventory: 14,
     description: 'integrate vertical hashtags',
     category: 'Ruby',
-    imageURL: 'https://unsplash.com/photos/rM7B4DheQc0'
+    imageURL: '/pics/cck (64).jpg'
   },
   {
     name: 'OdeCode',
@@ -293,7 +293,7 @@ const seedClasses = [
     inventory: 63,
     description: 'seize robust interfaces',
     category: 'Perl',
-    imageURL: 'https://unsplash.com/photos/Q47eNv_UvfM'
+    imageURL: '/pics/cck (63).jpg'
   },
   {
     name: 'Picolo Base',
@@ -301,7 +301,7 @@ const seedClasses = [
     inventory: 21,
     description: 'envisioneer sticky bandwidth',
     category: 'Java',
-    imageURL: 'https://unsplash.com/photos/pwaaqfoMibI'
+    imageURL: '/pics/cck (62).jpg'
   },
   {
     name: 'Rune System',
@@ -309,7 +309,7 @@ const seedClasses = [
     inventory: 83,
     description: 'grow innovative models',
     category: 'Python',
-    imageURL: 'https://unsplash.com/photos/pJILiyPdrXI'
+    imageURL: '/pics/cck (61).jpg'
   },
   {
     name: 'Agent#',
@@ -317,7 +317,7 @@ const seedClasses = [
     inventory: 51,
     description: 'target dot-com communities',
     category: 'Perl',
-    imageURL: 'https://unsplash.com/photos/-oWyJoSqBRM'
+    imageURL: '/pics/cck (60).jpg'
   },
   {
     name: 'Slick',
@@ -325,7 +325,7 @@ const seedClasses = [
     inventory: 89,
     description: 'transform 24/365 communities',
     category: 'Perl',
-    imageURL: 'https://unsplash.com/photos/OJJIaFZOeX4'
+    imageURL: '/pics/cck (59).jpg'
   },
   {
     name: 'Orbit System',
@@ -333,7 +333,7 @@ const seedClasses = [
     inventory: 10,
     description: 'brand leading-edge architectures',
     category: 'PHP',
-    imageURL: 'https://unsplash.com/photos/Oaqk7qqNh_c'
+    imageURL: '/pics/cck (58).jpg'
   },
   {
     name: 'Particle',
@@ -341,7 +341,7 @@ const seedClasses = [
     inventory: 63,
     description: 'aggregate leading-edge web-readiness',
     category: 'Javascript',
-    imageURL: 'https://unsplash.com/photos/NaWKMlp3tVs'
+    imageURL: '/pics/cck (57).jpg'
   },
   {
     name: 'Jinx',
@@ -349,7 +349,7 @@ const seedClasses = [
     inventory: 58,
     description: 'integrate real-time relationships',
     category: 'Java',
-    imageURL: 'https://unsplash.com/photos/mWRR1xj95hg'
+    imageURL: '/pics/cck (56).jpg'
   },
   {
     name: 'Sabre+',
@@ -357,7 +357,7 @@ const seedClasses = [
     inventory: 46,
     description: 'transform vertical networks',
     category: 'C++',
-    imageURL: 'https://unsplash.com/photos/LyeduBb2Auk'
+    imageURL: '/pics/cck (55).jpg'
   },
   {
     name: 'Mobius',
@@ -365,7 +365,7 @@ const seedClasses = [
     inventory: 28,
     description: 'envisioneer distributed functionalities',
     category: 'Perl',
-    imageURL: 'https://unsplash.com/photos/LNRyGwIJr5c'
+    imageURL: '/pics/cck (54).jpg'
   },
   {
     name: 'Core',
@@ -373,7 +373,7 @@ const seedClasses = [
     inventory: 83,
     description: 'expedite mission-critical bandwidth',
     category: 'C++',
-    imageURL: 'https://unsplash.com/photos/llYg8Ni43fc'
+    imageURL: '/pics/cck (53).jpg'
   },
   {
     name: 'AssetPro',
@@ -381,7 +381,7 @@ const seedClasses = [
     inventory: 73,
     description: 'optimize viral niches',
     category: 'PHP',
-    imageURL: 'https://unsplash.com/photos/Kt5hRENuotI'
+    imageURL: '/pics/cck (52).jpg'
   },
   {
     name: 'Knock',
@@ -389,7 +389,7 @@ const seedClasses = [
     inventory: 53,
     description: 'architect mission-critical web-readiness',
     category: 'Perl',
-    imageURL: 'https://unsplash.com/photos/KqVHRmHVwwM'
+    imageURL: '/pics/cck (51).jpg'
   },
   {
     name: 'AceBase',
@@ -397,7 +397,7 @@ const seedClasses = [
     inventory: 43,
     description: 'leverage best-of-breed markets',
     category: 'Perl',
-    imageURL: 'https://unsplash.com/photos/kmF_Aq8gkp0'
+    imageURL: '/pics/cck (50).jpg'
   },
   {
     name: 'Bindle++',
@@ -405,7 +405,7 @@ const seedClasses = [
     inventory: 60,
     description: 'transform robust models',
     category: 'Java',
-    imageURL: 'https://unsplash.com/photos/Kc7xqFTtcc4'
+    imageURL: '/pics/cck (49).jpg'
   },
   {
     name: 'Twist',
@@ -413,7 +413,7 @@ const seedClasses = [
     inventory: 22,
     description: 'target intuitive hashtags',
     category: 'Perl',
-    imageURL: 'https://unsplash.com/photos/KBX9XHk266s'
+    imageURL: '/pics/cck (48).jpg'
   },
   {
     name: 'Djinni',
@@ -421,7 +421,7 @@ const seedClasses = [
     inventory: 67,
     description: 'orchestrate intuitive markets',
     category: 'Ruby',
-    imageURL: 'https://unsplash.com/photos/JzkgpML_8XI'
+    imageURL: '/pics/cck (47).jpg'
   },
   {
     name: 'TruPro',
@@ -429,7 +429,7 @@ const seedClasses = [
     inventory: 65,
     description: 'embrace clicks-and-mortar communities',
     category: 'Ruby',
-    imageURL: 'https://unsplash.com/photos/j4PaE7E2_Ws'
+    imageURL: '/pics/cck (46).jpg'
   },
   {
     name: 'Kazam Engine',
@@ -437,7 +437,7 @@ const seedClasses = [
     inventory: 15,
     description: 'incentivize efficient architectures',
     category: 'Perl',
-    imageURL: 'https://unsplash.com/photos/Ixp4YhCKZkI'
+    imageURL: '/pics/cck (45).jpg'
   },
   {
     name: 'Segue',
@@ -445,7 +445,7 @@ const seedClasses = [
     inventory: 51,
     description: 'leverage leading-edge relationships',
     category: 'Javascript',
-    imageURL: 'https://unsplash.com/photos/ISL7czxIP-k'
+    imageURL: '/pics/cck (44).jpg'
   },
   {
     name: 'Aurora+',
@@ -453,7 +453,7 @@ const seedClasses = [
     inventory: 31,
     description: 'enable interactive content',
     category: 'Javascript',
-    imageURL: 'https://unsplash.com/photos/iNmouRApXYM'
+    imageURL: '/pics/cck (43).jpg'
   },
   {
     name: 'Hellion-3',
@@ -461,7 +461,7 @@ const seedClasses = [
     inventory: 20,
     description: 'monetize innovative applications',
     category: 'C++',
-    imageURL: 'https://unsplash.com/photos/iIg4F2IWbTM'
+    imageURL: '/pics/cck (42).jpg'
   },
   {
     name: 'Ditty',
@@ -469,7 +469,7 @@ const seedClasses = [
     inventory: 39,
     description: 'deliver global e-services',
     category: 'Python',
-    imageURL: 'https://unsplash.com/photos/-icmOdYWXuQ'
+    imageURL: '/pics/cck (41).jpg'
   },
   {
     name: 'Ditto+',
@@ -477,7 +477,7 @@ const seedClasses = [
     inventory: 19,
     description: 'leverage global bandwidth',
     category: 'Ruby',
-    imageURL: 'https://unsplash.com/photos/HkTMcmlMOUQ'
+    imageURL: '/pics/cck (40).jpg'
   },
   {
     name: 'Jewel',
@@ -485,7 +485,7 @@ const seedClasses = [
     inventory: 44,
     description: 'implement end-to-end models',
     category: 'C++',
-    imageURL: 'https://unsplash.com/photos/h13Y8vyIXNU'
+    imageURL: '/pics/cck (39).jpg'
   },
   {
     name: 'Curious-3',
@@ -493,7 +493,7 @@ const seedClasses = [
     inventory: 40,
     description: 'morph frictionless vortals',
     category: 'Ruby',
-    imageURL: 'https://unsplash.com/photos/GYumuBnTqKc'
+    imageURL: '/pics/cck (38).jpg'
   },
   {
     name: 'FleetX',
@@ -501,7 +501,7 @@ const seedClasses = [
     inventory: 39,
     description: 'incentivize 24/365 deliverables',
     category: 'Javascript',
-    imageURL: 'https://unsplash.com/photos/fwsvUxNgLRs'
+    imageURL: '/pics/cck (37).jpg'
   },
   {
     name: 'Ace',
@@ -509,7 +509,7 @@ const seedClasses = [
     inventory: 63,
     description: 'mesh efficient solutions',
     category: 'Perl',
-    imageURL: 'https://unsplash.com/photos/eLUegVAjN7s'
+    imageURL: '/pics/cck (36).jpg'
   },
   {
     name: 'Ripple Pro',
@@ -517,7 +517,7 @@ const seedClasses = [
     inventory: 31,
     description: 'envisioneer B2B niches',
     category: 'Perl',
-    imageURL: 'https://unsplash.com/photos/E7q00J_8N7A'
+    imageURL: '/pics/cck (35).jpg'
   },
   {
     name: 'Tiger',
@@ -525,7 +525,7 @@ const seedClasses = [
     inventory: 40,
     description: 'transform best-of-breed eyeballs',
     category: 'Javascript',
-    imageURL: 'https://unsplash.com/photos/DwTZwZYi9Ww'
+    imageURL: '/pics/cck (34).jpg'
   },
   {
     name: 'Cluster#',
@@ -533,7 +533,7 @@ const seedClasses = [
     inventory: 77,
     description: 'envisioneer value-added channels',
     category: 'Javascript',
-    imageURL: 'https://unsplash.com/photos/DDp-gC81V0w'
+    imageURL: '/pics/cck (33).jpg'
   },
   {
     name: 'Flow',
@@ -541,7 +541,7 @@ const seedClasses = [
     inventory: 40,
     description: 'incentivize dynamic functionalities',
     category: 'PHP',
-    imageURL: 'https://unsplash.com/photos/dccIfU1V1VU'
+    imageURL: '/pics/cck (32).jpg'
   },
   {
     name: 'Asset System',
@@ -549,7 +549,7 @@ const seedClasses = [
     inventory: 98,
     description: 'facilitate efficient networks',
     category: 'Javascript',
-    imageURL: 'https://unsplash.com/photos/D8LcRLwZyPs'
+    imageURL: '/pics/cck (31).jpg'
   },
   {
     name: 'OrbitCode',
@@ -557,7 +557,7 @@ const seedClasses = [
     inventory: 63,
     description: 'target web-enabled architectures',
     category: 'Perl',
-    imageURL: 'https://unsplash.com/photos/D76DklsG-5U'
+    imageURL: '/pics/cck (30).jpg'
   },
   {
     name: 'Trifle',
@@ -565,7 +565,7 @@ const seedClasses = [
     inventory: 19,
     description: 'incubate mission-critical e-services',
     category: 'Java',
-    imageURL: 'https://unsplash.com/photos/CMWRIzyMKZk'
+    imageURL: '/pics/cck (29).jpg'
   },
   {
     name: 'Virtue',
@@ -573,7 +573,7 @@ const seedClasses = [
     inventory: 97,
     description: 'seize e-business markets',
     category: 'Ruby',
-    imageURL: 'https://unsplash.com/photos/Cm7oKel-X2Q'
+    imageURL: '/pics/cck (28).jpg'
   },
   {
     name: 'Pronto',
@@ -581,7 +581,7 @@ const seedClasses = [
     inventory: 71,
     description: 'architect frictionless eyeballs',
     category: 'Ruby',
-    imageURL: 'https://unsplash.com/photos/bIQiMWxX_WU'
+    imageURL: '/pics/cck (27).jpg'
   },
   {
     name: 'Vertex',
@@ -589,7 +589,7 @@ const seedClasses = [
     inventory: 20,
     description: 'architect real-time interfaces',
     category: 'Perl',
-    imageURL: 'https://unsplash.com/photos/Bi4szXGcCAM'
+    imageURL: '/pics/cck (26).jpg'
   },
   {
     name: 'Query',
@@ -597,7 +597,7 @@ const seedClasses = [
     inventory: 92,
     description: 'mesh frictionless e-business',
     category: 'Javascript',
-    imageURL: 'https://unsplash.com/photos/bClr95glx6k'
+    imageURL: '/pics/cck (25).jpg'
   },
   {
     name: 'Borealis Script',
@@ -605,7 +605,7 @@ const seedClasses = [
     inventory: 39,
     description: 'incubate virtual action-items',
     category: 'C++',
-    imageURL: 'https://unsplash.com/photos/b5POxb2aL9o'
+    imageURL: '/pics/cck (24).jpg'
   },
   {
     name: 'RushScript',
@@ -613,7 +613,7 @@ const seedClasses = [
     inventory: 34,
     description: 'seize wearable action-items',
     category: 'PHP',
-    imageURL: 'https://unsplash.com/photos/B1amIgaNkwA'
+    imageURL: '/pics/cck (23).jpg'
   },
   {
     name: 'Jinx Base',
@@ -621,7 +621,7 @@ const seedClasses = [
     inventory: 64,
     description: 'syndicate innovative niches',
     category: 'Perl',
-    imageURL: 'https://unsplash.com/photos/AmPRUnRb6N0'
+    imageURL: '/pics/cck (22).jpg'
   },
   {
     name: 'Hustle+',
@@ -629,7 +629,7 @@ const seedClasses = [
     inventory: 16,
     description: 'syndicate 24/365 infomediaries',
     category: 'Perl',
-    imageURL: 'https://unsplash.com/photos/A6S-q3D67Ss'
+    imageURL: '/pics/cck (21).jpg'
   },
   {
     name: 'Ace System',
@@ -637,7 +637,7 @@ const seedClasses = [
     inventory: 93,
     description: 'benchmark 24/7 metrics',
     category: 'PHP',
-    imageURL: 'https://unsplash.com/photos/9VWOr22LhVI'
+    imageURL: '/pics/cck (20).jpg'
   },
   {
     name: 'Strut',
@@ -645,7 +645,7 @@ const seedClasses = [
     inventory: 42,
     description: 'grow 24/365 action-items',
     category: 'Java',
-    imageURL: 'https://unsplash.com/photos/93g2k8D1Mi8'
+    imageURL: '/pics/cck (19).jpg'
   },
   {
     name: 'AuroraX',
@@ -653,7 +653,7 @@ const seedClasses = [
     inventory: 84,
     description: 'seize dynamic schemas',
     category: 'C++',
-    imageURL: 'https://unsplash.com/photos/93Ep1dhTd2s'
+    imageURL: '/pics/cck (18).jpg'
   },
   {
     name: 'DiviScript',
@@ -661,7 +661,7 @@ const seedClasses = [
     inventory: 71,
     description: 'facilitate front-end action-items',
     category: 'PHP',
-    imageURL: 'https://unsplash.com/photos/8lMhzUjD1Wk'
+    imageURL: '/pics/cck (17).jpg'
   },
   {
     name: 'Glint-3',
@@ -669,7 +669,7 @@ const seedClasses = [
     inventory: 72,
     description: 'syndicate sticky niches',
     category: 'Javascript',
-    imageURL: 'https://unsplash.com/photos/8BmNurlVR6M'
+    imageURL: '/pics/cck (16).jpg'
   },
   {
     name: 'Flow Advanced',
@@ -677,7 +677,7 @@ const seedClasses = [
     inventory: 35,
     description: 'syndicate revolutionary e-markets',
     category: 'C++',
-    imageURL: 'https://unsplash.com/photos/7BjmDICVloE'
+    imageURL: '/pics/cck (15).jpg'
   },
   {
     name: 'Blossom Advanced',
@@ -685,7 +685,7 @@ const seedClasses = [
     inventory: 25,
     description: 'architect frictionless markets',
     category: 'C++',
-    imageURL: 'https://unsplash.com/photos/7ALI0RYyq6s'
+    imageURL: '/pics/cck (14).jpg'
   },
   {
     name: 'Ace Pro',
@@ -693,7 +693,7 @@ const seedClasses = [
     inventory: 73,
     description: 'optimize robust action-items',
     category: 'Ruby',
-    imageURL: 'https://unsplash.com/photos/6-jTZysYY_U'
+    imageURL: '/pics/cck (13).jpg'
   },
   {
     name: 'Asap System',
@@ -701,7 +701,7 @@ const seedClasses = [
     inventory: 96,
     description: 'incubate bleeding-edge convergence',
     category: 'PHP',
-    imageURL: 'https://unsplash.com/photos/6J--NXulQCs'
+    imageURL: '/pics/cck (12).jpg'
   },
   {
     name: 'ParryScript',
@@ -709,7 +709,7 @@ const seedClasses = [
     inventory: 24,
     description: 'implement distributed metrics',
     category: 'PHP',
-    imageURL: 'https://unsplash.com/photos/6cY-FvMlmkQ'
+    imageURL: '/pics/cck (11).jpg'
   },
   {
     name: 'Tru Pro',
@@ -717,7 +717,7 @@ const seedClasses = [
     inventory: 28,
     description: 'implement one-to-one portals',
     category: 'Java',
-    imageURL: 'https://unsplash.com/photos/688Fna1pwOQ'
+    imageURL: '/pics/cck (10).jpg'
   },
   {
     name: 'VirtueEdge',
@@ -725,7 +725,7 @@ const seedClasses = [
     inventory: 86,
     description: 'syndicate scalable action-items',
     category: 'Java',
-    imageURL: 'https://unsplash.com/photos/5Qwz2KyfIBE'
+    imageURL: '/pics/cck (9).jpg'
   },
   {
     name: 'Digi#',
@@ -733,7 +733,7 @@ const seedClasses = [
     inventory: 34,
     description: 'harness leading-edge deliverables',
     category: 'Perl',
-    imageURL: 'https://unsplash.com/photos/5L4XAgMSno0'
+    imageURL: '/pics/cck (8).jpg'
   },
   {
     name: 'Melody Language',
@@ -741,7 +741,7 @@ const seedClasses = [
     inventory: 46,
     description: 'synergize wearable partnerships',
     category: 'Python',
-    imageURL: 'https://unsplash.com/photos/3I5j50pIXvU'
+    imageURL: '/pics/cck (7).jpg'
   },
   {
     name: 'Agent',
@@ -749,7 +749,7 @@ const seedClasses = [
     inventory: 80,
     description: 'integrate dynamic systems',
     category: 'Java',
-    imageURL: 'https://unsplash.com/photos/2Ts5HnA67k8'
+    imageURL: '/pics/cck (6).jpg'
   },
   {
     name: 'Echo',
@@ -757,7 +757,7 @@ const seedClasses = [
     inventory: 25,
     description: 'envisioneer innovative e-commerce',
     category: 'Ruby',
-    imageURL: 'https://unsplash.com/photos/2fl-ocJ5MOA'
+    imageURL: '/pics/cck (5).jpg'
   },
   {
     name: 'Vitae-2',
@@ -765,7 +765,7 @@ const seedClasses = [
     inventory: 16,
     description: 'reintermediate killer users',
     category: 'Ruby',
-    imageURL: 'https://unsplash.com/photos/1DkWWN1dr-s'
+    imageURL: '/pics/cck (4).jpg'
   },
   {
     name: 'Voyage Basic',
@@ -773,7 +773,7 @@ const seedClasses = [
     inventory: 84,
     description: 'seize global content',
     category: 'PHP',
-    imageURL: 'https://unsplash.com/photos/12rzbJhQ89E'
+    imageURL: '/pics/cck (3).jpg'
   },
   {
     name: 'Semble',
@@ -781,7 +781,7 @@ const seedClasses = [
     inventory: 83,
     description: 'optimize bleeding-edge synergies',
     category: 'PHP',
-    imageURL: 'https://unsplash.com/photos/_snqARKTgoc'
+    imageURL: '/pics/cck (2).jpg'
   },
   {
     name: 'Neon Script',
@@ -789,7 +789,7 @@ const seedClasses = [
     inventory: 20,
     description: 'aggregate extensible metrics',
     category: 'Javascript',
-    imageURL: 'https://unsplash.com/photos/_SmZSuZwkHg'
+    imageURL: '/pics/cck (1).jpg'
   }
 ]
 

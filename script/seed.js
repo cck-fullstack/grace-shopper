@@ -1,12 +1,14 @@
 'use strict'
 
 const db = require('../server/db')
-const {Item, CartItem, User, OrderHistory} = require('../server/db/models')
+const {
+  Item,
+  CartItem,
+  User,
+  OrderHistory,
+  ShoppingCart
+} = require('../server/db/models')
 const {seedClasses} = require('./seedplus')
-// console.log(seedClasses)
-// seedClasses.forEach(item => {
-//   console.log(item, 'ITEM')
-// })
 
 async function seed() {
   await db.sync({force: true})
@@ -63,6 +65,7 @@ async function seed() {
 
   console.log(`seeded ${items.length} items`)
 
+  // Seeds larger file
   const allClasses = await Promise.all(
     seedClasses.map(item => {
       Item.create(item)
@@ -71,17 +74,30 @@ async function seed() {
 
   console.log(`seeded ${allClasses.length} new items`)
 
+  await Promise.all([
+    ShoppingCart.create({
+      orderNumber: '',
+      userId: 1
+    }),
+    ShoppingCart.create({
+      orderNumber: '',
+      userId: 1,
+      completed: true
+    })
+  ])
+
   const cartItems = await Promise.all([
-    CartItem.create({itemId: 1, quantity: 1}),
-    CartItem.create({itemId: 2, quantity: 5})
+    CartItem.create({itemId: 1, quantity: 1, shoppingCartId: 1}),
+    CartItem.create({itemId: 2, quantity: 5, shoppingCartId: 1})
   ])
 
   console.log(`seeded ${cartItems.length} cart items`)
 
   const orderHistory = await Promise.all([
-    OrderHistory.create({cartId: 1, userId: 1}),
     OrderHistory.create({cartId: 1, userId: 1})
   ])
+
+  console.log(`seeded ${orderHistory.length} order histories`)
 
   console.log(`seeded successfully`)
 }

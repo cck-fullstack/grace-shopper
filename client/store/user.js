@@ -50,6 +50,7 @@ export const updateUserThunk = (userId, user) => async dispatch => {
 
 export const me = () => async dispatch => {
   try {
+    console.log('ME')
     const res = await axios.get('/auth/me')
     dispatch(getUser(res.data || defaultUser))
   } catch (error) {
@@ -59,6 +60,8 @@ export const me = () => async dispatch => {
 
 export const getUserThunk = userId => async dispatch => {
   try {
+    console.log('GETUSERTHUNK')
+
     const {data} = await axios.get(`/users/${userId}`)
     dispatch(getUser(data))
   } catch (error) {
@@ -69,16 +72,21 @@ export const getUserThunk = userId => async dispatch => {
 export const auth = (email, password, method) => async dispatch => {
   let res
   try {
-    res = await axios.post(`/auth/${method}`, {email, password})
-  } catch (authError) {
-    return dispatch(getUser({error: authError}))
-  }
+    console.log('AUTH', method)
 
-  try {
+    res = await axios.post(`/auth/${method}`, {email, password})
+
+    if (res.data.shoppingCarts) {
+      await axios.put('/shoppingCarts/merge')
+    }
+
+    //Need to finish shopping cart merge and delete current cart
+
+    console.log(res.data, 'RES.DATA')
     dispatch(getUser(res.data))
     history.push('/home')
-  } catch (dispatchOrHistoryErr) {
-    console.error(dispatchOrHistoryErr)
+  } catch (authError) {
+    return dispatch(getUser({error: authError}))
   }
 }
 
@@ -102,6 +110,7 @@ export const getAllUsersThunk = () => async dispatch => {
   }
 }
 
+//admin page remove user from db
 export const deleteUserThunk = id => async dispatch => {
   try {
     await axios.delete(`api/users/${id}`)
@@ -115,6 +124,7 @@ export const deleteUserThunk = id => async dispatch => {
  */
 
 export default function(state = defaultUser, action) {
+  console.log(action, 'LOGIN?')
   switch (action.type) {
     case ADD_USER:
       return action.user

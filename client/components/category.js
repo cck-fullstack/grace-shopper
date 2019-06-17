@@ -4,6 +4,7 @@ import {getCategoryThunk} from '../store/items'
 import {addCartItemThunk} from '../store/cart'
 import _ from 'lodash'
 import {Link} from 'react-router-dom'
+import {Breadcrumb, Toast} from 'react-materialize'
 
 class Category extends Component {
   componentDidMount() {
@@ -29,12 +30,17 @@ class Category extends Component {
   render() {
     let {addToCart, items} = this.props
     if (!Array.isArray(items)) items = [items]
+    const category = this.props.match.params.category
 
     return (
       <span>
-        <h1 className="brand-logo">
-          {this.props.match.params.category} Classes
-        </h1>
+        <Breadcrumb className="teal">
+          <a href="/items" style={{margin: 0}}>
+            Products
+          </a>
+          <a style={{margin: 0}}>{category}</a>
+        </Breadcrumb>
+        <h1 className="brand-logo">{category} Classes</h1>
         {items.map(item => (
           <div className="row" key={item.id}>
             <div className="col s12 m7">
@@ -50,13 +56,21 @@ class Category extends Component {
                     <p>Description:{item.description}</p>
                   </div>{' '}
                 </Link>
-                <button
-                  type="button"
-                  className="btn waves-effect waves-light blue"
-                  onClick={() => addToCart(this.addOnClick(item))}
+                <div
+                  onClick={() => {
+                    addToCart(this.addOnClick(item))
+                  }}
                 >
-                  Add To Cart
-                </button>{' '}
+                  <Toast
+                    className="btn waves-effect waves-light blue"
+                    options={{
+                      html: `${item.name} added to cart!`,
+                      displayLength: 300
+                    }}
+                  >
+                    Add to Cart
+                  </Toast>
+                </div>
               </div>
             </div>
           </div>

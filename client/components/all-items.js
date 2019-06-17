@@ -4,6 +4,7 @@ import {getItemsThunk} from '../store/items'
 import {addCartItemThunk} from '../store/cart'
 import _ from 'lodash'
 import {Link} from 'react-router-dom'
+import {Toast} from 'react-materialize'
 
 class AllItems extends Component {
   componentDidMount() {
@@ -46,13 +47,21 @@ class AllItems extends Component {
                     <p>Description:{item.description}</p>
                   </div>{' '}
                 </Link>
-                <button
-                  type="button"
-                  className="btn waves-effect waves-light blue"
-                  onClick={() => addToCart(this.addOnClick(item))}
+                <div
+                  onClick={() => {
+                    addToCart(this.addOnClick(item))
+                  }}
                 >
-                  Add To Cart
-                </button>{' '}
+                  <Toast
+                    className="btn waves-effect waves-light blue"
+                    options={{
+                      html: `${item.name} added to cart!`,
+                      displayLength: 300
+                    }}
+                  >
+                    Add to Cart
+                  </Toast>
+                </div>
               </div>
             </div>
           </div>
