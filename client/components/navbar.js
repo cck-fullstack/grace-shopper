@@ -5,41 +5,6 @@ import {Link} from 'react-router-dom'
 import {logout} from '../store'
 import ProductsDropdown from './dropdown'
 
-{/*const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
-  <div>
-    <h1 className="brand-logo">
-      <Link to="/" className="black-text">
-        The Code School
-      </Link>
-    </h1>
-    <div id="navbar-fixed">
-      <nav className="nav-wrapper grey darken-3">
-        {isLoggedIn ? (
-          <div className="container">*/}
-            {/* The navbar will show these links after you log in */}
-{/*<a
-              href="#"
-              className="white-text waves-effect waves-light btn-flat right"
-              onClick={handleClick}
-            >
-              Logout
-            </a>
-            <Link
-              to="/checkout"
-              className="white-text right waves-effect waves-light btn-flat"
-            >
-              <div>
-                <i id="cartIcon" className="material-icons right">
-                  shopping_cart
-                </i>
-                {'cart '}
-                {cartCount}
-              </div>
-            </Link>
-            <div className="navlinks">
-              <Link
-                to="/"
-                className="white-text waves-effect waves-light btn-flat"*/}
 const Navbar = ({handleClick, isLoggedIn, cartCount}) => {
   return (
     <div>
@@ -62,8 +27,6 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => {
                 Logout
               </a>
               <Link
-    {/*to="/items"
-                className="white-text waves-effect waves-light btn-flat"*/}
                 to="/checkout"
                 className="white-text right waves-effect waves-light btn-flat"
               >
@@ -107,9 +70,6 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => {
                 Create Account{' '}
               </Link>
               <Link
-    {/*to="/items"
-                className="white-text waves-effect waves-light btn-flat"
-                data-target="dropdown1"*/}
                 to="/checkout"
                 className="white-text right waves-effect waves-light btn-flat"
               >
