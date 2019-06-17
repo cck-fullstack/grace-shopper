@@ -32,7 +32,7 @@ class AllItems extends Component {
     return (
       <span>
         <Breadcrumb className="teal">
-          <a href="/items" style={{margin: 0}}>
+          <a style={{margin: 0}}>
             Products
           </a>
         </Breadcrumb>
