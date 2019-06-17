@@ -3,11 +3,18 @@ import {connect} from 'react-redux'
 import {getUserThunk} from '../store/user'
 import UpdateUser from './updateUser'
 import OrderHistory from './order-history'
+import AdminPage from './admin-page'
+import {Select} from 'react-materialize'
+
+const defaultState = {
+  showUpdateUserForm: false,
+  showOrderHistory: false
+}
 
 class UserPage extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = defaultState
   }
 
   handleChange = event => {
@@ -19,18 +26,40 @@ class UserPage extends Component {
   handleSubmit = event => {
     event.preventDefault()
     this.props.updateUserThunk(this.props.userId, this.state)
-    this.setState({})
+    this.setState(defaultState)
   }
 
   render() {
+    const {showUpdateUserForm, showOrderHistory} = this.state
     return (
       <div>
         <h2>Welcome to your user page, {this.props.user.firstName}</h2>
         <div>
-          <h3>Update your information here:</h3>
-          <UpdateUser userId={+this.props.user.id} />
+          {this.props.user.isAdmin ? <AdminPage /> : ''}
           <br />
-          <OrderHistory />
+          <h3>Update your information here:</h3>
+          <button
+            type="button"
+            onClick={() =>
+              this.setState({showUpdateUserForm: !showUpdateUserForm})
+            }
+          >
+            Update User information
+          </button>
+          {showUpdateUserForm ? (
+            <UpdateUser userId={+this.props.user.id} />
+          ) : (
+            <div />
+          )}
+          <br />
+          <h3>Order History</h3>
+          <button
+            type="button"
+            onClick={() => this.setState({showOrderHistory: !showOrderHistory})}
+          >
+            Order History
+          </button>
+          {showOrderHistory ? <OrderHistory /> : <div />}
         </div>
       </div>
     )
