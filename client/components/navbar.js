@@ -32,18 +32,24 @@ const Navbar = ({handleClick, isLoggedIn, cartCount, firstName}) => {
       <div id="navbar-fixed">
         <nav className="nav-wrapper grey darken-3">
           {isLoggedIn ? (
-            <div className="container">
+            <div>
               {/* The navbar will show these links after you log in */}
+              <Link href="/" className="navlinks left">
+                <img
+                  id="logo"
+                  src="https://cdn.discordapp.com/attachments/581912987577876502/590217108122763267/6455ecdcad33ab630747b56c640a6a696e380c8d.png"
+                />
+              </Link>
               <a
                 href="#"
-                className="white-text waves-effect waves-light btn-flat right"
+                className="white-text waves-effect waves-light btn right"
                 onClick={handleClick}
               >
                 Logout
               </a>
               <Link
                 to="/checkout"
-                className="white-text right waves-effect waves-light btn-flat"
+                className="white-text right waves-effect waves-light btn"
               >
                 <div>
                   <i id="cartIcon" className="material-icons right">
@@ -56,14 +62,14 @@ const Navbar = ({handleClick, isLoggedIn, cartCount, firstName}) => {
               <div className="navlinks">
                 <Link
                   to="/"
-                  className="white-text waves-effect waves-light btn-flat"
+                  className="white-text waves-effect waves-light btn left"
                 >
                   Home
                 </Link>
                 <ProductsDropdown />
                 <Link
                   to="/user"
-                  className="white-text waves-effect waves-light btn-flat"
+                  className="white-text waves-effect waves-light btn"
                 >
                   {firstName}
                 </Link>
@@ -72,21 +78,28 @@ const Navbar = ({handleClick, isLoggedIn, cartCount, firstName}) => {
           ) : (
             <div>
               {/* The navbar will show these links before you log in */}
+              <Link href="/" className="brand-logo left">
+                <img
+                  className="brand-logo left"
+                  id="logo"
+                  src="https://cdn.discordapp.com/attachments/581912987577876502/590217108122763267/6455ecdcad33ab630747b56c640a6a696e380c8d.png"
+                />
+              </Link>
               <Link
                 to="/login"
-                className="white-text right waves-effect waves-light btn-flat"
+                className="white-text right waves-effect waves-light btn"
               >
                 Login
               </Link>
               <Link
                 to="/create"
-                className="white-text right waves-effect waves-light btn-flat"
+                className="white-text right waves-effect waves-light btn"
               >
                 Create Account{' '}
               </Link>
               <Link
                 to="/checkout"
-                className="white-text right waves-effect waves-light btn-flat"
+                className="white-text right waves-effect waves-light btn"
               >
                 <div>
                   <i id="cartIcon" className="material-icons right">
@@ -99,7 +112,7 @@ const Navbar = ({handleClick, isLoggedIn, cartCount, firstName}) => {
               <div className="navlinks">
                 <Link
                   to="/"
-                  className="white-text waves-effect waves-light btn-flat"
+                  className="white-text waves-effect waves-light btn"
                 >
                   Home
                 </Link>
