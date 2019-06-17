@@ -1,5 +1,7 @@
+/* eslint-disable max-statements */
 /* eslint-disable complexity */
 import axios from 'axios'
+import _ from 'lodash'
 
 /**
  * ACTION TYPES
@@ -9,6 +11,8 @@ const ADD_ITEMS = 'ADD_ITEMS'
 const REMOVE_ITEM = 'REMOVE_ITEM'
 const DECREMENT_ITEM = 'DECREMENT_ITEM'
 const CLEAR_CART = 'CLEAR_CART'
+
+const GET_USER = 'GET_USER'
 
 /**
  * INITIAL STATE
@@ -61,6 +65,7 @@ export const checkOutCartThunk = () => async dispatch => {
   try {
     await axios.all([
       axios.post('/api/orderHistories'),
+      axios.put('/api/shoppingCarts'),
       axios.post('/api/shoppingCarts')
     ])
 
@@ -124,6 +129,41 @@ export default function(state = defaultCart, action) {
     }
     case CLEAR_CART:
       return defaultCart
+
+    //Merges old active carts on login
+    case GET_USER: {
+      let count = state.count
+      let cart = action.user.shoppingCarts
+      let mergedCart = []
+      console.log(action, 'GETTING USER?')
+
+      if (cart) {
+        // console.log(cart[0].cartItems, 'DOES THIS EXIST?')
+        let oldCartItems = cart[0].cartItems
+        // console.log(count, items, 'count, items')
+        // console.log(oldCartItems, 'OLDCARTITEMS', oldCartItems[0].itemId)
+        for (let i = 0; i < oldCartItems.length; i++) {
+          let cartItem = _.find(state.items, {id: oldCartItems[i].itemId})
+          // console.log(cartItem, 'CART ITEM')
+          count += oldCartItems[i].quantity
+
+          if (cartItem) {
+            cartItem.quantity += oldCartItems[i].quantity
+          } else {
+            let name = oldCartItems[i].item.name
+            let price = oldCartItems[i].item.price
+
+            oldCartItems[i].name = name
+            oldCartItems[i].price = price
+
+            mergedCart.push(oldCartItems[i])
+          }
+        }
+        // console.log(count, mergedCart, 'AFTER FOR LOOP')
+      }
+      return {count, items: [...state.items, ...mergedCart]}
+    }
+
     default:
       return state
   }

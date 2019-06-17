@@ -24,3 +24,16 @@ router.post('/', async (req, res, next) => {
     next(err)
   }
 })
+
+router.put('/', async (req, res, next) => {
+  try {
+    await ShoppingCart.update(
+      {completed: true},
+      {where: {id: req.session.cart.cartId}}
+    )
+
+    res.sendStatus(202)
+  } catch (err) {
+    next(err)
+  }
+})
