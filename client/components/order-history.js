@@ -20,8 +20,7 @@ class OrderHistory extends Component {
 
   render() {
     return (
-      <span>
-        <h3 className="brand-logo">Order History</h3>
+      <span className="brand-logo">
         {this.state.orders.length === 0 ? (
           <div>There is no order History</div>
         ) : (

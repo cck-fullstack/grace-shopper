@@ -17,7 +17,7 @@ const status = async () => {
 const Navbar = ({handleClick, isLoggedIn, cartCount}) => {
   return (
     <div>
-      <button type="button" onClick={() => destroy()}>
+    {/*<button type="button" onClick={() => destroy()}>
         Destroy Session
       </button>
       <button type="button" onClick={() => status()}>
@@ -28,7 +28,7 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => {
         <Link to="/" className="black-text">
           The Code School
         </Link>
-      </h1>
+      </h1>*/}
       <div id="navbar-fixed">
         <nav className="nav-wrapper grey darken-3">
           {isLoggedIn ? (
