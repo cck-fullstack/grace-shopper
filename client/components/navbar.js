@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 import {logout} from '../store'
 import ProductsDropdown from './dropdown'
 
-const Navbar = ({handleClick, isLoggedIn, cartCount}) => {
+const Navbar = ({handleClick, isLoggedIn, cartCount, firstName}) => {
   return (
     <div>
       <div id="navbar-fixed">
@@ -44,7 +44,7 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => {
                   to="/user"
                   className="white-text waves-effect waves-light btn-flat"
                 >
-                  Profile
+                  {firstName}
                 </Link>
               </div>
             </div>
@@ -102,7 +102,8 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => {
 const mapState = state => {
   return {
     isLoggedIn: !!state.user.id,
-    cartCount: state.cart.count
+    cartCount: state.cart.count,
+    firstName: state.user.firstName
   }
 }
 
