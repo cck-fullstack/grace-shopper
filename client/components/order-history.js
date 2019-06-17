@@ -19,7 +19,6 @@ class OrderHistory extends Component {
   }
 
   render() {
-    console.log(this.state, 'ORDERHISTORY STATE')
     return (
       <span>
         <h3 className="brand-logo">Order History</h3>

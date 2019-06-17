@@ -3,8 +3,9 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
+import ProductsDropdown from './dropdown'
 
-const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
+{/*const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
   <div>
     <h1 className="brand-logo">
       <Link to="/" className="black-text">
@@ -14,9 +15,9 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
     <div id="navbar-fixed">
       <nav className="nav-wrapper grey darken-3">
         {isLoggedIn ? (
-          <div className="container">
+          <div className="container">*/}
             {/* The navbar will show these links after you log in */}
-            <a
+{/*<a
               href="#"
               className="white-text waves-effect waves-light btn-flat right"
               onClick={handleClick}
@@ -38,79 +39,106 @@ const Navbar = ({handleClick, isLoggedIn, cartCount}) => (
             <div className="navlinks">
               <Link
                 to="/"
-                className="white-text waves-effect waves-light btn-flat"
-              >
-                Home
-              </Link>
-              <Link
-                to="/items"
-                className="white-text waves-effect waves-light btn-flat"
-              >
-                Products
-              </Link>
-              <Link
-                to="/user"
-                className="white-text waves-effect waves-light btn-flat"
-              >
-                Profile
-              </Link>
-            </div>
-          </div>
-        ) : (
-          <div>
-            {/* The navbar will show these links before you log in */}
-            <Link
-              to="/login"
-              className="white-text right waves-effect waves-light btn-flat"
-            >
-              Login
-            </Link>
-            <Link
-              to="/create"
-              className="white-text right waves-effect waves-light btn-flat"
-            >
-              Create Account{' '}
-            </Link>
-            <Link
-              to="/checkout"
-              className="white-text right waves-effect waves-light btn-flat"
-            >
-              <div>
-                <i id="cartIcon" className="material-icons right">
-                  shopping_cart
-                </i>
-                {'cart '}
-                {cartCount}
-              </div>
-            </Link>
-            <div className="navlinks">
-              <Link
-                to="/"
-                className="white-text waves-effect waves-light btn-flat"
-              >
-                Home
-              </Link>
-              <Link
-                to="/items"
-                className="white-text waves-effect waves-light btn-flat"
-                data-target="dropdown1"
-              >
-                Our Products
-              </Link>
-              <ul id="dropdown1" className="dropdown-content">
-                <li>category1</li>
-                <li>category2</li>
-                <li>category3</li>
-              </ul>
-            </div>
-          </div>
-        )}
-      </nav>
-    </div>
+                className="white-text waves-effect waves-light btn-flat"*/}
+const Navbar = ({handleClick, isLoggedIn, cartCount}) => {
+  return (
+    <div>
+      <h1 className="brand-logo">
+        <Link to="/" className="black-text">
+          The Code School
+        </Link>
+      </h1>
 
-    <hr />
-  </div>
-)
+      <div id="navbar-fixed">
+        <nav className="nav-wrapper grey darken-3">
+          {isLoggedIn ? (
+            <div className="container">
+              {/* The navbar will show these links after you log in */}
+              <a
+                href="#"
+                className="white-text waves-effect waves-light btn-flat right"
+                onClick={handleClick}
+              >
+                Logout
+              </a>
+              <Link
+    {/*to="/items"
+                className="white-text waves-effect waves-light btn-flat"*/}
+                to="/checkout"
+                className="white-text right waves-effect waves-light btn-flat"
+              >
+                <div>
+                  <i id="cartIcon" className="material-icons right">
+                    shopping_cart
+                  </i>
+                  {'cart '}
+                  {cartCount}
+                </div>
+              </Link>
+              <div className="navlinks">
+                <Link
+                  to="/"
+                  className="white-text waves-effect waves-light btn-flat"
+                >
+                  Home
+                </Link>
+                <ProductsDropdown />
+                <Link
+                  to="/user"
+                  className="white-text waves-effect waves-light btn-flat"
+                >
+                  Profile
+                </Link>
+              </div>
+            </div>
+          ) : (
+            <div>
+              {/* The navbar will show these links before you log in */}
+              <Link
+                to="/login"
+                className="white-text right waves-effect waves-light btn-flat"
+              >
+                Login
+              </Link>
+              <Link
+                to="/create"
+                className="white-text right waves-effect waves-light btn-flat"
+              >
+                Create Account{' '}
+              </Link>
+              <Link
+    {/*to="/items"
+                className="white-text waves-effect waves-light btn-flat"
+                data-target="dropdown1"*/}
+                to="/checkout"
+                className="white-text right waves-effect waves-light btn-flat"
+              >
+                <div>
+                  <i id="cartIcon" className="material-icons right">
+                    shopping_cart
+                  </i>
+                  {'cart '}
+                  {cartCount}
+                </div>
+              </Link>
+              <div className="navlinks">
+                <Link
+                  to="/"
+                  className="white-text waves-effect waves-light btn-flat"
+                >
+                  Home
+                </Link>
+                <ProductsDropdown />
+              </div>
+            </div>
+          )}
+        </nav>
+      </div>
+
+      <hr />
+    </div>
+  )
+}
 
 //***DROPDOWN EVENT LISTENER***
 
