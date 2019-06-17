@@ -4,7 +4,7 @@ import {getItemsThunk} from '../store/items'
 import {addCartItemThunk} from '../store/cart'
 import _ from 'lodash'
 import {Link} from 'react-router-dom'
-import {Toast} from 'react-materialize'
+import {Breadcrumb, Toast} from 'react-materialize'
 
 class AllItems extends Component {
   componentDidMount() {
@@ -31,6 +31,11 @@ class AllItems extends Component {
 
     return (
       <span>
+        <Breadcrumb className="teal">
+          <a style={{margin: 0}}>
+            Products
+          </a>
+        </Breadcrumb>
         <h1 className="brand-logo">All Items</h1>
         {items.map(item => (
           <div className="row" key={item.id}>
