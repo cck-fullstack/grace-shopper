@@ -37,7 +37,7 @@ class Carousel extends Component {
             </Link>
           </li>
           <li className="carousel-item">
-            <Link href="/items/2">
+            <Link to="/items/2">
               <img
                 src="https://cdn-images-1.medium.com/max/1600/1*tD86WpoW19LFwQ9Lw71lsQ.png"
                 className="responsive-img"
