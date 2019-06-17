@@ -134,14 +134,14 @@ export default function(state = defaultCart, action) {
     case GET_USER: {
       let count = state.count
       let cart = action.user.shoppingCarts
-      console.log(cart, 'CART')
+      // console.log(cart, 'CART')
       if (cart === undefined) {
-        console.log(state, 'WHEN CART IS UNDEFINED')
+        // console.log(state, 'WHEN CART IS UNDEFINED')
         return state
       }
 
       let mergedCart = []
-      console.log(action, 'GETTING USER?')
+      // console.log(action, 'GETTING USER?')
 
       if (cart) {
         // console.log(cart[0].cartItems, 'DOES THIS EXIST?')
