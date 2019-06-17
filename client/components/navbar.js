@@ -16,7 +16,8 @@ const status = async () => {
 
 const Navbar = ({handleClick, isLoggedIn, cartCount, firstName}) => {
   return (
-    <div>
+
+    <div id="navbar">
       {/*<button type="button" onClick={() => destroy()}>
         Destroy Session
       </button>
