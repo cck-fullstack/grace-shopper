@@ -21,28 +21,28 @@ class Carousel extends Component {
         <h2>Featured Products</h2>
         <ul className="carousel carousel-slider">
           <li className="carousel-item">
-            <a href="/items/1">
+            <Link to="/items/1">
               <img
                 src="https://i.ytimg.com/vi/PK2CNau5lus/maxresdefault.jpg"
                 className="responsive-img"
               />
-            </a>
+            </Link>
           </li>
           <li className="carousel-item">
-            <a href="/items/3">
+            <Link to="/items/3">
               <img
                 src="https://embedwistia-a.akamaihd.net/deliveries/609a53c94661742ca9df581a2ee932068c530b51.jpg?image_crop_resized=1280x720"
                 className="responsive-img"
               />
-            </a>
+            </Link>
           </li>
           <li className="carousel-item">
-            <a href="/items/2">
+            <Link to="/items/2">
               <img
                 src="https://cdn-images-1.medium.com/max/1600/1*tD86WpoW19LFwQ9Lw71lsQ.png"
                 className="responsive-img"
               />
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

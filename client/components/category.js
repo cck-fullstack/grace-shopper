@@ -35,9 +35,9 @@ class Category extends Component {
     return (
       <span>
         <Breadcrumb className="teal">
-          <a href="/items" style={{margin: 0}}>
+          <Link to="/items" style={{margin: 0}}>
             Products
-          </a>
+          </Link>
           <a style={{margin: 0}}>{category}</a>
         </Breadcrumb>
         <h1 className="brand-logo">{category} Classes</h1>

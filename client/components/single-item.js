@@ -4,6 +4,7 @@ import {getSingleItemThunk} from '../store/items'
 import {addCartItemThunk} from '../store/cart'
 import _ from 'lodash'
 import {Breadcrumb, Toast} from 'react-materialize'
+import {Link} from 'react-router-dom'
 
 class SingleItem extends Component {
   componentDidMount() {
@@ -33,12 +34,12 @@ class SingleItem extends Component {
     return (
       <span>
         <Breadcrumb className="teal">
-          <a href="/items" style={{margin: 0}}>
+          <Link to="/items" style={{margin: 0}}>
             Products
-          </a>
-          <a href={`/items/category/${items.category}`} style={{margin: 0}}>
+          </Link>
+          <Link to={`/items/category/${items.category}`} style={{margin: 0}}>
             {items.category}
-          </a>
+          </Link>
           <a style={{margin: 0}}>{items.name}</a>
         </Breadcrumb>
         <div className="row" key={items.id}>
