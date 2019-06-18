@@ -71,7 +71,7 @@ const Navbar = ({handleClick, isLoggedIn, cartCount, firstName}) => {
                   to="/user"
                   className="white-text waves-effect waves-light btn"
                 >
-                  {firstName}
+                  {firstName}'s Profile
                 </Link>
               </div>
             </div>

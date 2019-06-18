@@ -6,6 +6,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background-color: rgb(239, 240, 240);
 }
 
 #content {
@@ -81,4 +82,20 @@ form div {
   height: 60px;
   padding-bottom: 10px;
   margin-top: -8px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#centered-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 1200;
+  font-size: 300%;
+  color: rgb(62, 112, 158);
 }

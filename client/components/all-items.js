@@ -5,6 +5,7 @@ import {addCartItemThunk} from '../store/cart'
 import _ from 'lodash'
 import {Link} from 'react-router-dom'
 import {Breadcrumb, Toast} from 'react-materialize'
+import PaginationBar from './pagination'
 
 class AllItems extends Component {
   componentDidMount() {
@@ -31,12 +32,15 @@ class AllItems extends Component {
 
     return (
       <span>
-        <Breadcrumb className="teal">
-          <a style={{margin: 0}}>Products</a>
-        </Breadcrumb>
-        <h1 className="brand-logo">All Items</h1>
         <div>
-          {items.map(item => (
+          <Breadcrumb className="teal">
+            <a style={{margin: 0}}>Products</a>
+          </Breadcrumb>
+          <PaginationBar />
+          <h1 className="brand-logo" id="centered-title">
+            All Items
+          </h1>
+
             <div className="row" key={item.id}>
               <div className="col s12 m7">
                 <div className="card">
@@ -69,7 +73,7 @@ class AllItems extends Component {
                 </div>
               </div>
             </div>
-          ))}
+          ))}{' '}
         </div>
       </span>
     )
