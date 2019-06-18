@@ -24,7 +24,8 @@ const Navbar = ({
 }) => {
   return (
     <div id="navbar" onLoad={fetchItems}>
-      {/* <button type="button" onClick={() => destroy()}>
+
+      <button type="button" onClick={() => destroy()}>
         Destroy Session
       </button>
       <button type="button" onClick={() => status()}>
@@ -120,6 +121,7 @@ const Navbar = ({
  * CONTAINER
  */
 const mapState = state => {
+  console.log('WTF IS THE STATE', state)
   return {
     isLoggedIn: !!state.user.id,
     cartCount: state.cart.count,
@@ -129,7 +131,7 @@ const mapState = state => {
 
 const mapDispatch = dispatch => ({
   handleClick: () => dispatch(logout()),
-  fetchItems: item => dispatch(getCartItemsThunk(item))
+  fetchItems: () => dispatch(getCartItemsThunk())
 })
 
 export default connect(mapState, mapDispatch)(Navbar)

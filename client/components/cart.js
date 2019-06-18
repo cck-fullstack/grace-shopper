@@ -16,7 +16,12 @@ class CartItems extends Component {
     super(props)
     this.state = {}
   }
-  async componentDidMount() {}
+  async componentDidMount() {
+    if (!this.cart) {
+      this.cart = JSON.parse(localStorage.getItem('cart'))
+      console.log('LOCAL CART', JSON.parse(localStorage.getItem('cart')))
+    }
+  }
 
   addOnClick = item => {
     if (this.props.cart) {

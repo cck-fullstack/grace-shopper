@@ -14,6 +14,10 @@ class Category extends Component {
     this.props.fetchItems(category)
   }
 
+  componentWillUnmount() {
+    localStorage.setItem('cart', JSON.stringify(this.props.cart))
+  }
+
   addOnClick = item => {
     if (this.props.cart) {
       let search = _.find(this.props.cart.items, {id: item.id})
