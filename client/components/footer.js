@@ -80,7 +80,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
+      </div>
 
       <div className="footer-copyright" style={{'justify-content': 'center'}}>
         <div
@@ -134,7 +134,6 @@ const Footer = () => {
               </a>
             </li>
           </ul>
-
         </div>
       </div>
     </footer>

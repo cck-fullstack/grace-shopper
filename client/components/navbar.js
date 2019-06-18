@@ -24,13 +24,12 @@ const Navbar = ({
 }) => {
   return (
     <div id="navbar" onLoad={fetchItems}>
-
       <button type="button" onClick={() => destroy()}>
         Destroy Session
       </button>
       <button type="button" onClick={() => status()}>
         Session Status
-      </button> */}
+      </button>
 
       <div id="navbar-fixed">
         <nav className="nav-wrapper grey darken-3">
