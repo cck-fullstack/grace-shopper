@@ -76,13 +76,19 @@ class Category extends Component {
                         displayLength: 300
                       }}
                     > */}
-                    <a
-                      className="btn-floating btn-small waves-effect waves-light green"
-                      id="add-to-cart"
+                    <div
+                      onClick={() => {
+                        addToCart(this.addOnClick(item))
+                      }}
                     >
-                      <i className="material-icons">add_shopping_cart</i>
-                    </a>
-                    {/* </Toast> */}
+                      <a
+                        className="btn-floating btn-small waves-effect waves-light green"
+                        id="add-to-cart"
+                      >
+                        <i className="material-icons">add_shopping_cart</i>
+                      </a>
+                    </div>
+                    {/*  </Toast>
                   </div>
                   <div className="card-content black-text">
                     <p className="card-title">{item.name}</p>
@@ -104,7 +110,8 @@ class Category extends Component {
                     }}
                   >
                     Add to Cart
-                  </Toast>
+                  </Toast> */}
+                  </div>
                 </div>
               </div>
             ))}{' '}
