@@ -99,3 +99,9 @@ form div {
   font-size: 300%;
   color: rgb(62, 112, 158);
 }
+
+.footer-copyright {
+  display: flex;
+  justify-content: 'space-between';
+  align-items: 'flex-end';
+}

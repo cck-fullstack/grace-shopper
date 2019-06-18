@@ -50,7 +50,7 @@ class SingleItem extends Component {
               </div>
               <div className="card-content">
                 <p className="card-title">{items.name}</p>
-                <p>${items.price * 0.01}</p>
+                <p>${items.price / 100}</p>
                 <p>Stock:{items.inventory}</p>
                 <p>Description:{items.description}</p>
               </div>{' '}
@@ -60,10 +60,10 @@ class SingleItem extends Component {
                 }}
               >
                 <Toast
-                  className="btn waves-effect waves-light blue"
+                  className="btn blue"
                   options={{
                     html: `${items.name} added to cart!`,
-                    displayLength: 300
+                    displayLength: 400
                   }}
                 >
                   Add to Cart

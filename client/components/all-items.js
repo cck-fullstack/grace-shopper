@@ -61,7 +61,7 @@ class AllItems extends Component {
                     }}
                   >
                     <Toast
-                      className="btn waves-effect waves-light blue"
+                      className="btn blue"
                       options={{
                         html: `${item.name} added to cart!`,
                         displayLength: 300
