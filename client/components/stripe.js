@@ -25,7 +25,7 @@ export default class Stripe extends React.Component {
       <div className="container">
         <div className="">
           <div>
-            <div className="">Get ready to have your money stolen!</div>
+            <div className="" />
             <StripeCheckout
               className="center waves-effect waves-light btn blue"
               token={() => this.onToken}

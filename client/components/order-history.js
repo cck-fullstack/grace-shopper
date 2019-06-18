@@ -40,7 +40,7 @@ class OrderHistory extends Component {
                           </div>
                           <div className="card-content">
                             <p className="card-title">{item.item.name}</p>
-                            <p>${item.item.price * 0.01}</p>
+                            <p>${item.item.price / 100}</p>
                             <p>Stock:{item.quantity}</p>
                             <p>Description:{item.item.description}</p>
                           </div>
