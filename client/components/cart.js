@@ -46,7 +46,7 @@ class CartItems extends Component {
     } = this.props
 
     let arrayCart = cart
-    if (!Array.isArray(cart)) arrayCart = [...cart]
+    // if (!Array.isArray(cart)) arrayCart = [...cart]
 
     return (
       <span>
