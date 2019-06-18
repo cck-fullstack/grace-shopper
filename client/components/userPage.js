@@ -33,7 +33,9 @@ class UserPage extends Component {
     const {showUpdateUserForm, showOrderHistory} = this.state
     return (
       <div>
-        <h2>Welcome to your user page, {this.props.user.firstName}</h2>
+        <h2 id="centered-title">
+          Welcome to your user page, {this.props.user.firstName}.
+        </h2>
         <div>
           {this.props.user.isAdmin ? <AdminPage /> : ''}
           <br />

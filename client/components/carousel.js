@@ -18,7 +18,7 @@ class Carousel extends Component {
   render() {
     return (
       <div className="container">
-        <h2>Featured Products</h2>
+        <h2 id="centered-title">Featured Products</h2>
         <ul className="carousel carousel-slider">
           <li className="carousel-item">
             <Link to="/items/1">

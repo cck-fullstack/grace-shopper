@@ -5,6 +5,7 @@ import {addCartItemThunk} from '../store/cart'
 import _ from 'lodash'
 import {Link} from 'react-router-dom'
 import {Breadcrumb, Toast} from 'react-materialize'
+import PaginationBar from './pagination'
 
 class Category extends Component {
   componentDidMount() {
@@ -40,7 +41,10 @@ class Category extends Component {
           </Link>
           <a style={{margin: 0}}>{category}</a>
         </Breadcrumb>
-        <h1 className="brand-logo">{category} Classes</h1>
+        <PaginationBar />
+        <h1 className="brand-logo" id="centered-title">
+          {category} Classes
+        </h1>
         {items.map(item => (
           <div className="row" key={item.id}>
             <div className="col s12 m7">
