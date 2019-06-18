@@ -40,7 +40,7 @@ class AllItems extends Component {
           <h1 className="brand-logo" id="centered-title">
             All Items
           </h1>
-          {items.map(item => (
+
             <div className="row" key={item.id}>
               <div className="col s12 m7">
                 <div className="card">

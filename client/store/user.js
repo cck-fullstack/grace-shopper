@@ -50,7 +50,7 @@ export const updateUserThunk = (userId, user) => async dispatch => {
 
 export const me = () => async dispatch => {
   try {
-    console.log('ME')
+    // console.log('ME')
     const res = await axios.get('/auth/me')
     dispatch(getUser(res.data || defaultUser))
   } catch (error) {
@@ -60,7 +60,7 @@ export const me = () => async dispatch => {
 
 export const getUserThunk = userId => async dispatch => {
   try {
-    console.log('GETUSERTHUNK')
+    // console.log('GETUSERTHUNK')
 
     const {data} = await axios.get(`/users/${userId}`)
     dispatch(getUser(data))
@@ -72,18 +72,18 @@ export const getUserThunk = userId => async dispatch => {
 export const auth = (email, password, method) => async dispatch => {
   let res
   try {
-    console.log('AUTH', method)
+    // console.log('AUTH', method)
 
     res = await axios.post(`/auth/${method}`, {email, password})
 
     if (res.data.shoppingCarts) {
-      console.log('IF SHOPPING CART EXISTS')
+      // console.log('IF SHOPPING CART EXISTS')
       await axios.put('/api/shoppingCarts/merge')
     }
 
     //Need to finish shopping cart merge and delete current cart
 
-    console.log(res.data, 'RES.DATA')
+    // console.log(res.data, 'RES.DATA')
     dispatch(getUser(res.data))
     history.push('/home')
   } catch (authError) {
@@ -125,7 +125,7 @@ export const deleteUserThunk = id => async dispatch => {
  */
 
 export default function(state = defaultUser, action) {
-  console.log(action, 'LOGIN?')
+  // console.log(action, 'LOGIN?')
   switch (action.type) {
     case ADD_USER:
       return action.user

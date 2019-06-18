@@ -44,7 +44,7 @@ router.put('/merge', async (req, res, next) => {
       where: {shoppingCartId: req.session.cart.prevCartId}
     })
 
-    console.log(cart, 'MERGECART')
+    // console.log(cart, 'MERGECART')
 
     res.sendStatus(202)
   } catch (err) {
