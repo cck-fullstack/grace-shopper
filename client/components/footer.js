@@ -2,68 +2,12 @@ import React from 'react'
 import {Modal, Button} from 'react-materialize'
 import {Link} from 'react-router-dom'
 
-{
-  /* <Footer
-      id="footer"
-      className="page-footer grey darken-3"
-      copyrights="
-    © 2019 Particle Industries
-    "
-      links={<a />}
-      moreLinks={
-        <ul className="grey-text text-lighten-4">
-          <li>
-            <a href="http://facebook.com/pewdiepie">
-              <button className="ui facebook button">Facebook</button>
-            </a>
-          </li>
-          <br />
-          <li>
-            <a href="http://instagram.com/pewdiepie">
-              <button className="ui instagram button">Instagram</button>
-            </a>
-          </li>
-          <br />
-          <li>
-            <a href="http://twitter.com/pewdiepie">
-              <button className="ui twitter button">Twitter</button>
-            </a>
-          </li>
-        </ul>
-      }
-    >
-      <div id="logo" style={{display: 'flex'}}>
-        <img
-          src="https://cdn.discordapp.com/attachments/581912987577876502/590217108122763267/6455ecdcad33ab630747b56c640a6a696e380c8d.png"
-          width="100px"
-          height="100px"
-        />
-        <div id="logotext">
-          <h5 className="white-text">Particle Industries</h5>
-          <p className="grey-text text-lighten-4">
-            Aggregating leading edge web readiness in the 21st century
-          </p>
-        </div>
-      </div> */
-}
-
 const Footer = () => {
   return (
     <footer id="footer" className="page-footer grey darken-3">
       <div className="ui container">
         <div className="ui grid">
-          <div className="column seven wide">
-            {/* <h5 className="white-text">Created By:</h5>
-              <ul className="grey-text text-lighten-4">
-                <li>Alex Mok</li>
-                <li>Will Golden</li>
-                <li>Stan So</li>
-                <li>Eric Kreiter</li>
-              </ul>
-              <a href="mailto:kat@reelstyle.co">
-                <button className="ui primary button teal">Email us</button>
-              </a> */}
-          </div>
+          <div className="column seven wide" />
           <div id="logo" style={{display: 'flex'}}>
             <img
               src="https://cdn.discordapp.com/attachments/581912987577876502/590217108122763267/6455ecdcad33ab630747b56c640a6a696e380c8d.png"
@@ -81,7 +25,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
       <div className="footer-copyright" style={{'justify-content': 'center'}}>
         <div
           className="container"

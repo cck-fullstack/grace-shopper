@@ -89,7 +89,7 @@ class SingleItem extends Component {
                   }}
                 > */}
                 <a
-                  className="btn-floating btn-small waves-effect waves-light green"
+                  className="btn-floating btn-small green"
                   id="add-to-cart"
                   onClick={() => {
                     addToCart(this.addOnClick(items))

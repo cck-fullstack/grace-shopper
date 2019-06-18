@@ -66,7 +66,7 @@ class CartItems extends Component {
                           <button
                             type="button"
                             id="view-all-btn"
-                            className="waves-effect waves-light btn-small red"
+                            className="btn-small red"
                             onClick={() => removeItem(index)}
                           >
                             x
@@ -75,7 +75,7 @@ class CartItems extends Component {
                           <p>Price:${item.price * 0.01}</p>
                           <button
                             type="button"
-                            className="btn-floating btn-small waves-effect waves-light green"
+                            className="btn-floating btn-small green"
                             onClick={() => addToCart(this.addOnClick(item))}
                           >
                             {' '}
@@ -83,7 +83,7 @@ class CartItems extends Component {
                           </button>{' '}
                           <button
                             type="button"
-                            className="btn-floating btn-small waves-effect waves-light red"
+                            className="btn-floating btn-small red"
                             onClick={() => decrementItem(item)}
                           >
                             {' '}
@@ -96,7 +96,7 @@ class CartItems extends Component {
                 </ul>
                 <button
                   type="button"
-                  className="waves-effect waves-light btn red"
+                  className="btn red"
                   onClick={() => checkOutCart(cart.items)}
                 >
                   Check Out
@@ -104,7 +104,7 @@ class CartItems extends Component {
                 <Stripe />
               </div>{' '}
             </div>{' '}
-                    {/*{arrayCart.items.map((item, index) => {
+            {/*{arrayCart.items.map((item, index) => {
               return (
                 <div className="container" key={index}>
                   <h4>{item.name}</h4>
