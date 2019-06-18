@@ -11,6 +11,9 @@ class SingleItem extends Component {
     const id = this.props.match.params.id
     this.props.fetchSingleItem(id)
   }
+  componentWillUnmount() {
+    localStorage.setItem('cart', JSON.stringify(this.props.cart))
+  }
 
   addOnClick = item => {
     if (this.props.cart) {

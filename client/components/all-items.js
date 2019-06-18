@@ -12,6 +12,10 @@ class AllItems extends Component {
     this.props.fetchItems()
   }
 
+  componentWillUnmount() {
+    localStorage.setItem('cart', JSON.stringify(this.props.cart))
+  }
+
   addOnClick = item => {
     if (this.props.cart) {
       let search = _.find(this.props.cart.items, {id: item.id})
@@ -81,6 +85,7 @@ class AllItems extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log('WHAT IS STATE.CART', state.cart)
   return {items: state.items, cart: state.cart}
 }
 
