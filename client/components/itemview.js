@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
+import {Toast} from 'react-materialize'
 
 const Navbar = ({items}) => {
   return (
@@ -29,7 +30,7 @@ const Navbar = ({items}) => {
                   className="btn waves-effect waves-light blue"
                   options={{
                     html: `${item.name} added to cart!`,
-                    displayLength: 300
+                    displayLength: 400
                   }}
                 >
                   Add to Cart

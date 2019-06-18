@@ -65,7 +65,7 @@ class Category extends Component {
                     className="btn waves-effect waves-light blue"
                     options={{
                       html: `${item.name} added to cart!`,
-                      displayLength: 300
+                      displayLength: 400
                     }}
                   >
                     Add to Cart
