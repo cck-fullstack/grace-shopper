@@ -46,8 +46,7 @@ class Routes extends Component {
           <Route path="/orderhistory" component={OrderHistory} />
           <Route path="/adminpage" component={AdminPage} />
 
-          {/* Blocks api routes but we use during development
-          <Route path="/api" component={UserHome} /> */}
+          <Route path="/api" component={UserHome} />
 
           {isLoggedIn && (
             <Switch>

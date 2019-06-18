@@ -55,7 +55,56 @@ class CartItems extends Component {
           <span>Please add items to the cart </span>
         ) : (
           <div>
-            {arrayCart.items.map((item, index) => {
+            <div className="container">
+              <div className="row">
+                <ul className="collection">
+                  {cart.items.map((item, index) => {
+                    return (
+                      <div key={index}>
+                        <li className="collection-item">
+                          <h4>{item.name}</h4>
+                          <button
+                            type="button"
+                            id="view-all-btn"
+                            className="waves-effect waves-light btn-small red"
+                            onClick={() => removeItem(index)}
+                          >
+                            x
+                          </button>
+                          <p>Quantity:{item.quantity}</p>
+                          <p>Price:${item.price * 0.01}</p>
+                          <button
+                            type="button"
+                            className="btn-floating btn-small waves-effect waves-light green"
+                            onClick={() => addToCart(this.addOnClick(item))}
+                          >
+                            {' '}
+                            +{' '}
+                          </button>{' '}
+                          <button
+                            type="button"
+                            className="btn-floating btn-small waves-effect waves-light red"
+                            onClick={() => decrementItem(item)}
+                          >
+                            {' '}
+                            -{' '}
+                          </button>
+                        </li>
+                      </div>
+                    )
+                  })}
+                </ul>
+                <button
+                  type="button"
+                  className="waves-effect waves-light btn red"
+                  onClick={() => checkOutCart(cart.items)}
+                >
+                  Check Out
+                </button>
+                <Stripe />
+              </div>{' '}
+            </div>{' '}
+                    {/*{arrayCart.items.map((item, index) => {
               return (
                 <div className="container" key={index}>
                   <h4>{item.name}</h4>
@@ -95,7 +144,7 @@ class CartItems extends Component {
             >
               Check Out
             </button>
-            <Stripe />
+            <Stripe />*/}
           </div>
         )}
         <div />

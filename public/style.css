@@ -9,6 +9,10 @@ body {
   background-color: rgb(239, 240, 240);
 }
 
+#container {
+  display: flex;
+}
+
 #content {
   flex: 1 0 auto;
 }
@@ -50,16 +54,8 @@ form div {
   line-height: unset;
 }
 
-.card-image {
-  height: 30em;
-  width: 30em;
-}
 .sliderboi {
   padding-bottom: 30px;
-}
-.card {
-  height: 45em;
-  width: 35em;
 }
 
 #view-all-btn {
@@ -98,6 +94,81 @@ form div {
   font-weight: 1200;
   font-size: 300%;
   color: rgb(62, 112, 158);
+}
+
+.image-fade {
+  display: block;
+  position: relative;
+}
+.image-fade::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: -moz-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  /* FF3.6+ */
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, rgba(0, 0, 0, 0.65)),
+    color-stop(100%, rgba(0, 0, 0, 0))
+  );
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  /* IE10+ */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  /* W3C */
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=0);
+  /* IE6-9 */
+}
+.product-image {
+  display: block;
+}
+
+.card-title {
+  color: white;
+  font-weight: 200;
+}
+
+#add-to-cart {
+  align-self: flex-start;
+  right: 10%;
+  top: 70%;
+  position: absolute;
+}
+
+#price-and-stock {
+  align-self: flex-start;
+  left: 10%; 
+  top: 70%; 
+  position: absolute;
 }
 
 .footer-copyright {

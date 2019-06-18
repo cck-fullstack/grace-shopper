@@ -46,16 +46,43 @@ class Category extends Component {
           <a style={{margin: 0}}>{category}</a>
         </Breadcrumb>
         <PaginationBar />
-        <h1 className="brand-logo" id="centered-title">
-          {category} Classes
-        </h1>
-        {items.map(item => (
-          <div className="row" key={item.id}>
-            <div className="col s12 m7">
-              <div className="card">
-                <Link to={`/items/${item.id}`}>
-                  <div className="card-image">
-                    <img src={item.imageURL} />
+        <div className="container">
+          <div className="row">
+            <h1 className="brand-logo" id="centered-title">
+              {category} Classes
+            </h1>
+            {items.map(item => (
+              <div key={item.id} className="col s4 m4">
+                <div className="card small">
+                  <Link to={`/items/${item.id}`}>
+                    <div className="card-image">
+                      <div className="image-fade">
+                        <img className="product-image" src={item.imageURL} />{' '}
+                      </div>
+                      <span className="card-title">{item.name}</span>
+                    </div>
+                  </Link>
+                  <div className="card-content" style={{display: 'flex'}}>
+                    <div className="price-and-stock">
+                      <ul>
+                        <li>Price: ${item.price / 100} </li>
+
+                        <li>Stock:{item.inventory}</li>
+                      </ul>
+                    </div>
+                    {/* <Toast
+                      options={{
+                        html: `${item.name} added to cart!`,
+                        displayLength: 300
+                      }}
+                    > */}
+                    <a
+                      className="btn-floating btn-small waves-effect waves-light green"
+                      id="add-to-cart"
+                    >
+                      <i className="material-icons">add_shopping_cart</i>
+                    </a>
+                    {/* </Toast> */}
                   </div>
                   <div className="card-content black-text">
                     <p className="card-title">{item.name}</p>
@@ -80,9 +107,9 @@ class Category extends Component {
                   </Toast>
                 </div>
               </div>
-            </div>
+            ))}{' '}
           </div>
-        ))}
+        </div>
       </span>
     )
   }
