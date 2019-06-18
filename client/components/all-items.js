@@ -4,12 +4,21 @@ import {getItemsThunk} from '../store/items'
 import {addCartItemThunk} from '../store/cart'
 import _ from 'lodash'
 import {Link} from 'react-router-dom'
-import {Breadcrumb, Toast} from 'react-materialize'
+import {Breadcrumb, 
+       
+       
+       
+       
+       } from 'react-materialize'
 import PaginationBar from './pagination'
 
 class AllItems extends Component {
   componentDidMount() {
     this.props.fetchItems()
+  }
+
+  componentWillUnmount() {
+    localStorage.setItem('cart', JSON.stringify(this.props.cart))
   }
 
   addOnClick = item => {
@@ -84,6 +93,27 @@ class AllItems extends Component {
                       </div>
                       <div className="card-action" />
                     </div>
+                        {/* <div className="card-content black-text">
+                      <p className="card-title">{item.name}</p>
+                      <p>${item.price / 100}</p>
+                      <p>Stock:{item.inventory.toFixed(2)}</p>
+                      <p>Description:{item.description}</p>
+                    </div>{' '}
+                  </Link>
+                  <div
+                    onClick={() => {
+                      addToCart(this.addOnClick(item))
+                    }}
+                  >
+                    <Toast
+                      className="btn blue"
+                      options={{
+                        html: `${item.name} added to cart!`,
+                        displayLength: 300
+                      }}
+                    >
+                      Add to Cart
+                    </Toast>*/}
                   </div>
                 </div>
               ))}{' '}
@@ -96,6 +126,7 @@ class AllItems extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log('WHAT IS STATE.CART', state.cart)
   return {items: state.items, cart: state.cart}
 }
 

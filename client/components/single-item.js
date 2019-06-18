@@ -11,6 +11,9 @@ class SingleItem extends Component {
     const id = this.props.match.params.id
     this.props.fetchSingleItem(id)
   }
+  componentWillUnmount() {
+    localStorage.setItem('cart', JSON.stringify(this.props.cart))
+  }
 
   addOnClick = item => {
     if (this.props.cart) {
@@ -62,9 +65,27 @@ class SingleItem extends Component {
                   </ul>
                 </div>
                 {/* <Toast
+          <div className="col s12 m7">
+            <div className="card">
+              <div className="card-image">
+                <img src={items.imageURL} />
+              </div>
+              <div className="card-content">
+                <p className="card-title">{items.name}</p>
+                <p>${items.price / 100}</p>
+                <p>Stock:{items.inventory}</p>
+                <p>Description:{items.description}</p>
+              </div>{' '}
+              <div
+                onClick={() => {
+                  addToCart(this.addOnClick(items))
+                }}
+              >
+                <Toast
+                  className="btn blue"
                   options={{
                     html: `${items.name} added to cart!`,
-                    displayLength: 300
+                    displayLength: 400
                   }}
                 > */}
                 <a

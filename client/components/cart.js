@@ -16,7 +16,12 @@ class CartItems extends Component {
     super(props)
     this.state = {}
   }
-  async componentDidMount() {}
+  async componentDidMount() {
+    if (!this.cart) {
+      this.cart = JSON.parse(localStorage.getItem('cart'))
+      console.log('LOCAL CART', JSON.parse(localStorage.getItem('cart')))
+    }
+  }
 
   addOnClick = item => {
     if (this.props.cart) {
@@ -40,10 +45,13 @@ class CartItems extends Component {
       removeItem
     } = this.props
 
+    let arrayCart = cart
+    // if (!Array.isArray(cart)) arrayCart = [...cart]
+
     return (
       <span>
         <h1>Cart Items</h1>
-        {cart.items.length === 0 ? (
+        {arrayCart.items.length === 0 ? (
           <span>Please add items to the cart </span>
         ) : (
           <div>
@@ -96,6 +104,47 @@ class CartItems extends Component {
                 <Stripe />
               </div>{' '}
             </div>{' '}
+                    {/*{arrayCart.items.map((item, index) => {
+              return (
+                <div className="container" key={index}>
+                  <h4>{item.name}</h4>
+                  <button
+                    type="button"
+                    id="view-all-btn"
+                    className="btn-small red"
+                    onClick={() => removeItem(index)}
+                  >
+                    x
+                  </button>
+                  <p>Quantity:{item.quantity}</p>
+                  <p>Price:${item.price * 0.01}</p>
+                  <button
+                    type="button"
+                    className="btn-floating btn-small green"
+                    onClick={() => addToCart(this.addOnClick(item))}
+                  >
+                    {' '}
+                    +{' '}
+                  </button>{' '}
+                  <button
+                    type="button"
+                    className="btn-floating btn-small red"
+                    onClick={() => decrementItem(item)}
+                  >
+                    {' '}
+                    -{' '}
+                  </button>
+                </div>
+              )
+            })}
+            <button
+              type="button"
+              className="btn red"
+              onClick={() => checkOutCart(arrayCart.items)}
+            >
+              Check Out
+            </button>
+            <Stripe />*/}
           </div>
         )}
         <div />
@@ -111,10 +160,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch, ownProps) => ({
   removeItem: idx => dispatch(removeCartItem(idx)),
   checkOutCart: () => {
-    // BROKEN: ownProps - when you click checkout, it does not redirect user to /home as intended {}
-    // console.log(ownProps)
     dispatch(checkOutCartThunk())
-    // .then(() => ownProps.history.push('/home'))
   },
   addToCart: item => dispatch(addCartItemThunk(item)),
   decrementItem: item => dispatch(decrementCartItemThunk(item))

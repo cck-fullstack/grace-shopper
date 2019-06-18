@@ -2,7 +2,7 @@ body {
   font-family: sans-serif;
 }
 
-#app {
+#entire-app {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -159,14 +159,20 @@ form div {
 
 #add-to-cart {
   align-self: flex-start;
-  right: 10%; /* new */
-  top: 70%; /* new */
-  position: absolute; /* new */
+  right: 10%;
+  top: 70%;
+  position: absolute;
 }
 
 #price-and-stock {
   align-self: flex-start;
-  left: 10%; /* new */
-  top: 70%; /* new */
-  position: absolute; /* new */
+  left: 10%; 
+  top: 70%; 
+  position: absolute;
+}
+
+.footer-copyright {
+  display: flex;
+  justify-content: 'space-between';
+  align-items: 'flex-end';
 }

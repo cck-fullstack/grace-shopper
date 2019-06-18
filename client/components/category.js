@@ -14,6 +14,10 @@ class Category extends Component {
     this.props.fetchItems(category)
   }
 
+  componentWillUnmount() {
+    localStorage.setItem('cart', JSON.stringify(this.props.cart))
+  }
+
   addOnClick = item => {
     if (this.props.cart) {
       let search = _.find(this.props.cart.items, {id: item.id})
@@ -80,6 +84,27 @@ class Category extends Component {
                     </a>
                     {/* </Toast> */}
                   </div>
+                  <div className="card-content black-text">
+                    <p className="card-title">{item.name}</p>
+                    <p>${item.price / 100}</p>
+                    <p>Stock:{item.inventory}</p>
+                    <p>Description:{item.description}</p>
+                  </div>{' '}
+                </Link>
+                <div
+                  onClick={() => {
+                    addToCart(this.addOnClick(item))
+                  }}
+                >
+                  <Toast
+                    className="btn blue"
+                    options={{
+                      html: `${item.name} added to cart!`,
+                      displayLength: 400
+                    }}
+                  >
+                    Add to Cart
+                  </Toast>
                 </div>
               </div>
             ))}{' '}

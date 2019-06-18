@@ -82,7 +82,7 @@ async function seed() {
     ShoppingCart.create({
       orderNumber: '',
       userId: 1,
-      completed: true
+      completed: false
     })
   ])
 
