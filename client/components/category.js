@@ -59,7 +59,7 @@ class Category extends Component {
                   </div>
                   <div className="card-content black-text">
                     <p className="card-title">{item.name}</p>
-                    <p>${item.price * 0.01}</p>
+                    <p>${item.price / 100}</p>
                     <p>Stock:{item.inventory}</p>
                     <p>Description:{item.description}</p>
                   </div>{' '}
@@ -70,7 +70,7 @@ class Category extends Component {
                   }}
                 >
                   <Toast
-                    className="btn waves-effect waves-light blue"
+                    className="btn blue"
                     options={{
                       html: `${item.name} added to cart!`,
                       displayLength: 400

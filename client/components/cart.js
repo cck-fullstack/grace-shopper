@@ -62,7 +62,7 @@ class CartItems extends Component {
                   <button
                     type="button"
                     id="view-all-btn"
-                    className="waves-effect waves-light btn-small red"
+                    className="btn-small red"
                     onClick={() => removeItem(index)}
                   >
                     x
@@ -71,7 +71,7 @@ class CartItems extends Component {
                   <p>Price:${item.price * 0.01}</p>
                   <button
                     type="button"
-                    className="btn-floating btn-small waves-effect waves-light green"
+                    className="btn-floating btn-small green"
                     onClick={() => addToCart(this.addOnClick(item))}
                   >
                     {' '}
@@ -79,7 +79,7 @@ class CartItems extends Component {
                   </button>{' '}
                   <button
                     type="button"
-                    className="btn-floating btn-small waves-effect waves-light red"
+                    className="btn-floating btn-small red"
                     onClick={() => decrementItem(item)}
                   >
                     {' '}
@@ -90,7 +90,7 @@ class CartItems extends Component {
             })}
             <button
               type="button"
-              className="waves-effect waves-light btn red"
+              className="btn red"
               onClick={() => checkOutCart(arrayCart.items)}
             >
               Check Out
@@ -111,10 +111,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch, ownProps) => ({
   removeItem: idx => dispatch(removeCartItem(idx)),
   checkOutCart: () => {
-    // BROKEN: ownProps - when you click checkout, it does not redirect user to /home as intended {}
-    // console.log(ownProps)
     dispatch(checkOutCartThunk())
-    // .then(() => ownProps.history.push('/home'))
   },
   addToCart: item => dispatch(addCartItemThunk(item)),
   decrementItem: item => dispatch(decrementCartItemThunk(item))

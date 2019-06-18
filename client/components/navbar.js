@@ -24,18 +24,14 @@ const Navbar = ({
 }) => {
   return (
     <div id="navbar" onLoad={fetchItems}>
+
       <button type="button" onClick={() => destroy()}>
         Destroy Session
       </button>
       <button type="button" onClick={() => status()}>
         Session Status
-      </button>
-      {/*
-      <h1 className="brand-logo">
-        <Link to="/" className="black-text">
-          The Code School
-        </Link>
-  </h1>*/}
+      </button> */}
+
       <div id="navbar-fixed">
         <nav className="nav-wrapper grey darken-3">
           {isLoggedIn ? (
@@ -49,14 +45,14 @@ const Navbar = ({
               </Link>
               <a
                 href="#"
-                className="white-text waves-effect waves-light btn right"
+                className="white-text btn right"
                 onClick={handleClick}
               >
                 Logout
               </a>
               <Link
                 to="/checkout"
-                className="white-text right waves-effect waves-light btn"
+                className="white-text right btn"
                 onLoad={fetchItems}
               >
                 <div>
@@ -68,17 +64,11 @@ const Navbar = ({
                 </div>
               </Link>
               <div className="navlinks">
-                <Link
-                  to="/"
-                  className="white-text waves-effect waves-light btn left"
-                >
+                <Link to="/" className="white-text btn left">
                   Home
                 </Link>
                 <ProductsDropdown />
-                <Link
-                  to="/user"
-                  className="white-text waves-effect waves-light btn"
-                >
+                <Link to="/user" className="white-text btn">
                   {firstName}'s Profile
                 </Link>
               </div>
@@ -92,11 +82,8 @@ const Navbar = ({
                   src="https://cdn.discordapp.com/attachments/581912987577876502/590217108122763267/6455ecdcad33ab630747b56c640a6a696e380c8d.png"
                 />
               </Link>
-              <Link
-                to="/login"
-                className="white-text right waves-effect waves-light btn"
-              >
-                Login/Sign Up
+              <Link to="/login" className="white-text right btn">
+                Login | Sign Up
               </Link>
               {/* <Link
                 to="/create"
@@ -104,10 +91,7 @@ const Navbar = ({
               >
                 Create Account{' '}
               </Link> */}
-              <Link
-                to="/checkout"
-                className="white-text right waves-effect waves-light btn"
-              >
+              <Link to="/checkout" className="white-text right btn">
                 <div>
                   <i id="cartIcon" className="material-icons right">
                     shopping_cart
@@ -117,10 +101,7 @@ const Navbar = ({
                 </div>
               </Link>
               <div className="navlinks">
-                <Link
-                  to="/"
-                  className="white-text waves-effect waves-light btn"
-                >
+                <Link to="/" className="white-text btn">
                   Home
                 </Link>
                 <ProductsDropdown />
