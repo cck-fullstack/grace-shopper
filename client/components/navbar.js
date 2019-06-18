@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 import {logout} from '../store'
 import ProductsDropdown from './dropdown'
 import axios from 'axios'
+import {getCartItemsThunk} from '../store/cart'
 
 const destroy = async () => {
   await axios.get('/api/dev/')
@@ -14,21 +15,30 @@ const status = async () => {
   await axios.get('/api/dev/status')
 }
 
-const Navbar = ({handleClick, isLoggedIn, cartCount, firstName}) => {
+const Navbar = ({
+  handleClick,
+  isLoggedIn,
+  cartCount,
+  firstName,
+  fetchItems
+}) => {
   return (
-    <div id="navbar">
-      {/*<button type="button" onClick={() => destroy()}>
+    <div
+      id="navbar"
+      // onLoad={fetchItems}
+    >
+      <button type="button" onClick={() => destroy()}>
         Destroy Session
       </button>
       <button type="button" onClick={() => status()}>
         Session Status
       </button>
-
+      {/*
       <h1 className="brand-logo">
         <Link to="/" className="black-text">
           The Code School
         </Link>
-      </h1>*/}
+  </h1>*/}
       <div id="navbar-fixed">
         <nav className="nav-wrapper grey darken-3">
           {isLoggedIn ? (
@@ -50,6 +60,7 @@ const Navbar = ({handleClick, isLoggedIn, cartCount, firstName}) => {
               <Link
                 to="/checkout"
                 className="white-text right waves-effect waves-light btn"
+                onLoad={fetchItems}
               >
                 <div>
                   <i id="cartIcon" className="material-icons right">
@@ -139,13 +150,10 @@ const mapState = state => {
   }
 }
 
-const mapDispatch = dispatch => {
-  return {
-    handleClick() {
-      dispatch(logout())
-    }
-  }
-}
+const mapDispatch = dispatch => ({
+  handleClick: () => dispatch(logout()),
+  fetchItems: item => dispatch(getCartItemsThunk(item))
+})
 
 export default connect(mapState, mapDispatch)(Navbar)
 

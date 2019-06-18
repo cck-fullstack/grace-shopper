@@ -11,6 +11,21 @@ router.get('/', async (req, res, next) => {
   }
 })
 
+router.get('/fetch', async (req, res, next) => {
+  try {
+    const cartItems = await CartItem.findAll({
+      where: {shoppingCartId: req.session.cart.cartId},
+      include: [Item]
+    })
+
+    if (!cartItems) return res.setStatus(500)
+
+    res.json(cartItems)
+  } catch (err) {
+    next(err)
+  }
+})
+
 router.get('/:cartId', async (req, res, next) => {
   try {
     res.json(
@@ -45,7 +60,7 @@ router.post('/', async (req, res, next) => {
   }
 })
 
-//Regular add cart (For persistence)
+//Regular add cart (For db persistence)
 router.put('/', async (req, res, next) => {
   try {
     const newCart = {

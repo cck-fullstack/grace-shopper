@@ -40,14 +40,17 @@ class CartItems extends Component {
       removeItem
     } = this.props
 
+    let arrayCart = cart
+    if (!Array.isArray(cart)) arrayCart = [...cart]
+
     return (
       <span>
         <h1>Cart Items</h1>
-        {cart.items.length === 0 ? (
+        {arrayCart.items.length === 0 ? (
           <span>Please add items to the cart </span>
         ) : (
           <div>
-            {cart.items.map((item, index) => {
+            {arrayCart.items.map((item, index) => {
               return (
                 <div className="container" key={index}>
                   <h4>{item.name}</h4>
@@ -83,7 +86,7 @@ class CartItems extends Component {
             <button
               type="button"
               className="waves-effect waves-light btn red"
-              onClick={() => checkOutCart(cart.items)}
+              onClick={() => checkOutCart(arrayCart.items)}
             >
               Check Out
             </button>

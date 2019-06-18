@@ -51,7 +51,7 @@ class AllItems extends Component {
                     <div className="card-content black-text">
                       <p className="card-title">{item.name}</p>
                       <p>${item.price / 100}</p>
-                      <p>Stock:{item.inventory}</p>
+                      <p>Stock:{item.inventory.toFixed(2)}</p>
                       <p>Description:{item.description}</p>
                     </div>{' '}
                   </Link>

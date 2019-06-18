@@ -6,7 +6,7 @@ import _ from 'lodash'
 /**
  * ACTION TYPES
  */
-const GET_ITEMS = 'GET_ITEMS'
+const FETCH_CART = 'FETCH_CART'
 const ADD_ITEMS = 'ADD_ITEMS'
 const REMOVE_ITEM = 'REMOVE_ITEM'
 const DECREMENT_ITEM = 'DECREMENT_ITEM'
@@ -23,7 +23,7 @@ const defaultCart = {count: 0, items: []}
 /**
  * ACTION CREATORS
  */
-export const getCartItems = () => ({type: GET_ITEMS})
+export const getCartItems = cartItems => ({type: FETCH_CART, cartItems})
 export const addCartItem = item => ({type: ADD_ITEMS, item})
 export const removeCartItem = index => ({type: REMOVE_ITEM, index})
 export const decrementCartItem = item => ({type: DECREMENT_ITEM, item})
@@ -34,14 +34,14 @@ export const clearCart = () => ({type: CLEAR_CART})
  */
 
 // NOT SURE IF NEEDED
-// export const getCartItemsThunk = cartId => async dispatch => {
-//   try {
-//     await axios.get(`/api/cartItems/${cartId}`)
-//     dispatch(getCartItems())
-//   } catch (error) {
-//     console.error(error)
-//   }
-// }
+export const getCartItemsThunk = () => async dispatch => {
+  try {
+    const {data} = await axios.get('/api/cartItems/fetch')
+    dispatch(getCartItems(data))
+  } catch (error) {
+    console.error(error)
+  }
+}
 
 export const addCartItemThunk = item => async dispatch => {
   try {
@@ -80,6 +80,18 @@ export const checkOutCartThunk = () => async dispatch => {
  */
 export default function(state = defaultCart, action) {
   switch (action.type) {
+    case FETCH_CART: {
+      let count = 0
+      const newCartItems = action.cartItems.map(item => {
+        item.item.quantity = item.quantity
+        count += item.quantity
+
+        return item.item
+      })
+
+      return {count, items: newCartItems}
+    }
+
     case ADD_ITEMS: {
       let search = false
       let index = 0
@@ -134,23 +146,16 @@ export default function(state = defaultCart, action) {
     case GET_USER: {
       let count = state.count
       let cart = action.user.shoppingCarts
-      // console.log(cart, 'CART')
       if (cart === undefined) {
-        // console.log(state, 'WHEN CART IS UNDEFINED')
         return state
       }
 
       let mergedCart = []
-      // console.log(action, 'GETTING USER?')
 
       if (cart) {
-        // console.log(cart[0].cartItems, 'DOES THIS EXIST?')
         let oldCartItems = cart[0].cartItems
-        // console.log(count, items, 'count, items')
-        // console.log(oldCartItems, 'OLDCARTITEMS', oldCartItems[0].itemId)
         for (let i = 0; i < oldCartItems.length; i++) {
           let cartItem = _.find(state.items, {id: oldCartItems[i].itemId})
-          // console.log(cartItem, 'CART ITEM')
           count += oldCartItems[i].quantity
 
           if (cartItem) {
@@ -165,7 +170,6 @@ export default function(state = defaultCart, action) {
             mergedCart.push(oldCartItems[i])
           }
         }
-        // console.log(count, mergedCart, 'AFTER FOR LOOP')
       }
       return {count, items: [...state.items, ...mergedCart]}
     }
