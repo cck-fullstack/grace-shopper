@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Stripe from './stripe.js'
 import _ from 'lodash'
+import {Link} from 'react-router-dom'
 
 import {
   addCartItemThunk,
@@ -50,101 +51,85 @@ class CartItems extends Component {
 
     return (
       <span>
-        <h1>Cart Items</h1>
         {arrayCart.items.length === 0 ? (
           <span>Please add items to the cart </span>
         ) : (
-          <div>
-            <div className="container">
+          <div className="container">
+            <div>
               <div className="row">
                 <ul className="collection">
                   {cart.items.map((item, index) => {
                     return (
-                      <div key={index}>
-                        <li className="collection-item">
-                          <h4>{item.name}</h4>
-                          <button
-                            type="button"
-                            id="view-all-btn"
-                            className="btn-small red"
-                            onClick={() => removeItem(index)}
+                      <div key={index} className="col s4 m4">
+                        <div className="card small">
+                          <Link to={`/items/${item.id}`}>
+                            <div className="card-image">
+                              <div className="image-fade">
+                                <img
+                                  className="product-image"
+                                  src={item.imageURL}
+                                />{' '}
+                              </div>
+                              <span className="card-title">{item.name}</span>
+                            </div>
+                          </Link>
+                          <div
+                            className="card-content"
+                            style={{display: 'flex'}}
                           >
-                            x
-                          </button>
-                          <p>Quantity:{item.quantity}</p>
-                          <p>Price:${item.price * 0.01}</p>
-                          <button
-                            type="button"
-                            className="btn-floating btn-small green"
-                            onClick={() => addToCart(this.addOnClick(item))}
-                          >
-                            {' '}
-                            +{' '}
-                          </button>{' '}
-                          <button
-                            type="button"
-                            className="btn-floating btn-small red"
-                            onClick={() => decrementItem(item)}
-                          >
-                            {' '}
-                            -{' '}
-                          </button>
-                        </li>
+                            <div className="price-and-stock">
+                              <ul>
+                                <li>Price: ${item.price / 100} </li>
+
+                                <li>Quantity:{item.quantity}</li>
+                              </ul>
+                            </div>
+                            <div className="card-action" />
+                            <button
+                              type="button"
+                              id="increment-button"
+                              className="btn-floating btn-small green"
+                              onClick={() => addToCart(this.addOnClick(item))}
+                            >
+                              {' '}
+                              +{' '}
+                            </button>{' '}
+                            <button
+                              type="button"
+                              id="view-all-btn"
+                              className="btn-small red"
+                              onClick={() => removeItem(index)}
+                            >
+                              x
+                            </button>
+                            <button
+                              type="button"
+                              id="decriment-button"
+                              className="btn-floating btn-small red"
+                              onClick={() => decrementItem(item)}
+                            >
+                              {' '}
+                              -{' '}
+                            </button>
+                          </div>
+                        </div>{' '}
                       </div>
                     )
                   })}
                 </ul>
-                <button
-                  type="button"
-                  className="btn red"
-                  onClick={() => checkOutCart(cart.items)}
-                >
-                  Check Out
-                </button>
-                <Stripe />
-              </div>{' '}
-            </div>{' '}
-            {/*{arrayCart.items.map((item, index) => {
-              return (
-                <div className="container" key={index}>
-                  <h4>{item.name}</h4>
+                <div className="stripe-and-checkout">
+                  <Stripe />
+                  <br />{' '}
                   <button
                     type="button"
-                    id="view-all-btn"
-                    className="btn-small red"
-                    onClick={() => removeItem(index)}
+                    className="btn red"
+                    onClick={() => checkOutCart(cart.items)}
                   >
-                    x
-                  </button>
-                  <p>Quantity:{item.quantity}</p>
-                  <p>Price:${item.price * 0.01}</p>
-                  <button
-                    type="button"
-                    className="btn-floating btn-small green"
-                    onClick={() => addToCart(this.addOnClick(item))}
-                  >
-                    {' '}
-                    +{' '}
-                  </button>{' '}
-                  <button
-                    type="button"
-                    className="btn-floating btn-small red"
-                    onClick={() => decrementItem(item)}
-                  >
-                    {' '}
-                    -{' '}
+                    Check Out
                   </button>
                 </div>
-              )
-            })}
-            <button
-              type="button"
-              className="btn red"
-              onClick={() => checkOutCart(arrayCart.items)}
-            >
-              Check Out
-            </button>
-            <Stripe />*/}
+              </div>{' '}
+            </div>{' '}
           </div>
         )}
         <div />

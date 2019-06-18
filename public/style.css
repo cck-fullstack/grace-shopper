@@ -166,8 +166,8 @@ form div {
 
 #price-and-stock {
   align-self: flex-start;
-  left: 10%; 
-  top: 70%; 
+  left: 10%;
+  top: 70%;
   position: absolute;
 }
 
@@ -175,4 +175,32 @@ form div {
   display: flex;
   justify-content: 'space-between';
   align-items: 'flex-end';
+}
+
+#increment-button {
+  align-self: flex-start;
+  right: 25%;
+  top: 75%;
+  position: absolute;
+}
+
+#decriment-button {
+  align-self: flex-start;
+  right: 5%;
+  top: 75%;
+  position: absolute;
+}
+
+#view-all-btn {
+  align-self: flex-start;
+  left: 10%;
+  top: 5%;
+  position: absolute;
+}
+
+.stripe-and-checkout {
+  display: flex;
+  align-self: flex-start;
+  left: 10%;
+  top: 5%;
 }
