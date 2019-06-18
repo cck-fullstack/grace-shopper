@@ -97,40 +97,67 @@ const Footer = () => {
             <li>
               <a>
                 <div>
-                  <button href="#modal1" className="modal-trigger">
+                  {/* <button href="#modal1" className="modal-trigger">
                     About Us{' '}
-                  </button>
+                  </button> */}
+                  <img
+                    href="#modal1"
+                    className="modal-trigger"
+                    height="50px"
+                    width="50px"
+                    src="http://icons.iconarchive.com/icons/hopstarter/soft-scraps/256/Button-Info-icon.png"
+                  />
                   <Modal id="modal1" header="Team">
-                    <uli>
+                    <ul>
                       <li>Alex Mok</li>
                       <li>Eric Kreiter</li>
                       <li>Stan So</li>
                       <li>Will Golden</li>
-                    </uli>
+                    </ul>
                   </Modal>
                 </div>
               </a>
             </li>
             <li>
               <a href="mailto:kat@reelstyle.co">
-                <button>Email Us</button>{' '}
+                <img
+                  height="50px"
+                  width="50px"
+                  src="https://cdn3.iconfinder.com/data/icons/user-interface-web-1/550/web-circle-circular-round_67-512.png"
+                />
+                {/* <button>Email Us</button>{' '} */}
               </a>
             </li>
             <li>
               <a href="http://facebook.com/pewdiepie">
-                <button className="ui facebook button">Facebook</button>
+                <img
+                  height="50px"
+                  width="50px"
+                  src="http://icons.iconarchive.com/icons/yootheme/social-bookmark/512/social-facebook-button-blue-icon.png"
+                />
+                {/* <button className="ui facebook button">Facebook</button> */}
               </a>
             </li>
             <br />
             <li>
               <a href="http://instagram.com/pewdiepie">
-                <button className="ui instagram button">Instagram</button>
+                <img
+                  height="50px"
+                  width="50px"
+                  src="https://sguru.org/wp-content/uploads/2018/01/best-instagram-logo-download-here-15.png"
+                />
+                {/* <button className="ui instagram button">Instagram</button> */}
               </a>
             </li>
             <br />
             <li>
               <a href="http://twitter.com/pewdiepie">
-                <button className="ui twitter button">Twitter</button>
+                <img
+                  height="50px"
+                  width="50px"
+                  src="http://pngimg.com/uploads/twitter/twitter_PNG39.png"
+                />
+                {/* <button className="ui twitter button">Twitter</button> */}
               </a>
             </li>
           </ul>
