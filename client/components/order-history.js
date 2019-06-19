@@ -19,40 +19,65 @@ class OrderHistory extends Component {
   }
 
   render() {
+    let totalPrice = 0
     return (
       <span className="brand-logo">
-        {this.state.orders.length === 0 ? (
-          <div>There is no order History</div>
-        ) : (
-          this.state.orders.map((cart, idx) => {
-            return cart.length === 0 ? (
-              <div />
-            ) : (
-              <div key={cart.id}>
-                <h2>Cart {idx + 1}</h2>
-                {cart.map(item => (
-                  <div className="row" key={`${cart.id}-${item.item.id}`}>
-                    <div className="col s12 m7">
-                      <div className="card">
-                        <Link to={`/items/${item.item.id}`}>
-                          <div className="card-image">
-                            <img src={item.item.imageURL} />
+        {' '}
+        <div className="container">
+          {this.state.orders.length === 0 ? (
+            <div>There is no order History</div>
+          ) : (
+            this.state.orders.map((cart, idx) => {
+              totalPrice = 0
+              return cart.length === 0 ? (
+                <div />
+              ) : (
+                <div key={cart.id}>
+                  <h2 id="centered-title">Cart {idx + 1}</h2>
+                  <div className="row">
+                    <ul className="collection">
+                      {cart.map(item => {
+                        totalPrice += item.item.price * item.quantity
+                        return (
+                          <div key={`${cart.id}-${item.item.id}`}>
+                            <div>
+                              <div className="col s4 m4">
+                                <div className="card small">
+                                  <Link to={`/items/${item.item.id}`}>
+                                    <div className="card-image">
+                                      <div className="image-fade">
+                                        <img
+                                          height="250px"
+                                          className="product-image"
+                                          src={item.item.imageURL}
+                                        />{' '}
+                                      </div>
+                                      <span className="card-title">
+                                        {item.item.name}
+                                      </span>
+                                    </div>
+                                  </Link>{' '}
+                                  <p> Quantity: {item.quantity}</p>{' '}
+                                  <p> Price: ${item.item.price / 100}</p>{' '}
+                                  <p> {item.item.description}</p>
+                                </div>
+                              </div>
+                            </div>
                           </div>
-                          <div className="card-content">
-                            <p className="card-title">{item.item.name}</p>
-                            <p>${item.item.price / 100}</p>
-                            <p>Stock:{item.quantity}</p>
-                            <p>Description:{item.item.description}</p>
-                          </div>
-                        </Link>
-                      </div>
-                    </div>
+                        )
+                      })}
+                    </ul>
                   </div>
-                ))}
-              </div>
-            )
-          })
-        )}
+                  <div className="speech-bubble">
+                    <h4 className="cart-total">
+                      Total Price: ${totalPrice / 100}
+                    </h4>
+                  </div>
+                </div>
+              )
+            })
+          )}
+        </div>{' '}
       </span>
     )
   }
