@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import Stripe from './stripe.js'
 import _ from 'lodash'
 import {Link} from 'react-router-dom'
+import {Modal} from 'react-materialize'
 
 import {
   addCartItemThunk,
@@ -20,8 +21,11 @@ class CartItems extends Component {
   async componentDidMount() {
     if (!this.cart) {
       this.cart = JSON.parse(localStorage.getItem('cart'))
-      console.log('LOCAL CART', JSON.parse(localStorage.getItem('cart')))
     }
+  }
+
+  checkStripeSuccess = boolean => {
+    this.setState({stripeComplete: boolean})
   }
 
   addOnClick = item => {
@@ -63,9 +67,7 @@ class CartItems extends Component {
               <div className="row">
                 <ul className="collection">
                   {cart.items.map((item, index) => {
-                    {
-                      totalPrice += item.price * item.quantity
-                    }
+                    totalPrice += item.price * item.quantity
                     return (
                       <div key={index} className="col s4 m4">
                         <div className="card small">
@@ -139,14 +141,33 @@ class CartItems extends Component {
                   {this.state.stripeComplete ? (
                     <button
                       type="button"
-                      className="btn red"
-                      onClick={() => checkOutCart(cart.items)}
+                      className="btn red modal-trigger"
+                      href="#modalCheckout"
+
                     >
                       CheckOut
                     </button>
                   ) : (
                     <a className="btn disabled">Checkout</a>
                   )}
+                  <div onClick={() => checkOutCart(cart.items)}>
+                    <Modal
+                      id="modalCheckout"
+                      header="Your order has been completed!"
+                    >
+                      <ul>
+                        {cart.items.map(item => {
+                          return (
+                            <li key={item.id}>
+                              {item.name} x {item.quantity} ={' '}
+                              {item.quantity * item.price / 100}
+                            </li>
+                          )
+                        })}
+                        <li>Total Order Cost: ${totalPrice / 100}</li>
+                      </ul>
+                    </Modal>
+                  </div>
                 </div>
               </div>{' '}
             </div>{' '}
