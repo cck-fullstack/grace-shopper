@@ -86,7 +86,6 @@ class AdminPage extends Component {
         ) : (
           <div />
         )}
-
         <button
           type="button"
           onClick={() => this.setState({showEditItems: !showEditItems})}
@@ -94,37 +93,41 @@ class AdminPage extends Component {
           Edit Item Quantity
         </button>
         {showEditItems ? (
-          <ul>
+          <ul className="collection">
             {items.map(item => (
               <div key={item.id}>
-                <li>
-                  {item.name}
-                  <button type="button" onClick={() => deleteItem(item.id)}>
-                    X
-                  </button>
-                </li>
-                <li>${item.price * 0.01}</li>
+                <li className="collection-item">
+                  <li>
+                    {item.name}
+                    <button type="button" onClick={() => deleteItem(item.id)}>
+                      X
+                    </button>
+                  </li>
+                  <li>Price: ${item.price / 100}</li>
 
-                <li>
-                  <button type="button" onClick={() => removeOneItem(item)}>
-                    -
-                  </button>
-                  Stock:{item.inventory}
-                  <button type="button" onClick={() => addOneItem(item)}>
-                    +
-                  </button>
-                </li>
-                <li>
-                  Change Amount:<form
-                    onSubmit={() => this.changeAmount(event, item)}
-                  >
-                    <input
-                      name="inventory"
-                      type="number"
-                      placeholder={item.inventory}
-                      style={{width: '3em'}}
-                    />
-                  </form>
+                  <li>
+                    <button type="button" onClick={() => removeOneItem(item)}>
+                      -
+                    </button>
+                    Stock:{item.inventory}
+                    <button type="button" onClick={() => addOneItem(item)}>
+                      +
+                    </button>
+                  </li>
+                  <li>
+                    Change Amount:<form
+                      onSubmit={() => this.changeAmount(event, item)}
+                    >
+                      <li className="collection-item">
+                        <input
+                          name="inventory"
+                          type="number"
+                          placeholder={item.inventory}
+                          style={{width: '3em'}}
+                        />
+                      </li>
+                    </form>
+                  </li>
                 </li>
               </div>
             ))}
