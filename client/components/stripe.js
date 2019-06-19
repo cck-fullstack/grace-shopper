@@ -15,6 +15,8 @@ export default class Stripe extends React.Component {
     }).then(response => {
       console.log(response, 'RESPONSE')
       response.json().then(data => {
+        console.log(data.success)
+        this.props.stripeComplete(data.success)
         console.log(`We are in business, ${data}`)
       })
     })
