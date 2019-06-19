@@ -4,13 +4,7 @@ import {getItemsThunk} from '../store/items'
 import {addCartItemThunk} from '../store/cart'
 import _ from 'lodash'
 import {Link} from 'react-router-dom'
-import {Breadcrumb, 
-       
-       
-       
-       
-       } from 'react-materialize'
-import PaginationBar from './pagination'
+import {Breadcrumb, Toast, Preloader, Pagination} from 'react-materialize'
 
 class AllItems extends Component {
   componentDidMount() {
@@ -38,85 +32,98 @@ class AllItems extends Component {
   render() {
     let {addToCart, items} = this.props
     if (!Array.isArray(items)) items = [items]
-
+    console.log(items, 'ITEMS')
     return (
       <span>
         <div>
           <Breadcrumb className="teal">
             <a style={{margin: 0}}>Products</a>
           </Breadcrumb>
-          <PaginationBar />
+          <Pagination
+            items={10}
+            activePage={1}
+            maxButtons={Math.ceil(items.length / 10)}
+          />{' '}
           <div className="container">
             <div className="row">
               <h1 className="brand-logo" id="centered-title">
                 All Items
               </h1>
-              {items.map(item => (
-                <div key={item.id} className="col s4 m4">
-                  <div className="card small">
-                    <Link to={`/items/${item.id}`}>
-                      <div className="card-image">
-                        <div className="image-fade">
-                          <img className="product-image" src={item.imageURL} />{' '}
-                        </div>
-                        <span className="card-title">{item.name}</span>
-                      </div>
-                    </Link>
-                    <div className="card-content" style={{display: 'flex'}}>
-                      <div className="price-and-stock">
-                        <ul>
-                          <li>Price: ${item.price / 100} </li>
 
-                          <li>Stock:{item.inventory}</li>
-                        </ul>
-                      </div>
-
-                      <div
-                        onClick={() => {
-                          addToCart(this.addOnClick(item))
-                        }}
-                      >
-                        {/* <Toast
-                          className="toast-button"
-                          options={{
-                            html: `${item.name} added to cart!`,
-                            displayLength: 300
+              {items.length > 0 ? (
+                <div>
+                  {items.map(item => (
+                    <div key={item.id} className="col s4 m4">
+                      <div className="card small">
+                        <Link to={`/items/${item.id}`}>
+                          <div className="card-image">
+                            <div className="image-fade">
+                              <img
+                                height="250px"
+                                className="product-image"
+                                src={item.imageURL}
+                              />{' '}
+                            </div>
+                            <span className="card-title">{item.name}</span>
+                          </div>
+                        </Link>
+                        <div
+                          style={{
+                            display: 'flex',
+                            alignItems: 'flex-end',
+                            justifyContent: 'space-between'
                           }}
-                        > */}
-                        <a
-                          className="btn-floating btn-small waves-effect waves-light green"
-                          id="add-to-cart"
                         >
-                          <i className="material-icons">add_shopping_cart</i>
-                        </a>
-                        {/* </Toast> */}
+                          <div>
+                            <p
+                              style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                paddingLeft: '1.5em'
+                              }}
+                            >
+                              <a>Price: ${item.price / 100} </a>
+                              <a>Stock:{item.inventory}</a>
+                            </p>
+                          </div>
+                          <div
+                            style={{
+                              display: 'flex',
+                              justifyContent: 'flex-end'
+                            }}
+                          >
+                            <div>
+                              <div
+                                style={{
+                                  paddingRight: '1.5em',
+                                  paddingBottom: '3.2em'
+                                }}
+                                onClick={() => {
+                                  addToCart(this.addOnClick(item))
+                                }}
+                              >
+                                <Toast
+                                  options={{
+                                    html: `${item.name} added to cart!`
+                                  }}
+                                >
+                                  <i className="material-icons">
+                                    add_shopping_cart
+                                  </i>
+                                </Toast>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <div className="card-action" />
                     </div>
-                        {/* <div className="card-content black-text">
-                      <p className="card-title">{item.name}</p>
-                      <p>${item.price / 100}</p>
-                      <p>Stock:{item.inventory.toFixed(2)}</p>
-                      <p>Description:{item.description}</p>
-                    </div>{' '}
-                  </Link>
-                  <div
-                    onClick={() => {
-                      addToCart(this.addOnClick(item))
-                    }}
-                  >
-                    <Toast
-                      className="btn blue"
-                      options={{
-                        html: `${item.name} added to cart!`,
-                        displayLength: 300
-                      }}
-                    >
-                      Add to Cart
-                    </Toast>*/}
-                  </div>
+                  ))}
                 </div>
-              ))}{' '}
+              ) : (
+                <div style={{display: 'flex', justifyContent: 'center '}}>
+                  <Preloader size="big" />
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -126,7 +133,6 @@ class AllItems extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log('WHAT IS STATE.CART', state.cart)
   return {items: state.items, cart: state.cart}
 }
 
