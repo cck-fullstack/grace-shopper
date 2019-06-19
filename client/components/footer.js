@@ -25,13 +25,13 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="footer-copyright" style={{'justify-content': 'center'}}>
+      <div className="footer-copyright" style={{justifyContent: 'center'}}>
         <div
           className="container"
           style={{
             display: 'flex',
-            'justify-content': 'space-between',
-            'align-items': 'flex-end',
+            justifyContent: 'space-between',
+            alignItems: 'flex-end',
             margin: '25px 0px 0px'
           }}
         >

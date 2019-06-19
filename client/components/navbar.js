@@ -84,12 +84,7 @@ const Navbar = ({
               <Link to="/login" className="white-text right btn">
                 Login | Sign Up
               </Link>
-              {/* <Link
-                to="/create"
-                className="white-text right waves-effect waves-light btn"
-              >
-                Create Account{' '}
-              </Link> */}
+
               <Link to="/checkout" className="white-text right btn">
                 <div>
                   <i id="cartIcon" className="material-icons right">
@@ -120,7 +115,6 @@ const Navbar = ({
  * CONTAINER
  */
 const mapState = state => {
-  console.log('WTF IS THE STATE', state)
   return {
     isLoggedIn: !!state.user.id,
     cartCount: state.cart.count,

@@ -4,7 +4,13 @@ import {getCategoryThunk} from '../store/items'
 import {addCartItemThunk} from '../store/cart'
 import _ from 'lodash'
 import {Link} from 'react-router-dom'
-import {Breadcrumb, Toast} from 'react-materialize'
+import {
+  Breadcrumb,
+  Toast,
+  Preloader,
+  Pagination,
+  PaginationButton
+} from 'react-materialize'
 import PaginationBar from './pagination'
 
 class Category extends Component {
@@ -45,76 +51,88 @@ class Category extends Component {
           </Link>
           <a style={{margin: 0}}>{category}</a>
         </Breadcrumb>
-        <PaginationBar />
+        <Pagination
+          items={10}
+          activePage={1}
+          maxButtons={Math.ceil(items.length / 10)}
+        />
         <div className="container">
           <div className="row">
             <h1 className="brand-logo" id="centered-title">
               {category} Classes
             </h1>
-            {items.map(item => (
-              <div key={item.id} className="col s4 m4">
-                <div className="card small">
-                  <Link to={`/items/${item.id}`}>
-                    <div className="card-image">
-                      <div className="image-fade">
-                        <img className="product-image" src={item.imageURL} />{' '}
-                      </div>
-                      <span className="card-title">{item.name}</span>
-                    </div>
-                  </Link>
-                  <div className="card-content" style={{display: 'flex'}}>
-                    <div className="price-and-stock">
-                      <ul>
-                        <li>Price: ${item.price / 100} </li>
-
-                        <li>Stock:{item.inventory}</li>
-                      </ul>
-                    </div>
-                    {/* <Toast
-                      options={{
-                        html: `${item.name} added to cart!`,
-                        displayLength: 300
-                      }}
-                    > */}
-                    <div
-                      onClick={() => {
-                        addToCart(this.addOnClick(item))
-                      }}
-                    >
-                      <a
-                        className="btn-floating btn-small waves-effect waves-light green"
-                        id="add-to-cart"
+            {items.length > 0 ? (
+              <div>
+                {items.map(item => (
+                  <div key={item.id} className="col s4 m4">
+                    <div className="card small">
+                      <Link to={`/items/${item.id}`}>
+                        <div className="card-image">
+                          <div className="image-fade">
+                            <img
+                              height="250px"
+                              className="product-image"
+                              src={item.imageURL}
+                            />{' '}
+                          </div>
+                          <span className="card-title">{item.name}</span>
+                        </div>
+                      </Link>
+                      <div
+                        style={{
+                          display: 'flex',
+                          'align-items': 'flex-end',
+                          'justify-content': 'space-between'
+                        }}
                       >
-                        <i className="material-icons">add_shopping_cart</i>
-                      </a>
+                        <div>
+                          <a
+                            style={{
+                              display: 'flex',
+                              'flex-direction': 'column',
+                              'padding-left': '1.5em'
+                            }}
+                          >
+                            <a>Price: ${item.price / 100} </a>
+                            <a>Stock:{item.inventory}</a>
+                          </a>
+                        </div>
+                        <div
+                          style={{
+                            display: 'flex',
+                            'justify-content': 'flex-end'
+                          }}
+                        >
+                          <div>
+                            <div
+                              style={{
+                                'padding-right': '1.5em',
+                                'padding-bottom': '2em'
+                              }}
+                              onClick={() => {
+                                addToCart(this.addOnClick(item))
+                              }}
+                            >
+                              <Toast
+                                options={{html: `${item.name} added to cart!`}}
+                              >
+                                <i className="material-icons">
+                                  add_shopping_cart
+                                </i>
+                              </Toast>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    {/*  </Toast>
                   </div>
-                  <div className="card-content black-text">
-                    <p className="card-title">{item.name}</p>
-                    <p>${item.price / 100}</p>
-                    <p>Stock:{item.inventory}</p>
-                    <p>Description:{item.description}</p>
-                  </div>{' '}
-                </Link>
-                <div
-                  onClick={() => {
-                    addToCart(this.addOnClick(item))
-                  }}
-                >
-                  <Toast
-                    className="btn blue"
-                    options={{
-                      html: `${item.name} added to cart!`,
-                      displayLength: 400
-                    }}
-                  >
-                    Add to Cart
-                  </Toast> */}
-                  </div>
-                </div>
+                ))}
               </div>
-            ))}{' '}
+            ) : (
+              <div style={{display: 'flex', justifyContent: 'center '}}>
+                <Preloader size="big" />
+              </div>
+            )}
           </div>
         </div>
       </span>
