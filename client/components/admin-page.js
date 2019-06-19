@@ -93,10 +93,10 @@ class AdminPage extends Component {
           Edit Item Quantity
         </button>
         {showEditItems ? (
-          <ul className="collection">
+          <ul style={{display: 'flex', flexWrap: 'wrap'}}>
             {items.map(item => (
               <div key={item.id}>
-                <li className="collection-item">
+                <li>
                   <li>
                     {item.name}
                     <button type="button" onClick={() => deleteItem(item.id)}>

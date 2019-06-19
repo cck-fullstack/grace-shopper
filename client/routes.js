@@ -44,9 +44,8 @@ class Routes extends Component {
           <Route path="/checkout" component={Checkout} />
           <Route path="/orderhistory" component={OrderHistory} />
           <Route path="/adminpage" component={AdminPage} />
-
-          <Route path="/api" component={UserHome} />
-          <Route exact path="/user/:id" component={Login} />
+          {/* <Route path="/api" component={Home} /> */}
+          <Route component={Login} />
 
           {isLoggedIn && (
             <Switch>
