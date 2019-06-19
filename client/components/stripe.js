@@ -17,13 +17,11 @@ export default class Stripe extends React.Component {
       console.log('Something went wrong', {type: 'error'})
     }
   }
-  
+
   render() {
     return (
       <div className="container">
-        <div className="product">
-          <h3>Steal your Money</h3>
-        </div>
+        <div className="product" />
         <StripeCheckout
           stripeKey="pk_test_gRQzdxlhd01cSlBN3AspN8xq00kBwwD21I"
           token={this.handleToken}

@@ -9,8 +9,6 @@ import {
 } from '../store/items'
 import {getAllUsersThunk, deleteUserThunk} from '../store/user'
 import ItemForm from './itemForm'
-import M from 'materialize-css'
-import {Select} from 'react-materialize'
 
 const defaultState = {
   name: '',

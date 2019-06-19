@@ -60,7 +60,14 @@ class CartItems extends Component {
     return (
       <span>
         {arrayCart.items.length === 0 ? (
-          <span>Please add items to the cart </span>
+          <span
+            style={{
+              display: 'flex',
+              justifyContent: 'center'
+            }}
+          >
+            Please add items to the cart{' '}
+          </span>
         ) : (
           <div className="container">
             <div>
@@ -75,6 +82,7 @@ class CartItems extends Component {
                             <div className="card-image">
                               <div className="image-fade">
                                 <img
+                                  height="250px"
                                   className="product-image"
                                   src={item.imageURL}
                                 />{' '}
@@ -143,7 +151,6 @@ class CartItems extends Component {
                       type="button"
                       className="btn red modal-trigger"
                       href="#modalCheckout"
-
                     >
                       CheckOut
                     </button>
@@ -159,8 +166,9 @@ class CartItems extends Component {
                         {cart.items.map(item => {
                           return (
                             <li key={item.id}>
-                              {item.name} x {item.quantity} ={' '}
-                              {item.quantity * item.price / 100}
+                              {item.name} x {item.quantity} = ${item.quantity *
+                                item.price /
+                                100}
                             </li>
                           )
                         })}
