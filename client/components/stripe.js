@@ -17,6 +17,7 @@ export default class Stripe extends React.Component {
       console.log('Something went wrong', {type: 'error'})
     }
   }
+  
   render() {
     return (
       <div className="container">

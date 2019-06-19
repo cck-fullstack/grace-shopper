@@ -41,6 +41,10 @@ class CartItems extends Component {
     return item
   }
 
+  checkStripeSuccess = boolean => {
+    this.setState({stripeComplete: boolean})
+  }
+
   render() {
     const {
       addToCart,
@@ -53,7 +57,6 @@ class CartItems extends Component {
     let arrayCart = cart
     // if (!Array.isArray(cart)) arrayCart = [...cart]
     let totalPrice = 0
-
     return (
       <span>
         {arrayCart.items.length === 0 ? (
@@ -65,7 +68,6 @@ class CartItems extends Component {
                 <ul className="collection">
                   {cart.items.map((item, index) => {
                     totalPrice += item.price * item.quantity
-
                     return (
                       <div key={index} className="col s4 m4">
                         <div className="card small">
@@ -103,7 +105,7 @@ class CartItems extends Component {
                             </button>{' '}
                             <button
                               type="button"
-                              id="view-all-btn"
+                              id="view-all-btn1"
                               className="btn-small red"
                               onClick={() => removeItem(index)}
                             >
@@ -135,28 +137,19 @@ class CartItems extends Component {
                   </div>
                 </div>
                 <div className="stripe-and-checkout">
-                  {/* <Stripe />
-                  <br />{' '}
-                  <button
-                    type="button"
-                    className="btn red modal-trigger"
-                    href="#modalCheckout"
-                  >
-                    CheckOut
-                  </button> */}
                   <Stripe stripeComplete={this.checkStripeSuccess} />
                   {this.state.stripeComplete ? (
                     <button
                       type="button"
                       className="btn red modal-trigger"
                       href="#modalCheckout"
+
                     >
                       CheckOut
                     </button>
                   ) : (
                     <a className="btn disabled">Checkout</a>
                   )}
-
                   <div onClick={() => checkOutCart(cart.items)}>
                     <Modal
                       id="modalCheckout"
