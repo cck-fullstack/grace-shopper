@@ -96,7 +96,7 @@ class CartItems extends Component {
                             </button>{' '}
                             <button
                               type="button"
-                              id="view-all-btn"
+                              id="view-all-btn1"
                               className="btn-small red"
                               onClick={() => removeItem(index)}
                             >

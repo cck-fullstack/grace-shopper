@@ -7,7 +7,6 @@ import {
   Items,
   SingleItem,
   Login,
-  Signup,
   UserHome,
   UserPage,
   AddUser,
@@ -47,6 +46,7 @@ class Routes extends Component {
           <Route path="/adminpage" component={AdminPage} />
 
           <Route path="/api" component={UserHome} />
+          <Route exact path="/user/:id" component={Login} />
 
           {isLoggedIn && (
             <Switch>
