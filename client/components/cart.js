@@ -15,7 +15,7 @@ import {
 class CartItems extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {stripeComplete: false}
   }
   async componentDidMount() {
     if (!this.cart) {
@@ -37,6 +37,10 @@ class CartItems extends Component {
     return item
   }
 
+  checkStripeSuccess = boolean => {
+    this.setState({stripeComplete: boolean})
+  }
+
   render() {
     const {
       addToCart,
@@ -48,7 +52,7 @@ class CartItems extends Component {
 
     let arrayCart = cart
     // if (!Array.isArray(cart)) arrayCart = [...cart]
-
+    let totalPrice = 0
     return (
       <span>
         {arrayCart.items.length === 0 ? (
@@ -59,6 +63,9 @@ class CartItems extends Component {
               <div className="row">
                 <ul className="collection">
                   {cart.items.map((item, index) => {
+                    {
+                      totalPrice += item.price * item.quantity
+                    }
                     return (
                       <div key={index} className="col s4 m4">
                         <div className="card small">
@@ -117,16 +124,29 @@ class CartItems extends Component {
                     )
                   })}
                 </ul>
+                <div>
+                  {' '}
+                  <div className="speech-bubble">
+                    {' '}
+                    <h4 className="cart-total">
+                      {' '}
+                      Cart Total: ${totalPrice / 100}
+                    </h4>
+                  </div>
+                </div>
                 <div className="stripe-and-checkout">
-                  <Stripe />
-                  <br />{' '}
-                  <button
-                    type="button"
-                    className="btn red"
-                    onClick={() => checkOutCart(cart.items)}
-                  >
-                    Check Out
-                  </button>
+                  <Stripe stripeComplete={this.checkStripeSuccess} />
+                  {this.state.stripeComplete ? (
+                    <button
+                      type="button"
+                      className="btn red"
+                      onClick={() => checkOutCart(cart.items)}
+                    >
+                      CheckOut
+                    </button>
+                  ) : (
+                    <a className="btn disabled">Checkout</a>
+                  )}
                 </div>
               </div>{' '}
             </div>{' '}
