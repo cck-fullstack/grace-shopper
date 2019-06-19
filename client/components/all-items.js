@@ -32,7 +32,6 @@ class AllItems extends Component {
   render() {
     let {addToCart, items} = this.props
     if (!Array.isArray(items)) items = [items]
-    console.log(items, 'ITEMS')
     return (
       <span>
         <div>

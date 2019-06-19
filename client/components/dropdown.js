@@ -26,7 +26,6 @@ class Categories extends Component {
           All
         </Link>
         <Divider />
-
         {categories.map(category => {
           return (
             <Link
