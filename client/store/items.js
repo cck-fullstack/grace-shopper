@@ -35,7 +35,6 @@ export const getItemsThunk = () => async dispatch => {
 
 export const getCategoryThunk = category => async dispatch => {
   try {
-    console.log(category, ' INTHUNK')
     const {data} = await axios.get(`/api/items/category/${category}`)
     dispatch(getItems(data))
   } catch (err) {

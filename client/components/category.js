@@ -11,7 +11,6 @@ import {
   Pagination,
   PaginationButton
 } from 'react-materialize'
-import PaginationBar from './pagination'
 
 class Category extends Component {
   componentDidMount() {
@@ -81,33 +80,33 @@ class Category extends Component {
                       <div
                         style={{
                           display: 'flex',
-                          'align-items': 'flex-end',
-                          'justify-content': 'space-between'
+                          alignItems: 'flex-end',
+                          justifyContent: 'space-between'
                         }}
                       >
                         <div>
-                          <a
+                          <p
                             style={{
                               display: 'flex',
-                              'flex-direction': 'column',
-                              'padding-left': '1.5em'
+                              flexDirection: 'column',
+                              paddingLeft: '1.5em'
                             }}
                           >
                             <a>Price: ${item.price / 100} </a>
                             <a>Stock:{item.inventory}</a>
-                          </a>
+                          </p>
                         </div>
                         <div
                           style={{
                             display: 'flex',
-                            'justify-content': 'flex-end'
+                            justifyContent: 'flex-end'
                           }}
                         >
                           <div>
                             <div
                               style={{
-                                'padding-right': '1.5em',
-                                'padding-bottom': '2em'
+                                paddingRight: '1.5em',
+                                paddingBottom: '3.2em'
                               }}
                               onClick={() => {
                                 addToCart(this.addOnClick(item))

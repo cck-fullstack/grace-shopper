@@ -14,7 +14,7 @@ class Checkout extends Component {
     let {cart} = this.props
     return (
       <div>
-        <h4>Your Current Cart:</h4>
+        <h4 id="centered-title">Your Current Cart:</h4>
         <CartItems />
       </div>
     )

@@ -7,29 +7,18 @@ router.get('/', function(req, res, next) {
   console.log('Hello?')
 })
 
-router.post('/', function(req, res, next) {
-  /* etc */
-  const stripeToken = req.body.stripeToken
+router.post('/', async (req, res, next) => {
+  const stripeToken = req.body.token
   const amount = 1000
-  console.log(stripeToken, 'POST ROUTE')
-  stripe.charges
-    .create(
-      {
-        amount: amount,
-        currency: 'usd',
-        source: stripeToken
-      },
-      {
-        stripe_account: 'acct_1Ei2gwFLlDpxJp8h'
-      }
-    )
-    .then(function(err, charge) {
-      // asynchronously called
-      console.log(charge, 'CHARGE')
-      if (err) {
-        res.send({success: false, message: 'Error'})
-      } else {
-        res.send({success: true, message: 'Success'})
-      }
-    })
+  const charge = await stripe.charges.create({
+    amount: amount,
+    currency: 'usd',
+    source: 'tok_visa'
+  })
+
+  if (!charge) {
+    res.send({success: false, message: 'Error'})
+  } else {
+    res.send({success: true, message: 'Success'})
+  }
 })

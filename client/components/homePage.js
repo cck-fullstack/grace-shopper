@@ -10,10 +10,7 @@ const Home = () => {
       </div>
       <div>
         <Link to="/items">
-          <button
-            id="view-all-btn"
-            className="btn-large waves-effect waves-light blue"
-          >
+          <button id="view-all-btn" className="btn-large waves-effect blue">
             View All
           </button>
         </Link>

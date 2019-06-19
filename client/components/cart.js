@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import Stripe from './stripe.js'
 import _ from 'lodash'
 import {Link} from 'react-router-dom'
+import {Modal} from 'react-materialize'
 
 import {
   addCartItemThunk,
@@ -15,13 +16,16 @@ import {
 class CartItems extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {stripeComplete: false}
   }
   async componentDidMount() {
     if (!this.cart) {
       this.cart = JSON.parse(localStorage.getItem('cart'))
-      console.log('LOCAL CART', JSON.parse(localStorage.getItem('cart')))
     }
+  }
+
+  checkStripeSuccess = boolean => {
+    this.setState({stripeComplete: boolean})
   }
 
   addOnClick = item => {
@@ -48,6 +52,7 @@ class CartItems extends Component {
 
     let arrayCart = cart
     // if (!Array.isArray(cart)) arrayCart = [...cart]
+    let totalPrice = 0
 
     return (
       <span>
@@ -59,6 +64,8 @@ class CartItems extends Component {
               <div className="row">
                 <ul className="collection">
                   {cart.items.map((item, index) => {
+                    totalPrice += item.price * item.quantity
+
                     return (
                       <div key={index} className="col s4 m4">
                         <div className="card small">
@@ -117,16 +124,57 @@ class CartItems extends Component {
                     )
                   })}
                 </ul>
+                <div>
+                  {' '}
+                  <div className="speech-bubble">
+                    {' '}
+                    <h4 className="cart-total">
+                      {' '}
+                      Cart Total: ${totalPrice / 100}
+                    </h4>
+                  </div>
+                </div>
                 <div className="stripe-and-checkout">
-                  <Stripe />
+                  {/* <Stripe />
                   <br />{' '}
                   <button
                     type="button"
-                    className="btn red"
-                    onClick={() => checkOutCart(cart.items)}
+                    className="btn red modal-trigger"
+                    href="#modalCheckout"
                   >
-                    Check Out
-                  </button>
+                    CheckOut
+                  </button> */}
+                  <Stripe stripeComplete={this.checkStripeSuccess} />
+                  {this.state.stripeComplete ? (
+                    <button
+                      type="button"
+                      className="btn red modal-trigger"
+                      href="#modalCheckout"
+                    >
+                      CheckOut
+                    </button>
+                  ) : (
+                    <a className="btn disabled">Checkout</a>
+                  )}
+
+                  <div onClick={() => checkOutCart(cart.items)}>
+                    <Modal
+                      id="modalCheckout"
+                      header="Your order has been completed!"
+                    >
+                      <ul>
+                        {cart.items.map(item => {
+                          return (
+                            <li key={item.id}>
+                              {item.name} x {item.quantity} ={' '}
+                              {item.quantity * item.price / 100}
+                            </li>
+                          )
+                        })}
+                        <li>Total Order Cost: ${totalPrice / 100}</li>
+                      </ul>
+                    </Modal>
+                  </div>
                 </div>
               </div>{' '}
             </div>{' '}
